@@ -12,20 +12,20 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../../../resources/images/myFortFolio/favicon.png" rel="icon">
-  <link href="../../../resources/images/myFortFolio/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="resources/images/myFortFolio/favicon.png" rel="icon">
+  <link href="resources/images/myFortFolio/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../../../resources/vender/myFortFolio/aos/aos.css" rel="stylesheet">
-  <link href="../../../resources/vender/myFortFolio/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../../resources/vender/myFortFolio/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../../../resources/vender/myFortFolio/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="resources/vender/myFortFolio/aos/aos.css" rel="stylesheet">
+  <link href="resources/vender/myFortFolio/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="resources/vender/myFortFolio/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="resources/vender/myFortFolio/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../../../resources/css/myFortFolio/style.css" rel="stylesheet">
+  <link href="resources/css/myFortFolio/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyPortfolio
@@ -265,7 +265,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial">
-                  <img src="../../../resources/images/myFortFolio/person_1.jpg" alt="Image" class="img-fluid">
+                  <img src="resources/images/myFortFolio/person_1.jpg" alt="Image" class="img-fluid">
                   <blockquote>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
                       explicabo inventore.</p>
@@ -278,7 +278,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial">
-                  <img src="../../../resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid">
+                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid">
                   <blockquote>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
                       explicabo inventore.</p>
@@ -325,14 +325,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../../../resources/vender/myFortFolio/aos/aos.js"></script>
-  <script src="../../../resources/vender/myFortFolio/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../resources/vender/myFortFolio/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../../../resources/vender/myFortFolio/swiper/swiper-bundle.min.js"></script>
-  <script src="../../../resources/vender/myFortFolio/php-email-form/validate.js"></script>
+  <script src="resources/vender/myFortFolio/aos/aos.js"></script>
+  <script src="resources/vender/myFortFolio/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/vender/myFortFolio/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="resources/vender/myFortFolio/swiper/swiper-bundle.min.js"></script>
+  <script src="resources/vender/myFortFolio/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../../../resources/js/myFortFolio/main.js"></script>
+  <script src="resources/js/myFortFolio/main.js"></script>
   
 
 </body>
