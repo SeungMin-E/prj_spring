@@ -48,11 +48,11 @@
       <div class="row align-items-start">
         <div class="col-md-2">
           <ul class="custom-menu">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="works.html">Works</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/aboutMe">About Me</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/work">Works</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-6 d-none d-md-block  mr-auto">
@@ -73,7 +73,7 @@
 
   <nav class="navbar navbar-light custom-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">MyPortfolio.</a>
+      <a class="navbar-brand" href="/">MyPortfolio.</a>
       <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
         <span></span>
       </a>
@@ -102,12 +102,12 @@
         </div>
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
           <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
+            <a href="/work_one" class="item-wrap fancybox">
               <div class="work-info">
                 <h3>Project NSA</h3>
                 <span>Web</span>
               </div>
-              <img class="img-fluid" src="../../../resources/images/myFortFolio/img_1.jpg">
+              <img class="img-fluid" src="resources/images/myFortFolio/img_1.jpg">
             </a>
           </div>
           <!-- <div class="item team_project col-sm-6 col-md-4 col-lg-4 mb-4">

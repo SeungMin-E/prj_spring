@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+/* Wrap - 경우에 따라서 틀이 변경될수도 있다. */
+.pageWrap {width: 85%; margin: auto;}
+
+/* 헤더? */
+header {height: 90px; background-color: rgba(10, 100, 200, .3); box-sizing: border-box;}
+#logo {width: 120px; height: 90px; float: left; box-sizing: border-box; text-align: center; line-height: 90px;}
+#logo img {width:100%; height: 100%; object-fit: cover;}
+
+/* nav 구간 */
+#nav_bar {width: 100%; height: 30px; background-color: coral;}
+#nav_bar ul {display: flex; justify-content: space-around;}
+#nav_bar ul li {width: 150px; height: 30px; text-align: center;}
+
+
+/* 프로필 구간 */
+section {box-sizing: border-box; padding-top: 30px;}
+#myInfo {height: 400px;}
+
+#myPhoto {width: 300px; height: 300px; border: 1.5px solid #fff; float: left;  border-radius: 100%; overflow: hidden;}
+#myPhoto img {width: 100%; height: 100%; object-fit: contain;}
+
+#profile {width: 800px; height: 300px; padding: 30px; box-sizing: border-box; float: left; margin-right: 40px;}
+#profile ul {display: flex; flex-direction: column;
+    flex-wrap: wrap; align-content: center;}
+#profile ul li:first-child {font-size: 40px; text-align: center; margin-bottom: 20px;}
+#profile ul li {font-size: 30px; font-weight: bold;}
+
+/* 프로젝트 구간 */
+.pro_win {width: 100%; height: 220px; box-sizing: border-box; padding: 15px;}
+
+.project_ti {width: 32%; height: 200px;
+    box-sizing: border-box; padding: 10px;
+    float: left; margin-right: 30px;
+}
+.project_ti h3 {margin: 0 0 10px 10px;}
+.project_ti .into_box {width: 100%; height: 160px; overflow: auto;}
+
+.project_btn {width: 30%; height: 200px; background-color: aliceblue; margin-right: 30px; 
+float: left; position: relative;}
+.project_btn:nth-last-child(0) {margin-right: 0;}
+.project_btn img {width: 100%; height: 100%; object-fit: cover;}
+.project_btn a {position: absolute; font-size: 30px;
+    bottom: 15px; left: 38%;
+}
