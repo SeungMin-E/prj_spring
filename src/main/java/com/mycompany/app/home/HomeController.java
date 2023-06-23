@@ -173,6 +173,8 @@ public class HomeController {
 	}
 	
 	
+//	project nsa 관리자 페이지
+	
 	@RequestMapping(value="projectNSA/admin_join")
 	public String nsa_admin() {
 		return "app/admin_host/admin_login_page";
@@ -193,4 +195,20 @@ public class HomeController {
 	public String nsa_admin_chart() {
 		return "app/admin_host/charts";
 	}
+	
+	@RequestMapping(value="/doNotPushMe")
+	public String nsa_button() {
+		return "app/admin_host/admin_host_interface/ad_button";
+	}
+	
+	@RequestMapping(value="/card_trick")
+	public String nsa_acdr() {
+		return "app/admin_host/admin_host_interface/ad_card";
+	}
+	
+	@RequestMapping(value="/color_Blindness")
+	public String nsa_color_weakness() {
+		return "app/admin_host_admin_host_interface/ad_color";
+	}
+	
 }
