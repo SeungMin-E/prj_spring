@@ -186,6 +186,11 @@ public class HomeController {
 		return "app/admin_host/ad_index";
 	}
 	
+	@RequestMapping(value="/register")
+	public String nsa_admin_register() {
+		return "app/admin_host/admin_host_page/register";
+	}
+	
 	@RequestMapping(value="/ad_table")
 	public String nsa_admin_table() {
 		return "app/admin_host/ad_table";
