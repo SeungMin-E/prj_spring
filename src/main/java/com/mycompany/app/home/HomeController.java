@@ -176,10 +176,12 @@ public class HomeController {
 //	project nsa 관리자 페이지
 	
 	@RequestMapping(value="projectNSA/admin_join")
-	public String nsa_admin() {
-		return "app/admin_host/admin_login_page";
+	public String nsa_admin_login() {
+		return "app/admin_host/admin_host_page/admin_login_page";
 	}
 	
+	
+//	페이지 경로
 	@RequestMapping(value="/admin_page")
 	public String nsa_admin_page() {
 		
@@ -191,11 +193,33 @@ public class HomeController {
 		return "app/admin_host/admin_host_page/register";
 	}
 	
+	@RequestMapping(value="/pwLost")
+	public String forget_pw() {
+		return "app/admin_host/admin_host_page/forget_password";
+	}
+	
+//	excenption sample page
+	
+	@RequestMapping(value="/smaple_one")
+	public String samplePage_404() {
+		return "app/admin_host/admin_host_page/404";
+	}
+	
+	
+	@RequestMapping(value="/sample_two")
+	public String samplePage_blank() {
+		return "app/admin_host/admin_host_page/blank";
+	}
+	
+	
+	
+//	테이블
 	@RequestMapping(value="/ad_table")
 	public String nsa_admin_table() {
 		return "app/admin_host/ad_table";
 	}
 	
+//	차트
 	@RequestMapping(value="/chart")
 	public String nsa_admin_chart() {
 		return "app/admin_host/charts";

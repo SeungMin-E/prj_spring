@@ -183,10 +183,15 @@
                     <form name="formList"
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-	                        <input type="text" name="getGenkeyword" class="form-control bg-light border-0 small" 
-                                aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.gender}"></c:out>'>
-                            <input type="text" name="getGenkeyword" class="form-control bg-light border-0 small" 
-                                aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.name}"></c:out>">
+	                      <select name="gender" class="form-control bg-light border-0 small col-auto"
+	                                aria-label="select" aria-describedby="basic-addon2">
+	                                <option value="" selected>선택하세요</option>
+	                                <option value="1">0</option>
+	                                <option value="2">1</option>
+	                                <option value="3">2</option>
+	                         </select>
+                            <input type="text" name="name" class="form-control bg-light border-0 small" 
+                                aria-label="Search" aria-describedby="basic-addon2" value="">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" id="btn" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -390,18 +395,18 @@
 						<form name="formTarget"
                         	class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         	<div class="input-group">
-	                        	<input type="text" name="seq" class="form-control bg-light border-0 small" 
-                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>'>
+	                        	<select name="gender" class="form-control bg-light border-0 small col-auto"
+	                                aria-label="select" aria-describedby="basic-addon2">
+	                                <option value="gender" selected>선택하세요</option>
+	                                <option value="1">남</option>
+	                                <option value="2">여</option>
+	                                <option value="3">나가</option>
+	                         </select>
                             	<input type="text" name="name" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.name}"></c:out>">
-                            	<input type="text" name="delNy" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.delNy}"></c:out>" readonly>
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="이름">
                        		 </div>
 							 <div>
-							 	<button type="button" id="goback">목록</button>
-							 	<button type="button" id="gouele">uele</button>
-							 	<button type="button" id="excution">삭제</button>
-							 	<button type="button" id="gosave">저장</button>
+							 	<button type="button" id="create">저장</button>
 							 </div>                     		 
                     	</form>
                     </div>
@@ -468,26 +473,10 @@
     		form.attr("action", "/codeGroupFrom").submit();
 //    		alert("Nothing say anyone");
     	});
-    	
-    	$("#goback").on("click", function(){
-    		window.location.replace("/codeGroupList");
-    	});
-    	
-    	$("#gouele").on("click", function(){
+    	    	
+    	$("#create").on("click",function(){
     		target.attr("method", "post");
-    		target.attr("action", "/codeGroupuele").submit();
-    	});
-    	
-    	
-    	$("#excution").on("click",function(){
-    		target.attr("method", "post");
-    		target.attr("action", "/codeGroupDelete").submit();
-    	});
-    	
-    	
-    	$("#gosave").on("click",function(){
-    		target.attr("method", "post");
-    		target.attr("action", "/codeGroupUpdate").submit();
+    		target.attr("action", "/codeGroupCreate").submit();
     	});
     	
     </script>

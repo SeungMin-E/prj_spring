@@ -181,14 +181,14 @@
                     <form name="formList"
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-	                        <select name="genOption" class="form-control bg-light border-0 small col-auto"
+	                        <select name="gender" class="form-control bg-light border-0 small col-auto"
 	                                aria-label="select" aria-describedby="basic-addon2">
 	                                <option value="" selected>선택하세요</option>
-	                                <option value="1">0</option>
-	                                <option value="2">1</option>
+	                                <option value="남">0</option>
+	                                <option value="여">1</option>
 	                                <option value="3">2</option>
 	                         </select>
-                            <input type="text" name="getGenkeyword" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" name="getGenkeyword" class="form-control bg-light border-0 small" placeholder="너 이름은?"
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" id="btn" type="button">
@@ -390,7 +390,7 @@
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">
+                    <div class=d-flext col>
 						<c:choose>
 								<c:when test="${fn:length(list) eq 0}">
 									<tr>
@@ -402,6 +402,7 @@
 							 			<c:out value="${list.seq}"></c:out>
 										<c:out value="${list.gender}"></c:out>
 										<a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a>
+										<c:out value="${list.delNy}"></c:out>
 									<br> 
 									</c:forEach>
 								</c:otherwise>
@@ -409,11 +410,13 @@
                     </div>
 
                     <!-- Content Row -->
-
+				<form name="formList2">
                     <div class="row">
-
-                      
-
+	                    <button class="btn btn-primary" id="create" type="button">
+	                        <i class="fas fa-search fa-sm"></i>
+	                     </button>
+                    </div>
+				</form>
                     <!-- Content Row -->
                     <div class="row">
 
@@ -481,8 +484,11 @@
     		form.attr("method", "post");
     		form.attr("action", "/codeGroupList").submit();
     		
-    		
 //    		alert("Nothing say anyone");
+    	});
+    	
+    	$("#create").on("click", function(){
+    		window.location.replace("/codeInsert");
     	});
     </script>
           

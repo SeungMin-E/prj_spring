@@ -20,7 +20,7 @@
 		 FROM
 		 	codeGroup
 		 where	
-		 	gender = #{getGenkeyword}
+		 	name like concat('%',#{getGenkeyword},'%')
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -31,6 +31,43 @@
 			seq = #{seq}
 	</select>
 	<!-- where gender LIKE CONCAT('%' + #{} + '%') -->
+	
+	<insert id="insertOne">
+		INSERT INTO
+			codeGroup(
+				gender
+				, name
+				, delNy
+			)
+		VALUES(
+			#{gender}
+			, #{name}
+			, 0
+		)
+	</insert>
+	
+	<update id="updateOne">
+		UPDATE codeGroup
+		SET
+			name = #{name}
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<update id="uele">
+		UPDATE codeGroup
+		SET
+			delNy = 1
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<delete id="deleteOne">
+		DELETE FROM
+			codeGroup
+		WHERE 
+			name = #{name}
+	</delete>
 	
 	    
 </mapper>    

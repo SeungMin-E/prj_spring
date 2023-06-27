@@ -39,11 +39,49 @@ public class CodeGroupController {
 		
 		CodeGroup codeGroup = service.selectOne(vo);
 		
-		System.out.println("테스트 : " + vo.getGetGenkeyword());
-		System.out.println("테스트 : " + vo.getGenOption());
+//		System.out.println("테스트 : " + vo.getGetGenkeyword());
+//		System.out.println("테스트 : " + vo.getGenOption());
 		
 		model.addAttribute("item",codeGroup);
 		
 		return "codeGroupFrom";
 	}
+	
+	@RequestMapping(value="/codeGroupUpdate")
+	public String codeGroupUpdate(CodeGroup dto) {
+		service.updateOne(dto);
+		
+		return "redirect:/codeGroupList";
+	}
+	
+	@RequestMapping(value="/codeGroupDelete")
+	public String codeGroupDelete(CodeGroup dto) {
+		service.deleteOne(dto);
+		
+		return "redirect:/codeGroupList";
+	}
+	
+	@RequestMapping(value="/codeGroupCreate")
+	public String codeGroupInsert(CodeGroup dto) {
+		service.insertOne(dto);
+		
+		return "redirect:/codeGroupList";
+	}
+	
+	@RequestMapping(value="/codeGroupuele")
+	public String codeGroupUele(CodeGroup dto, CodeGroupVo vo , Model model) {
+		service.uele(dto);
+		
+		
+		CodeGroup codeGroup = service.selectOne(vo);
+		model.addAttribute("item",codeGroup);
+		
+		return "/codeGroupFrom";
+	}
+	
+	@RequestMapping(value="/codeInsert")
+	public String codeInsertPage() {
+		return "codeInsert";
+	}
+	
 }
