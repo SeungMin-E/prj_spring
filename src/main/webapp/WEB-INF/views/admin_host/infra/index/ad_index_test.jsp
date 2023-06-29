@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>관리자-메인 페이지</title>
+    <title>테스트페이지 - 여기는 어떻게 알고 들어왔냐?</title>
 
     <!-- Custom fonts for this template-->
     <link href="resources/vender/project_nsa/admin_host/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,20 +32,22 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-       <!-- sidebar -->
-       <%@include file="../../include/sidebar.jsp" %>
+		<!-- 사이드바 인클루드 -->
+      <%@include file="../../include/sidebar.jsp" %>
+      
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-                    
-               	<!-- head Topbar -->
-				<%@include file="../../include/header.jsp" %>
+
+                <!-- 헤드 툴바 인클루드 -->
+                <%@include file="../../include/header.jsp" %>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -378,14 +380,14 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-           <%@include file="../../include/footer.jsp" %>
+            <%@include file="../../include/footer.jsp" %>
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
-	
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

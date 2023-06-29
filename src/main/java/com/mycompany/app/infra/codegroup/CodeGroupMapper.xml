@@ -19,8 +19,8 @@
 		 	*
 		 FROM
 		 	codeGroup
-		 where	
-		 	name like concat('%',#{getGenkeyword},'%')
+		 where 1=1
+		 	<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name like concat('%',#{getGenkeyword},'%')</if>
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">

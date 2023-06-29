@@ -29,6 +29,9 @@
 
     <!-- Custom styles for this page -->
     <link href="resources/vender/project_nsa/admin_host/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
+    <!-- custom font awesome -->
+   	<script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
 
 </head>
 

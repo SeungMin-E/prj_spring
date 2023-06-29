@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CodeGroupController {
@@ -82,6 +83,15 @@ public class CodeGroupController {
 	@RequestMapping(value="/codeInsert")
 	public String codeInsertPage() {
 		return "admin_host/infra/codegroup/codeInsert";
+	}
+	
+	
+//	카나리아니까 건들지 마세요. (테스트하는데라 말없이 괜히 건들어서서 악성코드나 바이러스 걸려도 나는 모름 )
+	@RequestMapping(value="/test_page")
+	public ModelAndView test_page() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin_host/infra/index/ad_index_test");
+		return mav;
 	}
 	
 }

@@ -14,13 +14,16 @@
     <title>관리자 로그인</title>
 
     <!-- Custom fonts for this template-->
-    <link href="resources/vender/project_nsa/admin_host/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../resources/vender/project_nsa/admin_host/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+	
+	<!-- custom font awesome -->
+   	<script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
+	
     <!-- Custom styles for this template-->
-    <link href="resources/css/project_nsa/admin_host/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../resources/css/project_nsa/admin_host/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -95,7 +98,7 @@
     <script src="../../resources/vender/project_nsa/admin_host/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
+    <script src="../../resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
     
 
 </body>
