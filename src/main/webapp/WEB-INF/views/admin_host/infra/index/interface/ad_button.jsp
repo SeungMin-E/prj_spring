@@ -36,11 +36,6 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-			id="accordionSidebar">
-
-			<!-- Sidebar - Brand -->
 			<%@include file="../../../include/sidebar.jsp" %>
 			
 

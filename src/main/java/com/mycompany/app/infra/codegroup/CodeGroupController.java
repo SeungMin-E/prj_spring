@@ -52,7 +52,7 @@ public class CodeGroupController {
 	public String codeGroupUpdate(CodeGroup dto) {
 		service.updateOne(dto);
 		
-		return "redirect:/admin_host/infra/codegroup/codeGroupList";
+		return "redirect:/codeGroupList";
 	}
 	
 	@RequestMapping(value="/codeGroupDelete")

@@ -64,24 +64,34 @@
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
                     <!-- Content Row -->
-                    <div class="row">
-						<form name="formTarget"
-                        	class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        	<div class="input-group">
-	                        	<input type="text" name="seq" class="form-control bg-light border-0 small" 
-                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>'>
-                            	<input type="text" name="name" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.name}"></c:out>">
-                            	<input type="text" name="delNy" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.delNy}"></c:out>" readonly>
-                       		 </div>
-							 <div>
-							 	<button type="button" id="goback">목록</button>
-							 	<button type="button" id="gouele">uele</button>
-							 	<button type="button" id="excution">삭제</button>
-							 	<button type="button" id="gosave">저장</button>
-							 </div>                     		 
-                    	</form>
+                    <div class="col">
+                    	<div class="card mb-4">
+	                    	<div class="card-header py-3">
+	                    		<h6 class="m-0 font-weight-bold text-primary">CodeGroupList</h6>
+	                    	</div>
+                    		<div class="card-body">
+								<form name="formTarget"
+		                        	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+		                        	<div class="col-8">
+		                        		seq : 
+			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
+		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>' readonly>
+		                       		 	이름 : 
+		                            	<input type="text" name="name" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.name}"></c:out>">
+		                       		 	delNy : 
+		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.delNy}"></c:out>" readonly>
+		                       		 </div>
+									 <div class="col mt-4 mb-4">
+									 	<button type="button" class="btn btn-primary" id="goback">목록</button>
+									 	<button type="button" class="btn btn-warning" id="gouele">uele</button>
+									 	<button type="button" class="btn btn-danger" id="excution">삭제</button>
+									 	<button type="button" class="btn btn-success" id="gosave">저장</button>
+									 </div>                     		 
+		                    	</form>
+                    		</div>
+                    	</div>	
                     </div>
             <!-- End of Main Content -->
 			

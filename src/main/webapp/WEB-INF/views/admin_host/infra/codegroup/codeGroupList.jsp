@@ -61,7 +61,7 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">CodeGroupList</h1>
                         
-                        <!-- Topbar Search -->
+                        <!-- Search -->
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -71,9 +71,9 @@
 			                                <option value="" selected>선택하세요</option>
 			                                <option value="남">0</option>
 			                                <option value="여">1</option>
-			                                <option value="3">2</option>
+			                                <option value="나가">2</option>
 			                         </select>
-		                            <input type="text" name="getGenkeyword" class="form-control bg-light border-0 small" placeholder="너 이름은?"
+		                            <input type="text" name="getGenkeyword" class="form-control bg-white border-0 small" placeholder="너 이름은?"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
@@ -91,7 +91,7 @@
 					
 					
                     <!-- Content Row -->
-                    <div class=d-flext col>
+                    <div class="d-flext col">
 						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                  <thead>
                                      <tr>

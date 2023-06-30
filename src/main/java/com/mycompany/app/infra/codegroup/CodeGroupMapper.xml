@@ -10,11 +10,6 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.codegroup.CodeGroup"></resultMap>
     
 	<select id="selectList" resultMap="resultMapObj">
-		<!-- select
-			 seq,
-			 gender
-		 from codeGroup -->
-		 
 		 SELECT 
 		 	*
 		 FROM
@@ -22,6 +17,18 @@
 		 where 1=1
 		 	<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name like concat('%',#{getGenkeyword},'%')</if>
 	</select>
+	
+			<!-- select
+			 seq
+			 , gender
+			 , name
+			 , delNy
+		 	from 
+		 		codeGroup
+		 	whrer 1=1
+		 		<if test="genOption != null and !genOption.equals(0)">AND name like concat('%',#{genOption},'%')</if>
+		 		<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name like concat('%',#{getGenkeyword},'%')</if>
+		  -->
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT *

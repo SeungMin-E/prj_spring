@@ -130,14 +130,30 @@
                             </div>
                             
                             <!-- form Utilities -->
-                            <div class="card">
+                            <div class="card mb-4">
                             	<div class="card-header py-3">
                             		 <h6 class="m-0 font-weight-bold text-primary">form Utilities</h6>
                             	</div>
-                            	<div class="card-bady">
+                            	<div class="card-body">
+                            	<!-- inline-block -->
 				                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 				                        <!-- input -->
-				                        <div class="input-group col-auto mt-4 mb-4">
+				                        <div class="mb-1 small">in-line block</div>
+				                        <div class="input-group mb-4">
+				                            <input type="text" class="form-control bg-light border-0" placeholder="Search for..."
+				                                aria-label="Search" aria-describedby="basic-addon2">
+				                            <div class="input-group-append">
+				                                <button class="btn btn-primary" type="button">
+				                                    <i class="fas fa-search fa-sm"></i>
+				                                </button>
+				                            </div>
+				                        </div>
+				                    </form>
+				                    <!-- inline-block -->
+				                    <form class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+				                        <!-- input -->
+				                        <div class="mb-1 small">block</div>
+				                        <div class="input-group mb-4">
 				                            <input type="text" class="form-control bg-light border-0" placeholder="Search for..."
 				                                aria-label="Search" aria-describedby="basic-addon2">
 				                            <div class="input-group-append">
@@ -149,11 +165,8 @@
 				                    </form>
                             	</div>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
