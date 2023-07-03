@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- 전체 매퍼중에서 유일한 값을 사용해야한다. 해서 관계적으로 해당 파일의 패스와 파일이름(확장제외) 그리고 dao에서 namespace와 일치해야한다. -->
+<mapper namespace="com.mycompany.app.infra.code.CodeMapper">
+				     		
+	<!-- select 결과를 받을 객체 -->		   
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
+    
+	<select id="codeSelectList" resultMap="resultMapObj">
+		 SELECT 
+		 	*
+		 FROM
+		 	code
+		 where 1=1
+		 	<if test="getAgeKeyword != null and !getAgeKeyword.equals('')">AND age like concat('%',#{getAgeKeyword},'%')</if>
+	</select>
+	
+			<!-- select
+			 seq
+			 , gender
+			 , name
+			 , delNy
+		 	from 
+		 		codeGroup
+		 	whrer 1=1
+		 		<if test="genOption != null and !genOption.equals(0)">AND name like concat('%',#{genOption},'%')</if>
+		 		<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name like concat('%',#{getGenkeyword},'%')</if>
+		  -->
+	
+	<select id="codeSelectOne" resultMap="resultMapObj">
+		SELECT *
+		FROM
+			code
+		WHERE 1=1
+		    AND	seq = #{seq}
+		    codeGroup_seq = #{codeGroup_seq}
+	</select>
+	<!-- where gender LIKE CONCAT('%' + #{} + '%') -->
+	
+	<insert id="codeInsert">
+		INSERT INTO
+			code(
+				age
+				, birthday
+				
+			)
+		VALUES(
+			#{age}
+			, #{birthday}
+		)
+	</insert>
+	
+	<update id="codeUpdate">
+		UPDATE code
+		SET
+			age = #{name}
+			, birthday = #{birthday}
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<update id="codeUelete">
+		UPDATE code
+		SET
+			delNy = 1
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<delete id="codeDelete">
+		DELETE FROM
+			code
+		WHERE 
+			seq = #{seq}
+	</delete>
+	
+	    
+</mapper>    

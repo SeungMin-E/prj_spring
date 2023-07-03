@@ -59,7 +59,7 @@
 					
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">CodeGroupList</h1>
+                        <h1 class="h3 mb-0 text-gray-800">CodeList</h1>
                         
                         <!-- Search -->
 		                    <!-- <form name="formList" method="get" -->
@@ -73,7 +73,7 @@
 			                                <option value="여">1</option>
 			                                <option value="나가">2</option>
 			                         </select>
-		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.getGenkeyword}"/>" class="form-control bg-white border-0 small" placeholder="너 이름은?"
+		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.getAgeKeyword}"/>" class="form-control bg-white border-0 small" placeholder="너 이름은?"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
@@ -96,9 +96,10 @@
                                  <thead>
                                      <tr>
                                          <th>Seq</th>
-                                         <th>gender</th>
-                                         <th>name</th>
+                                         <th>age</th>
+                                         <th>birth</th>
                                          <th>delNy</th>
+                                         <th>codeGroup_seq</th>
                                      </tr>
                                  </thead>
                                  
@@ -113,9 +114,10 @@
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
 		                                            <td><c:out value="${list.seq}"></c:out></td>
-		                                            <td><c:out value="${list.gender}"></c:out></td>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
+		                                            <td><c:out value="${list.age}"></c:out></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.birthday}"></c:out></a></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
+		                                            <td><c:out value="${list.codeGroup_seq}"></c:out></td>
 	                                        	</tr>
 	                                       	</c:forEach>
 										</c:otherwise>

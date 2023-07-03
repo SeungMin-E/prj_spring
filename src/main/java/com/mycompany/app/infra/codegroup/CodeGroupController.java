@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,21 +15,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class CodeGroupController {
 	
 	@Autowired
-	CodeGroupServieImpl service;
+	CodeGroupServiceImpl service;
 	
 	@RequestMapping(value="/codeGroupList")
-	public String codeGroupList(CodeGroupVo vo, Model model) {
+	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) {
 		
-		vo.getGenOption();
-		vo.getGetGenkeyword();
-		
-		System.out.println("cotroller : vo.option: " + vo.getGenOption());
-		System.out.println("cotroller : vo.ketword: " + vo.getGetGenkeyword());
+		vo.setGetGenkeyword(vo.getGetGenkeyword() == null ? "회원" : vo.getGetGenkeyword());
 		
 		List<CodeGroup> list = service.selectList(vo);
 		
 //		왼쪽의 list는 jsp 에서 사용할 변수명
 		model.addAttribute("list", list);
+//		model.addAttribute("vo",vo);
 		
 //		System.out.println("nothing say anyone");
 		
@@ -80,9 +78,9 @@ public class CodeGroupController {
 		return "admin_host/infra/codegroup/codeGroupFrom";
 	}
 	
-	@RequestMapping(value="/codeInsert")
-	public String codeInsertPage() {
-		return "admin_host/infra/codegroup/codeInsert";
+	@RequestMapping(value="/codeGroupInsert")
+	public String codeGroupInsertPage() {
+		return "admin_host/infra/codegroup/codeGroupInsert";
 	}
 	
 	

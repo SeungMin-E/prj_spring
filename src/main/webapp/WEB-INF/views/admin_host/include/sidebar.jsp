@@ -113,6 +113,13 @@
                     <i class="fa-solid fa-star-and-crescent fa-flip"></i>
                     <span>CodeGroup</span></a>
             </li>
+            
+			<!-- codeGroup -->
+            <li class="nav-item">
+                <a class="nav-link" href="codeList">
+                    <i class="fa-solid fa-star-and-crescent fa-flip"></i>
+                    <span>Code</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
