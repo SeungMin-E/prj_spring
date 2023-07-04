@@ -16,4 +16,6 @@ public interface CodeService {
 	
 	public int codeUelete(Code dto);
 	
+	public int selectOneCount(CodeVo vo);
+	
 }

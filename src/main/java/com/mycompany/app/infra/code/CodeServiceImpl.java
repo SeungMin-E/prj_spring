@@ -39,7 +39,12 @@ public class CodeServiceImpl implements CodeService {
 
 	@Override
 	public int codeUelete(Code dto) {
-		return codeUelete(dto);
+		return dao.codeUelete(dto);
+	}
+
+	@Override
+	public int selectOneCount(CodeVo vo) {
+		return dao.selectOneCount(vo);
 	}
 
 	

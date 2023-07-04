@@ -18,11 +18,17 @@ public class CodeController {
 	@RequestMapping(value="/codeList")
 	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) {
 		
-//		vo.setAgeKeyword(vo.getAgeKeyword() == null ? 0 :  vo.getAgeKeyword());
+		vo.setAgeKeyword(vo.getAgeKeyword() == null ? "" :  vo.getAgeKeyword());
 		
-		List<Code> list = service.codeSelectList(vo);
+		vo.setParamPaing(service.selectOneCount(vo));
 		
-		model.addAttribute("list", list);
+		if(vo.getTotalRows() > 0) {
+			List<Code> list = service.codeSelectList(vo);
+			model.addAttribute("list", list);
+		}else {
+			
+		}
+		
 		return "admin_host/infra/code/codeList";
 	}
 	
@@ -38,13 +44,13 @@ public class CodeController {
 	public String codeUpadate(Code dto) {
 		service.codeUpdate(dto);
 		
-		return "redirect/codeList";
+		return "redirect:/codeList";
 	}
 	
 	@RequestMapping(value="/codeInsertPage")
 	public ModelAndView codeInsertPage() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("admin_host./infra/code/code_insert");
+		mav.setViewName("admin_host/infra/code/codeInset");
 		return mav;
 	}
 	
@@ -58,15 +64,16 @@ public class CodeController {
 	public String codeDelete(Code dto) {
 		service.codeDelete(dto);
 		
-		return "redirect/codeList";
+		return "redirect:codeList";
 	}
 	
 	
 	@RequestMapping(value="/codeUelete")
 	public String codeUelete(Code dto, CodeVo vo, Model model) {
 		service.codeUelete(dto);
+		
 		Code code = service.codeSelectOne(vo);
-		model.addAttribute("itme", code);
+		model.addAttribute("codeItem", code);
 		return "admin_host/infra/code/codeForm";
 	}
 	

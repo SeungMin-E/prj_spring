@@ -2,8 +2,6 @@ package com.mycompany.app.infra.codegroup;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,17 +18,29 @@ public class CodeGroupController {
 	@RequestMapping(value="/codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) {
 		
-		vo.setGetGenkeyword(vo.getGetGenkeyword() == null ? "회원" : vo.getGetGenkeyword());
+		vo.setGetGenkeyword(vo.getGetGenkeyword() == null ? "" : vo.getGetGenkeyword());
 		
-		List<CodeGroup> list = service.selectList(vo);
+		vo.setParamsPaging(service.selectOneCount(vo));
 		
+		if(vo.getTotalRows() > 0) {
+			List<CodeGroup> list = service.selectList(vo);
+			model.addAttribute("list", list);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
+		
+		return "admin_host/infra/codegroup/codeGroupList";
+
+//		System.out.println("nothing say anyone");
+//		vo.setGetGenkeyword(vo.getGetGenkeyword() == null ? "회원" : vo.getGetGenkeyword());
+//		List<CodeGroup> list = service.selectList(vo);
 //		왼쪽의 list는 jsp 에서 사용할 변수명
-		model.addAttribute("list", list);
+//		model.addAttribute("list", list);
 //		model.addAttribute("vo",vo);
 		
 //		System.out.println("nothing say anyone");
 		
-		return "admin_host/infra/codegroup/codeGroupList";
 	}
 	
 	@RequestMapping(value="/codeGroupFrom")
@@ -70,7 +80,6 @@ public class CodeGroupController {
 	@RequestMapping(value="/codeGroupuele")
 	public String codeGroupUele(CodeGroup dto, CodeGroupVo vo , Model model) {
 		service.uele(dto);
-		
 		
 		CodeGroup codeGroup = service.selectOne(vo);
 		model.addAttribute("item",codeGroup);

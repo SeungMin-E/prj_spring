@@ -7,14 +7,42 @@
 				     		
 	<!-- select 결과를 받을 객체 -->		   
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
+    <sql id="def">
+    	seq
+    	,age
+    	,birthday
+    	,delNy
+    	,codeGroup_seq
+    </sql>
+    
+    <sql id="selectUncommon">
+    	FROM
+    		code
+    	WHERE 1=1	
+    		<if test="ageKeyword != null and !ageKeyword.equals('')">AND age like concat('%',#{ageKeyword},'%')</if>
+    </sql>
+    
+    <select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectUncommon" />
+	</select>
+    
     
 	<select id="codeSelectList" resultMap="resultMapObj">
-		 SELECT 
+		SELECT bb.* FROM(
+			SELECT
+				<include refid="def"/>
+				<include refid="selectUncommon"></include>
+		) bb
+		LIMIT #{rowNumToShow} OFFSET #{startRunMForMysql}
+
+		<!--  SELECT 
 		 	*
 		 FROM
 		 	code
 		 where 1=1
-		 	<if test="getAgeKeyword != null and !getAgeKeyword.equals('')">AND age like concat('%',#{getAgeKeyword},'%')</if>
+		 AND age like concat('%','3','%')
+		 	 <if test="ageKeyword != null and !ageKeyword.equals('')">AND age like concat('%',#{ageKeyword},'%')</if> -->
 	</select>
 	
 			<!-- select
@@ -35,7 +63,6 @@
 			code
 		WHERE 1=1
 		    AND	seq = #{seq}
-		    codeGroup_seq = #{codeGroup_seq}
 	</select>
 	<!-- where gender LIKE CONCAT('%' + #{} + '%') -->
 	
@@ -44,18 +71,21 @@
 			code(
 				age
 				, birthday
-				
+				, delNy
+				, codeGroup_seq
 			)
 		VALUES(
 			#{age}
 			, #{birthday}
+			, 0
+			, #{codeGroup_seq}
 		)
 	</insert>
 	
 	<update id="codeUpdate">
 		UPDATE code
 		SET
-			age = #{name}
+			age = #{age}
 			, birthday = #{birthday}
 		WHERE
 			seq = #{seq}

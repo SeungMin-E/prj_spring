@@ -65,6 +65,10 @@
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+		                        
+		                        <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+		                        
 		                        <div class="input-group">
 			                        <select name="gender" class="form-control bg-light border-0 small col-auto"
 			                                aria-label="select" aria-describedby="basic-addon2">
@@ -132,6 +136,33 @@
 	                     </button>
                     </div>
 				</form>
+				<div class="container-fluid px-0 mt-2">
+				    <div class="row">
+				        <div class="col">
+				            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+				            <ul class="pagination justify-content-center mb-0">
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+								<c:if test="${vo.startPage gt vo.pageNumToShow}">
+				                	<li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+								</c:if>
+								<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+									<c:choose>
+										<c:when test="${i.index eq vo.thisPage}">
+				                			<li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+										</c:when>
+											<c:otherwise>             
+				                				<li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+											</c:otherwise>
+									</c:choose>
+								</c:forEach>                
+								<c:if test="${vo.endPage ne vo.totalPages}">                
+				                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
+								</c:if>
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+				            </ul>
+				        </div>
+				    </div>
+				</div>
 
             <!-- End of Main Content -->
 			 <!-- Footer -->
@@ -202,6 +233,11 @@
     	$("#create").on("click", function(){
     		window.location.replace("/codeGroupInsert");
     	});
+    	
+    	goList = function(thisPage) {
+    		$("input:hidden[name=thisPage]").val(thisPage);
+    		$("form[name=formList]").attr("action", "codeGroupList").submit();
+    	}
     </script>
           
 </body>

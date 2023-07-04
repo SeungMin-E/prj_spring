@@ -145,14 +145,19 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/codeGroupFrom").submit();
+    		form.attr("action", "/codeForm").submit();
 //    		alert("Nothing say anyone");
     	});
     	    	
     	$("#create").on("click",function(){
     		target.attr("method", "post");
-    		target.attr("action", "/codeGroupCreate").submit();
+    		target.attr("action", "/codeInsert").submit();
     	});
+    	
+    	goList = function(thisPage) {
+    		$("input:hidden[name=thisPage]").val(thisPage);
+    		$("form[name=formList2]").attr("action", "codeList").submit();
+    	}
     	
     </script>
           

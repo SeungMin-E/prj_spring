@@ -166,4 +166,13 @@ public class indexController {
 		return mav;
 	}
 	
+//	project NSA 메인 페이지
+	
+	@RequestMapping(value="/projectNSA/main_page")
+	public ModelAndView nsa_userPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/index");
+		return mav;
+	}
+	
 }

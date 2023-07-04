@@ -16,4 +16,6 @@ public interface CodeGroupService {
 	
 	public int uele(CodeGroup dto);
 	
+	public int selectOneCount(CodeGroupVo vo);
+	
 }

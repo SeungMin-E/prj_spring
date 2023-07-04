@@ -66,14 +66,8 @@
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		                        <div class="input-group">
-			                        <select name="gender" class="form-control bg-light border-0 small col-auto"
-			                                aria-label="select" aria-describedby="basic-addon2">
-			                                <option value="" selected>선택하세요</option>
-			                                <option value="남">0</option>
-			                                <option value="여">1</option>
-			                                <option value="나가">2</option>
-			                         </select>
-		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.getAgeKeyword}"/>" class="form-control bg-white border-0 small" placeholder="너 이름은?"
+
+		                            <input type="text" name="getAgeKeyword" value="<c:out value="${vo.ageKeyword}"/>" class="form-control bg-white border-0 small" placeholder="나이가?"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
@@ -115,7 +109,7 @@
 												<tr>
 		                                            <td><c:out value="${list.seq}"></c:out></td>
 		                                            <td><c:out value="${list.age}"></c:out></td>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.birthday}"></c:out></a></td>
+		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.birthday}"></c:out></a></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 		                                            <td><c:out value="${list.codeGroup_seq}"></c:out></td>
 	                                        	</tr>
@@ -128,14 +122,49 @@
                     
                     <!-- Content Row -->
 				<form name="formList2">
+					<input type="hidden" name="thisIspage" value="<c:out value="${vo.thisIspage}" default="1"/>">
+					<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+				
                     <div class="row">
 	                    <button class="btn btn-primary" id="create" type="button">
 	                        추가
 	                     </button>
                     </div>
+                    <div class="container-fluid px-0 mt-2">
+				    <div class="row">
+				        <div class="col">
+				            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+				            <ul class="pagination justify-content-center mb-0">
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+								<c:if test="${vo.startPage gt vo.pageNumToShow}">
+				                	<li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+								</c:if>
+								<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+									<c:choose>
+										<c:when test="${i.index eq vo.thisIspage}">
+				                			<li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+										</c:when>
+											<c:otherwise>             
+				                				<li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+											</c:otherwise>
+									</c:choose>
+								</c:forEach>                
+								<c:if test="${vo.endPage ne vo.totalPages}">                
+				                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
+								</c:if>
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+				
+                    
 				</form>
+				
 
-            <!-- End of Main Content -->
+            	
+            	<!-- End of Main Content -->
+			 
 			 <!-- Footer -->
             <%@include file="../../include/footer.jsp" %>
 
@@ -196,14 +225,19 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/codeGroupList").submit();
+    		form.attr("action", "/codeList").submit();
     		
 //    		alert("Nothing say anyone");
     	});
     	
     	$("#create").on("click", function(){
-    		window.location.replace("/codeGroupInsert");
+    		window.location.replace("/codeInsertPage");
     	});
+    	
+    	goList = function(thisIspage) {
+    		$("input:hidden[name=thisIspage]").val(thisIspage);
+    		$("form[name=formList2]").attr("action", "codeList").submit();
+    	}
     </script>
           
 </body>

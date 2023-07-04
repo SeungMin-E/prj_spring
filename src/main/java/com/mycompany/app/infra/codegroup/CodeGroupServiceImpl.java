@@ -12,6 +12,11 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	CodeGroupDao dao;
 	
 	@Override
+	public int selectOneCount(CodeGroupVo vo) {
+		return dao.selectOneCount(vo);
+	}
+
+	@Override
 	public List<CodeGroup> selectList(CodeGroupVo vo) {
 		return dao.selectList(vo);
 	}
@@ -40,5 +45,6 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	public int uele(CodeGroup dto) {
 		return dao.uele(dto);
 	}
+
 	
 }

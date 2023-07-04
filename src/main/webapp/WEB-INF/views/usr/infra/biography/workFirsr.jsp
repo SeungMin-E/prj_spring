@@ -126,7 +126,7 @@
                   <li>API 연결(카카오페이, 도서API, 카카오 맵 사용)</li>
                 </ul>
 
-                <p><a href="#" class="readmore">Visit User Website</a></p>
+                <p><a href="/projectNSA/main_page" class="readmore">Visit User Website</a></p>
                 <p><a href="/projectNSA/admin_join" class="readmore">Visit adminStie</a></p>
               </div>
             </div>
