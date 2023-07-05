@@ -52,7 +52,7 @@
 			 , delNy
 		 	from 
 		 		codeGroup
-		 	whrer 1=1
+		 	where 1=1
 		 		<if test="genOption != null and !genOption.equals(0)">AND name like concat('%',#{genOption},'%')</if>
 		 		<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name like concat('%',#{getGenkeyword},'%')</if>
 		  -->
