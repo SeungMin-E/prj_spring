@@ -48,7 +48,38 @@
 				userAccount
 			WHERE 1 = 1
 				AND userName =  #{nameKeyWord}
-		</select>	
+		</select>
 		
-    
+		<insert id="memberJoin">
+			INSERT INTO userAccount (
+				 userId
+				, userPw
+				, userName
+				, userAge
+				, gender
+				, userStatuse
+			) VALUES (
+				#{userId}
+				, #{userPw}
+				, #{userName}
+				, #{userAge}
+				, #{gender}
+				, #{userStatuse}
+			)
+			 
+		</insert>
+		
+		<update id="">
+			UPDATE
+		</update>
+    	
+    	<update id="uelete">
+    		
+    	
+    	</update>
+    	
+    	<delete id="">
+    		
+    	</delete>
+    	
 	</mapper>
