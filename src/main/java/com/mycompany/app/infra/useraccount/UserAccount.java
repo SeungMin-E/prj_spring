@@ -1,6 +1,6 @@
-package com.mycompany.app.infra.member;
+package com.mycompany.app.infra.useraccount;
 
-public class Member {
+public class UserAccount {
 	private String seq;
 	private String userID;
 	private String userPW;
@@ -8,9 +8,8 @@ public class Member {
 	private String userAge;
 	private String gender;
 	private String userStatus;
-
 	
-//	getter & setter
+//	get & set
 	
 	public String getSeq() {
 		return seq;
@@ -54,6 +53,5 @@ public class Member {
 	public void setUserStatus(String userStatus) {
 		this.userStatus = userStatus;
 	}
-	
 	
 }

@@ -13,8 +13,7 @@
 	
 	<sql id="abc">
 		 seq
-		, gender
-		, name
+		, codeGroup_name
 		, delNy
 	</sql>
 	
@@ -22,7 +21,7 @@
    		FROM    
 	    	codeGroup
 		WHERE 1=1
-			<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND name LIKE CONCAT('%',#{getGenkeyword},'%')</if>
+			<if test="getGenkeyword != null and !getGenkeyword.equals('')">AND codeGroup_name LIKE CONCAT('%',#{getGenkeyword},'%')</if>
     </sql>
 
 	
@@ -57,24 +56,23 @@
 		  -->
 	
 	<select id="selectOne" resultMap="resultMapObj">
-		SELECT *
+		SELECT 
+			<include refid="abc"></include>
 		FROM
 			codeGroup
-		WHERE
-			seq = #{seq}
+		WHERE 1=1
+			AND seq = #{seq}
 	</select>
 	<!-- where gender LIKE CONCAT('%' + #{} + '%') -->
 	
 	<insert id="insertOne">
 		INSERT INTO
 			codeGroup(
-				gender
-				, name
+				codeGroup_name
 				, delNy
 			)
 		VALUES(
-			#{gender}
-			, #{name}
+			#{codeGroup_name}
 			, 0
 		)
 	</insert>
@@ -82,7 +80,7 @@
 	<update id="updateOne">
 		UPDATE codeGroup
 		SET
-			name = #{name}
+			codeGroup_name = #{codeGroup_name}
 		WHERE
 			seq = #{seq}
 	</update>

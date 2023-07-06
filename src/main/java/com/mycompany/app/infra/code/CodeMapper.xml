@@ -9,10 +9,12 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
     <sql id="def">
     	seq
-    	,age
-    	,birthday
-    	,delNy
-    	,codeGroup_seq
+    	,code_id
+    	,code_value
+    	,code_description
+    	,sort
+    	, delNy
+    	, codeGroup_seq
     </sql>
     
     <sql id="selectUncommon">
@@ -58,7 +60,8 @@
 		  -->
 	
 	<select id="codeSelectOne" resultMap="resultMapObj">
-		SELECT *
+		SELECT 
+			<include refid="def"></include>
 		FROM
 			code
 		WHERE 1=1
@@ -69,14 +72,18 @@
 	<insert id="codeInsert">
 		INSERT INTO
 			code(
-				age
-				, birthday
-				, delNy
-				, codeGroup_seq
+				code_id
+    			, code_value
+    			, code_description
+    			, sort
+    			, delNy
+    			, codeGroup_seq
 			)
 		VALUES(
-			#{age}
-			, #{birthday}
+			#{code_id}
+			, #{code_value}
+			, #{code_description}
+			, #{sort}
 			, 0
 			, #{codeGroup_seq}
 		)
@@ -85,8 +92,9 @@
 	<update id="codeUpdate">
 		UPDATE code
 		SET
-			age = #{age}
-			, birthday = #{birthday}
+			code_value = #{code_value}
+    		, code_description = #{code_description}
+    		, sort = #{sort}
 		WHERE
 			seq = #{seq}
 	</update>

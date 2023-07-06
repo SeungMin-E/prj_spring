@@ -67,15 +67,8 @@
 						<form name="formTarget"
                         	class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         	<div class="input-group">
-	                        	<select name="gender" class="form-control bg-light border-0 small col-auto"
-	                                aria-label="select" aria-describedby="basic-addon2">
-	                                <option value="gender" selected>선택하세요</option>
-	                                <option value="1">남</option>
-	                                <option value="2">여</option>
-	                                <option value="3">나가</option>
-	                         </select>
-                            	<input type="text" name="name" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="이름">
+                            	<input type="text" name="codeGroup_name" class="form-control bg-light border-0 small" 
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드 그룹명을 작성하세여">
                        		 </div>
 							 <div>
 							 	<button type="button" id="create">저장</button>
@@ -151,7 +144,8 @@
     	    	
     	$("#create").on("click",function(){
     		target.attr("method", "post");
-    		target.attr("action", "/codeInsert").submit();
+    		target.attr("action", "/codeGroupCreate").submit();
+    		
     	});
     	
     	goList = function(thisPage) {

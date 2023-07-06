@@ -76,9 +76,9 @@
 		                        		seq : 
 			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>' readonly>
-		                       		 	이름 : 
-		                            	<input type="text" name="name" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.name}"></c:out>">
+		                       		 	코드 그룹명 : 
+		                            	<input type="text" name="codeGroup_name" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.codeGroup_name}"></c:out>" >
 		                       		 	delNy : 
 		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.delNy}"></c:out>" readonly>
@@ -101,6 +101,8 @@
         </div>
         <!-- End of Content Wrapper -->
     </div>
+ 	</div>
+  </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->

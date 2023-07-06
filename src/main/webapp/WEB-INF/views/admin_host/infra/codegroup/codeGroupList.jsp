@@ -70,14 +70,7 @@
 								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		                        
 		                        <div class="input-group">
-			                        <select name="gender" class="form-control bg-light border-0 small col-auto"
-			                                aria-label="select" aria-describedby="basic-addon2">
-			                                <option value="" selected>선택하세요</option>
-			                                <option value="남">0</option>
-			                                <option value="여">1</option>
-			                                <option value="나가">2</option>
-			                         </select>
-		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.getGenkeyword}"/>" class="form-control bg-white border-0 small" placeholder="너 이름은?"
+		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.getGenkeyword}"/>" class="form-control bg-white border-0 small" placeholder="찾고 싶은 코드그룹 명"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
@@ -100,8 +93,7 @@
                                  <thead>
                                      <tr>
                                          <th>Seq</th>
-                                         <th>gender</th>
-                                         <th>name</th>
+                                         <th>codeGroup_name</th>
                                          <th>delNy</th>
                                      </tr>
                                  </thead>
@@ -117,8 +109,7 @@
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
 		                                            <td><c:out value="${list.seq}"></c:out></td>
-		                                            <td><c:out value="${list.gender}"></c:out></td>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.codeGroup_name}"></c:out></a></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 	                                        	</tr>
 	                                       	</c:forEach>

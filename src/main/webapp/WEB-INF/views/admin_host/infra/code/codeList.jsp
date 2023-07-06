@@ -67,7 +67,7 @@
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		                        <div class="input-group">
 
-		                            <input type="text" name="getAgeKeyword" value="<c:out value="${vo.ageKeyword}"/>" class="form-control bg-white border-0 small" placeholder="나이가?"
+		                            <input type="text" name="getAgeKeyword" value="<c:out value="${vo.ageKeyword}"/>" class="form-control bg-white border-0 small" placeholder="찾고 싶은 코드를 작성하세요"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
@@ -89,9 +89,11 @@
 						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                  <thead>
                                      <tr>
-                                         <th>Seq</th>
-                                         <th>age</th>
-                                         <th>birth</th>
+                                         <th>seq</th>
+                                         <th>code_id</th>
+                                         <th>code_value</th>
+                                         <th>code_description</th>
+                                         <th>sort</th>
                                          <th>delNy</th>
                                          <th>codeGroup_seq</th>
                                      </tr>
@@ -108,8 +110,10 @@
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
 		                                            <td><c:out value="${list.seq}"></c:out></td>
-		                                            <td><c:out value="${list.age}"></c:out></td>
-		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.birthday}"></c:out></a></td>
+		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.code_id}"></c:out></a></td>
+		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.code_value}"></c:out></a></td>
+		                                            <td><c:out value="${list.code_description}"></c:out></td>
+		                                            <td><c:out value="${list.sort}"></c:out></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 		                                            <td><c:out value="${list.codeGroup_seq}"></c:out></td>
 	                                        	</tr>

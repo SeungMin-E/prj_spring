@@ -72,18 +72,27 @@
 								<form name="formTarget"
 		                        	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		                        	<div class="col-8">
-		                        		seq : 
+		                        		SEQ : 
 			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${codeItem.seq}"></c:out>' readonly>
-		                       		 	나이 : 
-		                            	<input type="text" name="age" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.age}"></c:out>">
-		                       		 	생일 : 
-		                            	<input type="text" name=birthday class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.birthday}"></c:out>">
-		                       		 	delNy : 
-		                            	<input type="text" name=birthday class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.delNy}"></c:out>">
+		                       		 	CODE_ID : 
+		                            	<input type="text" name="code_id" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_id}"></c:out>" readonly>
+		                       		 	CODE_VAL : 
+		                            	<input type="text" name="code_value" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_value}"></c:out>">
+		                       		 	CODE_DESCRIPTION : 
+		                            	<input type="text" name="code_description" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_description}"></c:out>">
+		                       		 	SROT : 
+		                            	<input type="text" name="sort" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.sort}"></c:out>">
+		                       		 	DELNY : 
+		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.delNy}"></c:out>" readonly>
+		                       		 	CODEGROUP_SEQ : 
+		                            	<input type="text" name="codeGroup_seq" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.codeGroup_seq}"></c:out>" readonly>
 		                       		 </div>
 									 <div class="col mt-4 mb-4">
 									 	<button type="button" class="btn btn-primary" id="goback">목록</button>
