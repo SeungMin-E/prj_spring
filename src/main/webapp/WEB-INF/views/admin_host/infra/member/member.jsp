@@ -41,8 +41,9 @@
 	 <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
+       <!-- Sidebar -->
         <%@include file="../../include/sidebar.jsp" %>
+       
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -58,64 +59,59 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">CordGroupList</h1>
+                        <h1 class="h3 mb-0 text-gray-800">UserInfo</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
                     <!-- Content Row -->
-                    <div class="row">
-						<form name="formTarget"
-                        	class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        		
-                        	<div class="col-auto mb-3">
-                        		<!-- 코드 일련 번호 -->
-                        		<div class="input-group">
-                        			<span class="input-group-text">코드 일련번호</span>
-	                            	<input type="text" name="code_id" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드 일련번호를 정하세요">
-                        		</div>
-
-                               	 <!-- 코드명 -->
-                               	 <div class="input-group mt-3">
-    								<span class="input-group-text">코드 명</span>                           	 
-	                            	<input type="text" name="code_value" class="form-control bg-white border-0 small" 
-   	                            	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드이름을 적으세요">
-                               	 </div>
-
-                            	<!-- 코드에 대한 상세 설명 -->
-                            	<div class="input-group mt-3">
-	                            	<span class="input-group-text">코드 설명</span>
-	                            	<textarea name="code_description" class="form-control bg-white border-0 small" 
-	                               	 aria-label="Search" aria-describedby="basic-addon2">이 글을 지우시고 코드에 대한 상세 설명을 작성하시면 됩니다. 
-	                               	 </textarea>
-                            	</div>
-
-                            	<!-- 코드 정렬 순서 -->
-                            	<div class="input-group mt-3">
-                            		<span class="input-group-text">정렬순서</span>
-	                            	<input type="text" name="sort" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="정렬순서를 정해주세요">
-                            	</div>
-
-                            	<!-- 소속 코드그룹 -->
-                            	<div class="input-group mt-3">
-                            		<span class="input-group-text">코드그룹 번호</span>
-	                            	<input type="text" name="codeGroup_seq" class="form-control bg-white border-0 small" 
-	                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드를 넣어야 할 코드그룹 번호를 작성하세요">
-                            	</div>
-								 <div>
-								 	<button type="button" id="create">저장</button>
-								 </div>                     		 
+                    <div class="col">
+                    	<div class="card mb-4">
+	                    	<div class="card-header py-3">
+	                    		<h6 class="m-0 font-weight-bold text-primary">member</h6>
+	                    	</div>
+                    		<div class="card-body">
+								<form name="formTarget"
+		                        	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+		                        	<div class="col-8">
+		                        		seq : 
+			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
+		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${user.seq}"></c:out>' readonly>
+		                       		 	ID : 
+		                            	<input type="text" name="userID" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userID}"></c:out>" readonly>
+		                       		 	PW : 
+		                            	<input type="text" name="userPW" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userPW}"></c:out>">
+		                       		 	이름 : 
+		                            	<input type="text" name="userName" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userName}"></c:out>">
+		                       		 	이름 : 
+		                            	<input type="text" name=userAge class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userAge}"></c:out>">
+		                       		 	userStatus : 
+		                            	<input type="text" name="userStatus" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userStatus}"></c:out>" readonly>
+		                       		 </div>
+									 <div class="col mt-4 mb-4">
+									 	<button type="button" class="btn btn-primary" id="goback">목록</button>
+									 	<button type="button" class="btn btn-warning" id="gouele">uele</button>
+									 	<button type="button" class="btn btn-danger" id="excution">삭제</button>
+									 	<button type="button" class="btn btn-success" id="gosave">저장</button>
+									 </div>                     		 
 		                    	</form>
-		                    </div>
-			            
-		            <!-- End of Main Content -->
-		        </div>
-	        <!-- Footer -->
-			<%@include file="../../include/footer.jsp" %>
-	        <!-- End of Content Wrapper -->
-    	</div>
+                    		</div>
+                    	</div>	
+                    </div>
+            <!-- End of Main Content -->
+			
+			 <!-- Footer -->
+            <%@include file="../../include/footer.jsp" %>
+			
+        </div>
+        <!-- End of Content Wrapper -->
     </div>
+ 	</div>
+  </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -171,20 +167,30 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/codeForm").submit();
+    		form.attr("action", "/codeGroupFrom").submit();
 //    		alert("Nothing say anyone");
     	});
-    	    	
-    	$("#create").on("click",function(){
-    		target.attr("method", "post");
-    		target.attr("action", "/codeGroupCreate").submit();
-    		
+    	
+    	$("#goback").on("click", function(){
+    		window.location.replace("/userList");
     	});
     	
-    	goList = function(thisPage) {
-    		$("input:hidden[name=thisPage]").val(thisPage);
-    		$("form[name=formList2]").attr("action", "codeList").submit();
-    	}
+    	$("#gouele").on("click", function(){
+    		target.attr("method", "post");
+    		target.attr("action", "/userUele").submit();
+    	});
+    	
+    	
+    	$("#excution").on("click",function(){
+    		target.attr("method", "post");
+    		target.attr("action", "/userDelete").submit();
+    	});
+    	
+    	
+    	$("#gosave").on("click",function(){
+    		target.attr("method", "post");
+    		target.attr("action", "/userUpdate").submit();
+    	});
     	
     </script>
           

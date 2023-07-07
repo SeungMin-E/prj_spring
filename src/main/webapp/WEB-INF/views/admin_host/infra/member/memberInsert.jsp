@@ -58,7 +58,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">CordGroupList</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Member</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -66,55 +66,47 @@
                     <div class="row">
 						<form name="formTarget"
                         	class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        		
-                        	<div class="col-auto mb-3">
-                        		<!-- 코드 일련 번호 -->
-                        		<div class="input-group">
-                        			<span class="input-group-text">코드 일련번호</span>
-	                            	<input type="text" name="code_id" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드 일련번호를 정하세요">
-                        		</div>
+                        	<div class="input-group">
+                        		<span class="input-group-text">ID</span>
+                            	<input type="text" name="userID" class="form-control bg-light border-0 small" 
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="ID를 입력하세요">
+                       		 </div>
+                        	<div class="input-group">
+                        		<span class="input-group-text">PW</span>
+                            	<input type="password" name="userPW" class="form-control bg-light border-0 small" 
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="PW를 입력하세요">
+                       		 </div>
+                        	<div class="input-group">
+                        		<span class="input-group-text">이름</span>
+                            	<input type="text" name="userName" class="form-control bg-light border-0 small" 
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="이름을 입력하세요">
+                       		 </div>
+                        	<div class="input-group">
+                        		<span class="input-group-text">나이</span>
+                            	<input type="text" name="userAge" class="form-control bg-light border-0 small" 
+                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="나이를 입력하세요">
+                       		 </div>
+                        	<div class="input-group">
+                        		<span class="input-group-text">성별</span>
+                            	<select class="form-select" name="gender">
+                            		<option selected>성별을 선택하세요</option>
+                            		<option value="1">남자</option>
+                            		<option value="2">여자</option>
+                            	</select>
+                       		 </div>
+                       		 
+							 <div>
+							 	<button type="button" id="create">가입</button>
+							 </div>                     		 
+                    	</form>
+                    </div>
+            <!-- End of Main Content -->
+            
+            <!-- Footer -->
+            <%@include file="../../include/footer.jsp" %>
 
-                               	 <!-- 코드명 -->
-                               	 <div class="input-group mt-3">
-    								<span class="input-group-text">코드 명</span>                           	 
-	                            	<input type="text" name="code_value" class="form-control bg-white border-0 small" 
-   	                            	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드이름을 적으세요">
-                               	 </div>
-
-                            	<!-- 코드에 대한 상세 설명 -->
-                            	<div class="input-group mt-3">
-	                            	<span class="input-group-text">코드 설명</span>
-	                            	<textarea name="code_description" class="form-control bg-white border-0 small" 
-	                               	 aria-label="Search" aria-describedby="basic-addon2">이 글을 지우시고 코드에 대한 상세 설명을 작성하시면 됩니다. 
-	                               	 </textarea>
-                            	</div>
-
-                            	<!-- 코드 정렬 순서 -->
-                            	<div class="input-group mt-3">
-                            		<span class="input-group-text">정렬순서</span>
-	                            	<input type="text" name="sort" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="정렬순서를 정해주세요">
-                            	</div>
-
-                            	<!-- 소속 코드그룹 -->
-                            	<div class="input-group mt-3">
-                            		<span class="input-group-text">코드그룹 번호</span>
-	                            	<input type="text" name="codeGroup_seq" class="form-control bg-white border-0 small" 
-	                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드를 넣어야 할 코드그룹 번호를 작성하세요">
-                            	</div>
-								 <div>
-								 	<button type="button" id="create">저장</button>
-								 </div>                     		 
-		                    	</form>
-		                    </div>
-			            
-		            <!-- End of Main Content -->
-		        </div>
-	        <!-- Footer -->
-			<%@include file="../../include/footer.jsp" %>
-	        <!-- End of Content Wrapper -->
-    	</div>
+        </div>
+        <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
 
@@ -177,7 +169,7 @@
     	    	
     	$("#create").on("click",function(){
     		target.attr("method", "post");
-    		target.attr("action", "/codeGroupCreate").submit();
+    		target.attr("action", "/newChallger").submit();
     		
     	});
     	

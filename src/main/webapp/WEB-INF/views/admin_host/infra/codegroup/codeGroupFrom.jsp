@@ -76,7 +76,7 @@
 		                        		seq : 
 			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>' readonly>
-		                       		 	코드 그룹명 : 
+		                       		 	코드그룹명 : 
 		                            	<input type="text" name="codeGroup_name" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.codeGroup_name}"></c:out>" >
 		                       		 	delNy : 

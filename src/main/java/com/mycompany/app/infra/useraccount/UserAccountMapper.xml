@@ -5,7 +5,7 @@
 
     <mapper namespace = "com.mycompany.app.infra.useraccount.UserAccountMapper">
     
-    <resultMap type="resultMapObj" id="com.mycompany.app.infra.useraccount" />
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.useraccount.UserAccount" />
     
     	<sql id="user_val">
     		seq
@@ -21,9 +21,76 @@
     		FROM
     			userAccount
     		WHERE 1=1 
-    			AND userName LIKE CONCAT('%',#{},'%') 
+    			AND userName LIKE CONCAT('%',#{userNameWord},'%') 
     	</sql>
     	
+    	<select id="selectOneCount" resultType="Integer">
+			SELECT count(*)
+			<include refid="user_db" />
+		</select>
     	
+    	<select id="userAll" resultMap="resultMapObj">
+    		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="user_val" />
+	   			<include refid="user_db" />
+			) aa
+			LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   
+    	</select>
+    	
+    	<select id="userOne" resultMap="resultMapObj">
+    		SELECT
+    			<include refid="user_val" />
+    		FROM
+    			userAccount
+    		WHERE 1=1
+    			AND seq = #{seq}
+    	</select>
+    	
+    	<insert id="userJoin">
+    		INSERT INTO
+    			userAccount
+    		(
+    			userID
+    			, userPW
+    			, userName
+    			, userAge
+    			, gender
+    			, userStatus
+    		)VALUES(
+				#{userID}
+				, #{userPW}
+				, #{userName}
+				, #{userAge}
+				, #{gender}
+				, 0
+    		)
+    	</insert>
+    	
+    	<update id="userUpdate">
+    		UPDATE userAccount
+    		SET
+    			userPW = #{userPW}
+    			userName = #{userName}
+    			userAge = #{userAge}
+    			gender = #{gender}
+    		WHERE 1=1
+    			AND seq = #{seq}
+    	</update>
+    	
+    	<update id="userUelete">
+    		UPDATE userAccount
+    		SET
+    			userStatus = 1
+    		WHERE 1 = 1
+    			AND seq = #{seq}
+    	</update>
+    	
+    	<delete id="userCut">
+    		DELETE FROM
+    			userAccount
+    		WHERE
+    			seq = #{seq}
+    	</delete>
     
     </mapper>

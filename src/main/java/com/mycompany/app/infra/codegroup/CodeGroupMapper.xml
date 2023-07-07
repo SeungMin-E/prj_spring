@@ -7,7 +7,7 @@
 	<mapper namespace="com.mycompany.app.infra.codegroup.CodeGroupMapper">
 	
 	<!-- select 결과를 받을 객체 -->		   
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.codegroup.CodeGroup"></resultMap>
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.codegroup.CodeGroup"/>
 	
 
 	

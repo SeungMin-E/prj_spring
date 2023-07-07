@@ -107,19 +107,28 @@
                     <span>Tables</span></a>
             </li>
             
-			<!-- codeGroup -->
+            <!-- codeSet -->
             <li class="nav-item">
-                <a class="nav-link" href="/codeGroupList">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCodeSet"
+                    aria-expanded="true" aria-controls="collapseCodeSet">
                     <i class="fa-solid fa-star-and-crescent fa-flip"></i>
-                    <span>CodeGroup</span></a>
+                    <span>CodeSet</span>
+                </a>
+                <div id="collapseCodeSet" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/codeList">Code</a>
+                        <a class="collapse-item" href="/codeGroupList">CodeGroup</a>
+                    </div>
+                </div>
             </li>
             
-			<!-- codeGroup -->
-            <li class="nav-item">
-                <a class="nav-link" href="codeList">
-                    <i class="fa-solid fa-star-and-crescent fa-flip"></i>
-                    <span>Code</span></a>
+            <!-- member -->
+             <li class="nav-item">
+                <a class="nav-link" href="/userList">
+                    <i class="fa-regular fa-user fa-spin-pulse"></i>
+                    <span>Member</span></a>
             </li>
+			
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
