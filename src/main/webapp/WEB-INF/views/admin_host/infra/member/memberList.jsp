@@ -70,7 +70,7 @@
 								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		                        
 		                        <div class="input-group">
-		                            <input type="text" name="getGenkeyword" value="<c:out value="${vo.userNameWord}"/>" class="form-control bg-white border-0 small" placeholder="이름으로 유저 검색하기"		                                aria-label="Search" aria-describedby="basic-addon2">
+		                            <input type="text" name="userGenOption" value="<c:out value="${vo.userNameWord}"/>" class="form-control bg-white border-0 small" placeholder="이름으로 유저 검색하기"		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
 		                                    <i class="fas fa-search fa-sm"></i>
@@ -234,7 +234,7 @@
     	
     	goList = function(thisPage) {
     		$("input:hidden[name=thisPage]").val(thisPage);
-    		$("form[name=formList]").attr("action", "codeGroupList").submit();
+    		$("form[name=formList]").attr("action", "userList").submit();
     	}
     </script>
           

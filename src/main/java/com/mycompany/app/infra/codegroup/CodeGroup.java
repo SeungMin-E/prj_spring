@@ -29,9 +29,4 @@ public class CodeGroup {
 	public void setDelNy(String delNy) {
 		this.delNy = delNy;
 	}
-	
-	
-	
-	
-	
 }

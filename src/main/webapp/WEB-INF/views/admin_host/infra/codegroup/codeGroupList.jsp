@@ -54,7 +54,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-					<div>
+
 					
 					
                     <!-- Page Heading -->
@@ -65,7 +65,6 @@
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-		                        
 		                        <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		                        
@@ -83,8 +82,7 @@
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
-					
-					
+				
 					
 					
                     <!-- Content Row -->
@@ -108,7 +106,7 @@
 										<c:otherwise><!-- ${list} 자바에서 넘겨준 객체 이름 --><!-- var="list" jstl 블럭에서 사용할 변수 이름 -->
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
-		                                            <td><c:out value="${list.seq}"></c:out></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.seq}"></c:out></a></td>
 		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.codeGroup_name}"></c:out></a></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 	                                        	</tr>
@@ -120,13 +118,11 @@
                     	</div>
                     
                     <!-- Content Row -->
-				<form name="formList2">
                     <div class="row">
 	                    <button class="btn btn-primary" id="create" type="button">
 	                        추가
 	                     </button>
                     </div>
-				</form>
 				<div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
@@ -163,7 +159,8 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-
+	</div>
+</div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

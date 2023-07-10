@@ -77,7 +77,7 @@
 			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${item.seq}"></c:out>' readonly>
 		                       		 	코드그룹명 : 
-		                            	<input type="text" name="codeGroup_name" class="form-control bg-light border-0 small mb-4" 
+		                            	<input type="text" name="codeGroup_name" id="codeGroup_name" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${item.codeGroup_name}"></c:out>" >
 		                       		 	delNy : 
 		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
@@ -147,13 +147,29 @@
     <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
+    <script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
+    
     
     <script type="text/javascript">
     
     	var form = $("form[name='formList']");
     	var target = $("form[name='formTarget']");
+    	
+    	vaildationInst = function(){
+    		if(vaildationUpdt() == false) return false;	
+    	}
+    	
+		vaildationUpdt = function(){
+			if(check($.trim($("#codeGroup_name").val())) == false) return false;
+    	}
+    	
+		$("#gosave").on("click", function(){
+			
+			if(vaildationInst() == false) return false;
+			$("form[name='formTarget']").attr("action", "/codeGroupUpdate").submit();
+			
+		});
+		
     	
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
@@ -178,10 +194,10 @@
     	});
     	
     	
-    	$("#gosave").on("click",function(){
+    	/* $("#gosave").on("click",function(){
     		target.attr("method", "post");
     		target.attr("action", "/codeGroupUpdate").submit();
-    	});
+    	}); */
     	
     </script>
           

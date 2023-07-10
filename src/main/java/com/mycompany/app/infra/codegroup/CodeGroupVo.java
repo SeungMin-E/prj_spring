@@ -113,6 +113,8 @@ public int getThisPage() {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
+	
+	
 public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);

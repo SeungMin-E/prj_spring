@@ -65,8 +65,10 @@
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+		                        	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+									<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+		                        
 		                        <div class="input-group">
-
 		                            <input type="text" name="getAgeKeyword" value="<c:out value="${vo.ageKeyword}"/>" class="form-control bg-white border-0 small" placeholder="찾고 싶은 코드를 작성하세요"
 		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
@@ -125,15 +127,14 @@
                     	</div>
                     
                     <!-- Content Row -->
-				<form name="formList2">
-					<input type="hidden" name="thisIspage" value="<c:out value="${vo.thisIspage}" default="1"/>">
-					<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 				
+					
                     <div class="row">
 	                    <button class="btn btn-primary" id="create" type="button">
 	                        추가
 	                     </button>
                     </div>
+                    
                     <div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
@@ -145,7 +146,7 @@
 								</c:if>
 								<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
 									<c:choose>
-										<c:when test="${i.index eq vo.thisIspage}">
+										<c:when test="${i.index eq vo.thisPage}">
 				                			<li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
 										</c:when>
 											<c:otherwise>             
@@ -161,9 +162,9 @@
 				        </div>
 				    </div>
 				</div>
-				
+			</div>	
                     
-				</form>
+				
 				
 
             	
@@ -176,7 +177,8 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-
+</div>
+</div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -238,9 +240,9 @@
     		window.location.replace("/codeInsertPage");
     	});
     	
-    	goList = function(thisIspage) {
-    		$("input:hidden[name=thisIspage]").val(thisIspage);
-    		$("form[name=formList2]").attr("action", "codeList").submit();
+    	goList = function(thispage) {
+    		$("input:hidden[name=thispage]").val(thispage);
+    		$("form[name=formList]").attr("action", "codeList").submit();
     	}
     </script>
           

@@ -30,11 +30,11 @@
 		</select>
     	
     	<select id="userAll" resultMap="resultMapObj">
-    		SELECT aa.* FROM (   	
+    		SELECT cc.* FROM (   	
 	   		SELECT
 				<include refid="user_val" />
 	   			<include refid="user_db" />
-			) aa
+			) cc
 			LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   
     	</select>
     	

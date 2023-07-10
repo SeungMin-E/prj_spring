@@ -64,43 +64,41 @@
                     </div>
                     <!-- Content Row -->
                     <div class="row">
-						<form name="formTarget"
+						<form name="formTarget" method="post"
                         	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         	
                         	<div class="col-auto mb-3">
                         		<!-- 코드 일련 번호 -->
                         		<div class="input-group">
                         			<span class="input-group-text">코드 일련번호</span>
-	                            	<input type="text" name="code_id" class="form-control bg-white border-0 small" 
+	                            	<input type="text" name="code_id" id="code_id" class="form-control bg-white border-0 small" 
     	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드 일련번호를 정하세요">
                         		</div>
                                	 
                                	 <!-- 코드명 -->
                                	 <div class="input-group mt-3">
     								<span class="input-group-text">코드 명</span>                           	 
-	                            	<input type="text" name="code_value" class="form-control bg-white border-0 small" 
+	                            	<input type="text" name="code_value" id="code_value" class="form-control bg-white border-0 small" 
    	                            	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드이름을 적으세요">
                                	 </div>
                             	
                             	<!-- 코드에 대한 상세 설명 -->
                             	<div class="input-group mt-3">
 	                            	<span class="input-group-text">코드 설명</span>
-	                            	<textarea name="code_description" class="form-control bg-white border-0 small" 
-	                               	 aria-label="Search" aria-describedby="basic-addon2">이 글을 지우시고 코드에 대한 상세 설명을 작성하시면 됩니다. 
-	                               	 </textarea>
+	                            	<textarea name="code_description" id="code_description" lass="form-control bg-white border-0 small" placeholder="자신의 의견을 간단히 적어주세요.">	                               	 </textarea>
                             	</div>
                             	
                             	<!-- 코드 정렬 순서 -->
                             	<div class="input-group mt-3">
                             		<span class="input-group-text">정렬순서</span>
-	                            	<input type="text" name="sort" class="form-control bg-white border-0 small" 
+	                            	<input type="text" name="sort" id="sort" class="form-control bg-white border-0 small" 
     	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="정렬순서를 정해주세요">
                             	</div>
                             	
                             	<!-- 소속 코드그룹 -->
                             	<div class="input-group mt-3">
                             		<span class="input-group-text">코드그룹 번호</span>
-	                            	<input type="text" name="codeGroup_seq" class="form-control bg-white border-0 small" 
+	                            	<input type="text" name="codeGroup_seq" id="codeGroup_seq" class="form-control bg-white border-0 small" 
 	                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드를 넣어야 할 코드그룹 번호를 작성하세요">
                             	</div>
                        		 </div>
@@ -179,8 +177,25 @@
     	});
     	    	
     	$("#create").on("click",function(){
-    		target.attr("method", "post");
-    		target.attr("action", "/codeInsert").submit();
+    		if($.trim($("#code_id").val()) == "" || $.trim($("#code_id").val()) == null ){
+    			alert("코드 일련번호를 적으셔야합니다.");
+    			$("#code_id").focus();
+    		}else if($.trim($("#code_value").val()) == "" || $.trim($("#code_value").val()) == null){
+    			alert("코드명을 적으셔야합니다.");
+    			$("#code_value").focus();
+    		}else if($.trim($("#code_description").val()) == "" || $.trim($("#code_description").val()) == null ){
+    			alert("코드설명을 작성하셔야 코드관리가 원활합니다.");
+    			$("$code_description").focus();
+    		}else if($.trim($("#sort").val()) == "" || $.trim($("#sort").val()) == null){
+    			alert("순서가 몇번인가요?");
+    			$("#sort").focus();
+    		}else if($.trim($("#codeGroup_seq").val()) == "" || $.trim($("#codeGroup_seq").val()) == null ){
+    			alert("이 코드는 어디 코드그룹에 속해 있나요?");
+    			$("#codeGroup_seq").focus();
+    		}else{
+	    		target.attr("action", "/codeInsert").submit();
+    		}
+    		
     	});
     	
     </script>

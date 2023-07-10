@@ -61,9 +61,11 @@ public class UserAccountController {
 	
 //	유저 삭제 상태
 	@RequestMapping(value="/userUele")
-	public String userUele(UserAccount dto) {
+	public String userUele(UserAccount dto, UserAccountVo vo, Model model) {
 		service.userUelete(dto);
 		
+		UserAccount userAccount = service.userOne(vo);
+		model.addAttribute("user", userAccount);
 		return "admin_host/infra/member/member";
 	}
 	
@@ -72,7 +74,7 @@ public class UserAccountController {
 	public String userJoin(UserAccount dto) {
 		service.userJoin(dto);
 		
-		return "admin_host/infra/member/member";
+		return "redirect:/userList";
 	}
 	
 	@RequestMapping(value="/newChallgerPage")
