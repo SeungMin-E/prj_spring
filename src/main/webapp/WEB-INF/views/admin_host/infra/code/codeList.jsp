@@ -217,13 +217,8 @@
     <!-- Custom scripts for all pages-->
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
-    
     <script type="text/javascript">
     
     	var form = $("form[name='formList']");
@@ -241,6 +236,7 @@
     	});
     	
     	goList = function(thispage) {
+    		alert("asdasdf");
     		$("input:hidden[name=thispage]").val(thispage);
     		$("form[name=formList]").attr("action", "codeList").submit();
     	}

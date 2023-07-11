@@ -20,17 +20,16 @@
     <title>project NSA(예제 프로젝트)</title>
 </head>
 <body>
-            	<!-- include head 확정 -->
     <header id="head_backg">
         <div id="wrap" class="wrap_container">
             <div class="">
                 <div id="head_nav_bar">
                     <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">회원가입</a>
+                       <li class="nav-item">
+                            <a href="/projectNSA/join" class="nav-link">회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">로그인</a>
+                            <a href="/projectNSA/login" class="nav-link">로그인</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">마이페이지</a>
@@ -83,50 +82,41 @@
             </nav>
         </div>
     </header>
-    <!-- 헤드 끝 -->
     <section>
         <div class="wrap_container">
             <div class="d-flex flex-row justify-content-center mt-5">
                 <i class="fa-sharp fa-solid fa-book align-self-center" style="font-size: 135px; color: rgb(206, 179, 26);"></i>
-                <h1 class="align-self-center">&nbsp;&nbsp;&nbsp;&nbsp;마이페이지</h1>
+                <h1 class="align-self-center">&nbsp;&nbsp;&nbsp;&nbsp;로그인</h1>
             </div>
             <div class="d-flex justify-content-center mt-5">
                 <form>
-                    <!-- 인적사항 내용 창 -->
-                    <div class="d-flex flex-column">
-                        <div class="col-auto mb-3" style="width: 500px;">
-                            <span>이름 : </span>
-                            <span>@@@</span>
+                    <div class="col-auto mb-3" style="width: 500px;">
+                        <label for="exampleInputEmail1" class="form-label fs-3">ID</label>
+                        <input type="id" class="form-control p-3" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-auto mb-3" style="width: 500px;">
+                        <label for="exampleInputPassword1" class="form-label fs-3">PW</label>
+                        <input type="password" class="form-control p-3" id="exampleInputPassword1">
+                    </div>
+                    <div class="col-auto mb-3 d-flex justify-content-center">
+                        <div class="mb-3 form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">아이디 저장</label>
                         </div>
-                        <div class="col-auto mb-3" style="width: 500px;">
-                            <span>성별 : </span>
-                            <span>비공개</span>
-                        </div>
-                        <div class="col-auto mb-3" style="width: 500px;">
-                            <span>이메일 : </span>
-                            <span>Loremipsum@dolorsit.com</span>
-                        </div>
-                        <div class="col-auto mb-3" style="width: 500px;">
-                            <span>우편번호 : </span>
-                            <span>11010</span>
-                        </div>
-                        <div class="col-auto mb-3" style="width: 500px;">
-                            <span>주소 : </span>
-                            <span>@@시 !@#구 ##동 @!#$%%</span>
+                        <div class="mb-3 form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                            <label class="form-check-label" for="exampleCheck2">자동 로그인</label>
                         </div>
                     </div>
-                        
-                    <!-- 변경 툴 -->
-                    <div class="d-grid gap-2 col-10 mx-auto">
-                        <button class="btn btn-primary" type="button">인적사항 변경하기</button>
-                        <button class="btn btn-primary" type="button">비밀번호 변경</button>
-                        <button class="btn btn-primary" type="button">회원 탈퇴</button>
-                      </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary">로그인</button>
+                    </div>
                     <!-- 오븐 확인하고 빠진거나 부족한거 수정 예정 -->
                 </form>
             </div>
         </div>
     </section>
+    <!-- 풋 인클루드 확정 -->
     <footer>
         <div class="container-fluid p-3 text-center">
             <div class="align-items-center">
@@ -135,5 +125,6 @@
             </div>
         </div>
     </footer>
+    <!-- 푸터 끝 -->
 </body>
 </html>

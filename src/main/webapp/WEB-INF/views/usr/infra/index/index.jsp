@@ -26,10 +26,10 @@
                 <div id="head_nav_bar">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">회원가입</a>
+                            <a href="/projectNSA/join" class="nav-link">회원가입</a>
                         </li>
                         <li class="nav-item">
-                            <a href="loginPage.html" class="nav-link">로그인</a>
+                            <a href="/projectNSA/login" class="nav-link">로그인</a>
                         </li>
                         <li class="nav-item">
                             <a href="myPage.html" class="nav-link">마이페이지</a>

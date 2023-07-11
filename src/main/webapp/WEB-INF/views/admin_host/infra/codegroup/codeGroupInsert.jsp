@@ -132,17 +132,14 @@
     <!-- Custom scripts for all pages-->
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
+	<!-- 유효성검사 -->
+    <script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
     
     <script type="text/javascript">
     
     	var form = $("form[name='formList']");
     	var target = $("form[name=formTarget]");
+    	var objName = $("#codeGroup_name");
     	
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
@@ -150,18 +147,19 @@
     		form.attr("action", "/codeForm").submit();
 //    		alert("Nothing say anyone");
     	});
+    	
+    	vaildationInst = function(){
+    		if(vaildationUpdt() == false) return false;
+    	}
+    	
+    	vaildationUpdt = function(){
+    		if(check(objName) == false ) return false;
+    	}
     	    	
     	$("#create").on("click",function(){
     		
-    		if($.trim($("#codeGroup_name").val()) == "" || $.trim($("#codeGroup_name").val()) == null ){
-    			alert("코드그룹명을 작성하셔야합니다.");
-    			$("#codeGroup_name").focus();
-    		}else{
-        		target.attr("action", "/codeGroupCreate").submit();
-    		}
-    		
-    		
-    		
+    		if(vaildationInst() == false ) return false;
+			target.attr("action", "/codeGroupCreate").submit();
     	});
     	
     	goList = function(thisPage) {

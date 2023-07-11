@@ -108,6 +108,8 @@
         </div>
         <!-- End of Content Wrapper -->
     </div>
+   </div>
+  </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->

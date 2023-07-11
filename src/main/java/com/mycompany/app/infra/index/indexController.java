@@ -2,6 +2,7 @@ package com.mycompany.app.infra.index;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -174,5 +175,20 @@ public class indexController {
 		mav.setViewName("usr/infra/index/index");
 		return mav;
 	}
+	
+	@RequestMapping(value="/projectNSA/login")
+	public ModelAndView nsa_loginPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/myPage/login");
+		return mav;
+	}
+	
+	@RequestMapping(value="/projectNSA/join")
+	public ModelAndView nsa_joinPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/myPage/join");
+		return mav;
+	}
+	
 	
 }

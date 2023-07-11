@@ -143,10 +143,7 @@
     <!-- Custom scripts for all pages-->
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
+    <!-- 유효성검사 -->
     <script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
     
     
@@ -154,13 +151,14 @@
     
     	var form = $("form[name='formList']");
     	var target = $("form[name='formTarget']");
+    	var objName = $("#codeGroup_name");
     	
     	vaildationInst = function(){
     		if(vaildationUpdt() == false) return false;	
     	}
     	
 		vaildationUpdt = function(){
-			if(check($.trim($("#codeGroup_name").val())) == false) return false;
+			if(check(objName) == false) return false;
     	}
     	
 		$("#gosave").on("click", function(){

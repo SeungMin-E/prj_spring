@@ -21,7 +21,7 @@
     	FROM
     		code
     	WHERE 1=1	
-    		<if test="ageKeyword != null and !ageKeyword.equals('')">AND age like concat('%',#{ageKeyword},'%')</if>
+    		<if test="ageKeyword != null and !ageKeyword.equals('')">AND code_value like concat('%',#{ageKeyword},'%')</if>
     </sql>
     
     <select id="selectOneCount" resultType="Integer">

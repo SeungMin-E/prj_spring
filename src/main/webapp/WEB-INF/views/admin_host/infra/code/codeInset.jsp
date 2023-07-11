@@ -156,18 +156,16 @@
 
     <!-- Custom scripts for all pages-->
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
+	
+	<!-- 유효성검사 -->
+    <script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
     
     <script type="text/javascript">
     
     	var form = $("form[name='formList']");
     	var target = $("form[name='formTarget']");
+    	var objVal = $("#code_value");
+    	var objDec = $("#code_description");
     	
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
@@ -175,17 +173,22 @@
     		form.attr("action", "/codeForm").submit();
 //    		alert("Nothing say anyone");
     	});
+    	
+    	vaildationInst = function(){
+    		if(vaildationUpdt() == false) return false;
+    	}
+    	
+    	vaildationUpdt = function(){
+    		if(check(objVal) == false) return false;
+    		if(check(objDec) == false) return false;
+    	}
     	    	
     	$("#create").on("click",function(){
     		if($.trim($("#code_id").val()) == "" || $.trim($("#code_id").val()) == null ){
     			alert("코드 일련번호를 적으셔야합니다.");
     			$("#code_id").focus();
-    		}else if($.trim($("#code_value").val()) == "" || $.trim($("#code_value").val()) == null){
-    			alert("코드명을 적으셔야합니다.");
-    			$("#code_value").focus();
-    		}else if($.trim($("#code_description").val()) == "" || $.trim($("#code_description").val()) == null ){
-    			alert("코드설명을 작성하셔야 코드관리가 원활합니다.");
-    			$("$code_description").focus();
+    		}else if(vaildationInst() == false){
+    			return false;
     		}else if($.trim($("#sort").val()) == "" || $.trim($("#sort").val()) == null){
     			alert("순서가 몇번인가요?");
     			$("#sort").focus();

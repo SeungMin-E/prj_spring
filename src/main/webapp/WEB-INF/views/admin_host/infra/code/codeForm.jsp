@@ -69,7 +69,7 @@
 	                    		<h6 class="m-0 font-weight-bold text-primary">CodeList</h6>
 	                    	</div>
                     		<div class="card-body">
-								<form name="formTarget"
+								<form name="formTarget" method="post"
 		                        	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		                        	<div class="col-8">
 		                        		SEQ : 
@@ -79,13 +79,13 @@
 		                            	<input type="text" name="code_id" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_id}"></c:out>" readonly>
 		                       		 	CODE_VAL : 
-		                            	<input type="text" name="code_value" class="form-control bg-light border-0 small mb-4" 
+		                            	<input type="text" name="code_value" id="code_value" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_value}"></c:out>">
 		                       		 	CODE_DESCRIPTION : 
-		                            	<input type="text" name="code_description" class="form-control bg-light border-0 small mb-4" 
+		                            	<input type="text" name="code_description" id="code_description" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_description}"></c:out>">
 		                       		 	SROT : 
-		                            	<input type="text" name="sort" class="form-control bg-light border-0 small mb-4" 
+		                            	<input type="text" name="sort" id="sort" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.sort}"></c:out>">
 		                       		 	DELNY : 
 		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
@@ -104,6 +104,8 @@
                     		</div>
                     	</div>	
                     </div>
+                  </div>
+               </div>
             <!-- End of Main Content -->
 			
 			 <!-- Footer -->
@@ -151,18 +153,18 @@
 
     <!-- Custom scripts for all pages-->
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
+    
+    <!-- 유효성검사 -->
+    <script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
     
     <script type="text/javascript">
     
     	var form = $("form[name='formList']");
     	var target = $("form[name='formTarget']");
+    	var objVal = $("#code_value");
+    	var objDec = $("#code_description");
     	
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
@@ -187,10 +189,24 @@
     	});
     	
     	
-    	$("#gosave").on("click",function(){
+    	vaildationInst = function(){
+    		if(vaildationUpdt() == false) return false;
+    	}
+    	
+    	vaildationUpdt = function(){
+    		if(check(objVal) == false || check(objDec) == false) return false;
+    	}
+    	
+    	$("#gosave").on("click" , function(){
+    		if(vaildationInst() == false) return false;
+    		target.attr("action", "/codeUpdate").submit();
+    	
+    	});
+    	
+    	/* $("#gosave").on("click",function(){
     		target.attr("method", "post");
     		target.attr("action", "/codeUpdate").submit();
-    	});
+    	}); */
     	
     </script>
           

@@ -11,8 +11,6 @@ public class CodeVo {
 	
 //	private int rowNoToShow = Constants.ROW_NUM_TO_SHOW;
 //	private int PageNoToShow = Constants.PAGE_NUM_TO_SHOW;
-	
-	
 
 	private int rowNumToShow = 3;
 	private int pageNumToShow = 2;
@@ -124,7 +122,7 @@ public class CodeVo {
 		if(getTotalRows() == 0) {
 			setTotalPages(1);
 		} else {
-			setTotalPages(getTotalPages() / getRowNumToShow());
+			setTotalPages(getTotalRows() / getRowNumToShow());
 		}
 		
 		if(getTotalRows() % getRowNumToShow() > 0 ) {

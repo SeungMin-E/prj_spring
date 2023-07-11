@@ -47,7 +47,7 @@ public class CodeGroupVo {
 	}
 	
 
-public int getThisPage() {
+	public int getThisPage() {
 		return thisPage;
 	}
 	public void setThisPage(int thisPage) {
