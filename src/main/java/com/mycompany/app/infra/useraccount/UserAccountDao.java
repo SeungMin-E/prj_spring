@@ -48,4 +48,9 @@ public class UserAccountDao {
 		return sqlSession.delete(namespace + ".userCut", dto);
 	}
 	
+	public UserAccount loginUserOne(UserAccountVo vo) {
+		UserAccount userAccount = sqlSession.selectOne(namespace + ".loginUserOne", vo);
+		return userAccount;
+	}
+	
 }

@@ -100,22 +100,22 @@
                 <div class="mt-3">
                     <label for = "userPW" class = "form-label">비밀번호</label>
                     <div class="input-group">
-                        <input type = "password" name="userPw" class = "form-control" >
+                        <input type = "password" name="userPW" class = "form-control" >
                     </div>
                 </div>
                 
                 <div class = "mt-3">
-                    <label for = "userID" class = "form-label">비밀번호 확인</label>
+                    <label for = "" class = "form-label">비밀번호 확인</label>
                     <div class="input-group">
-                        <input type = "password" name="userPw" class = "form-control" >
+                        <input type = "password" name="" class = "form-control" >
                     </div>
                 </div>
                     
                 <!-- 이름 -->
                 <div class="mt-3">
-                    <label for = "userID" class = "form-label">이름</label>
+                    <label for = "userName" class = "form-label">이름</label>
                     <div class="input-group mt-3">
-                        <input type = "text" name="userAge" class = "form-control" placeholder = "이름을 입력하세요">
+                        <input type = "text" name="userName" class = "form-control" placeholder = "이름을 입력하세요">
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@
 		
 		$("#create").on("click", function(){
 			form.attr("method", "post");
-			form.attr("action", "/newChallger").submit();
+			form.attr("action", "/getReadyForTheNextBattle").submit();
 			
 		});
 		

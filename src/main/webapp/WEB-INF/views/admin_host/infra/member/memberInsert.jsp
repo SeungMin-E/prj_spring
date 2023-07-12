@@ -81,11 +81,7 @@
                             	<input type="text" name="userName" class="form-control bg-light border-0 small" 
                                	 aria-label="Search" aria-describedby="basic-addon2" placeholder="이름을 입력하세요">
                        		 </div>
-                        	<div class="input-group">
-                        		<span class="input-group-text">나이</span>
-                            	<input type="text" name="userAge" class="form-control bg-light border-0 small" 
-                               	 aria-label="Search" aria-describedby="basic-addon2" placeholder="나이를 입력하세요">
-                       		 </div>
+                        	
                         	<div class="input-group">
                         		<span class="input-group-text">성별</span>
                             	<select class="form-select" name="gender">

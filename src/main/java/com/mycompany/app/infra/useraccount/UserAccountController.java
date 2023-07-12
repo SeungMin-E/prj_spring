@@ -2,13 +2,17 @@ package com.mycompany.app.infra.useraccount;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -70,6 +74,16 @@ public class UserAccountController {
 	}
 	
 //	회원가입
+
+	//	관리자용 유저 추가 페이지(관리팀 및 직원 계정 생성용)
+	@RequestMapping(value="/newChallgerPage")
+	public ModelAndView userJoinPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin_host/infra/member/memberInsert");
+		return mav;
+	}
+
+	//	뉴챌린저 - 철권아니고 그냥 새로운 회원(관리자용)
 	@RequestMapping(value="/newChallger")
 	public String userJoin(UserAccount dto) {
 		service.userJoin(dto);
@@ -77,10 +91,29 @@ public class UserAccountController {
 		return "redirect:/userList";
 	}
 	
-	@RequestMapping(value="/newChallgerPage")
-	public ModelAndView userJoinPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("admin_host/infra/member/memberInsert");
-		return mav;
+// 난입하는 회원(유저용)
+	@RequestMapping(value="/getReadyForTheNextBattle")
+	public String onlyUserJoin(UserAccount dto) {
+		service.userJoin(dto);
+		
+		return "redirect:/projectNSA/main_page";
+	}
+	
+//	로그인
+	@ResponseBody
+	@RequestMapping(value="/loginP")
+	public Map<String, Object> loginP(UserAccountVo vo){ 
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+	
+		UserAccount rtUserAccount = service.loginUserOne(vo);
+		
+		if(rtUserAccount != null) {
+			returnMap.put("rtUserAccount", rtUserAccount);
+			returnMap.put("rt", "success");
+		}else {
+			returnMap.put("rt", "fail");
+		}
+		
+		return returnMap;
 	}
 }

@@ -95,7 +95,6 @@
                                          <th>ID</th>
                                          <th>PW</th>
                                          <th>이름</th>
-                                         <th>나이</th>
                                          <th>성별</th>
                                          <th>userStatus</th>
                                      </tr>
@@ -115,7 +114,6 @@
 		                                            <td><a href="/userOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.userID}"></c:out></a></td>
 		                                            <td><c:out value="${list.userPW}"></c:out></td>
 		                                            <td><c:out value="${list.userName}"></c:out></td>
-		                                            <td><c:out value="${list.userAge}"></c:out></td>
 		                                            <td><c:out value="${list.gender}"></c:out></td>
 		                                            <td><c:out value="${list.userStatus}"></c:out></td>
 	                                        	</tr>

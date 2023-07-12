@@ -92,11 +92,11 @@
                 <form>
                     <div class="col-auto mb-3" style="width: 500px;">
                         <label for="exampleInputEmail1" class="form-label fs-3">ID</label>
-                        <input type="id" class="form-control p-3" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" name="userID" class="form-control p-3" id="userID" aria-describedby="emailHelp">
                     </div>
                     <div class="col-auto mb-3" style="width: 500px;">
                         <label for="exampleInputPassword1" class="form-label fs-3">PW</label>
-                        <input type="password" class="form-control p-3" id="exampleInputPassword1">
+                        <input type="password" name="userPW" class="form-control p-3" id="userPW">
                     </div>
                     <div class="col-auto mb-3 d-flex justify-content-center">
                         <div class="mb-3 form-check-inline">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary">로그인</button>
+                        <button type="button" name="btnLogin" id="btnLogin" class="btn btn-primary">로그인</button>
                     </div>
                     <!-- 오븐 확인하고 빠진거나 부족한거 수정 예정 -->
                 </form>
@@ -127,4 +127,45 @@
     </footer>
     <!-- 푸터 끝 -->
 </body>
+
+
+<script type="text/javascript">
+
+	$("#btnLogin").on("click", function(){
+		
+		if(validation() == false) return false;
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/loginP"
+			/* ,data : $("#formLogin").serialize() */
+			,data : {
+				"userID" : $("#userID").val(),
+				"userPW" : $("#userPW").val()
+				}
+			,success: function(response) {
+				if(response.rt == "success") {
+					alert(response.rtUserAccount.userName);
+					location.href = "/projectNSA/main_page";
+				} else {
+					alert("그런 회원 없습니다.");
+					
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	});
+
+
+	validation = function() {
+//		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
+//		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
+	}
+
+</script>
 </html>

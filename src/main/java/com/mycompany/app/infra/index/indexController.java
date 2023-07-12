@@ -8,6 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class indexController {
 	
+	// 메인페이지 - 바이로파지 
+	@RequestMapping(value="/")
+	public String home() {
+		// 아래의 jsp파일 호출
+		return "usr/infra/biography/home";	
+	}		
 
 	@RequestMapping(value="/biographyUsrView")
 	public String biographyUsrView() {
@@ -21,12 +27,6 @@ public class indexController {
 	}
 	
 	
-	// 메인페이지 
-	@RequestMapping(value="/")
-	public String home() {
-		// 아래의 jsp파일 호출
-		return "usr/infra/biography/home";	
-	}		
 	
 	
 //	본질적인 시작(바이오페이지 컨트롤)

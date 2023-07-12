@@ -2,6 +2,8 @@ package com.mycompany.app.infra.useraccount;
 
 public class UserAccountVo {
 	private String seq;
+	private String userID;
+	private String userPW;
 	private String userNameWord;
 	private String userGenOption;
 	private String userDelNy;
@@ -31,6 +33,18 @@ public class UserAccountVo {
 //	get & set
 	public String getSeq() {
 		return seq;
+	}
+	public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+	public String getUserPW() {
+		return userPW;
+	}
+	public void setUserPW(String userPW) {
+		this.userPW = userPW;
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;

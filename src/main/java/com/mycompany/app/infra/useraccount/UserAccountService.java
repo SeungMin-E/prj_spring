@@ -18,4 +18,6 @@ public interface UserAccountService {
 	public int userUelete(UserAccount dto);
 	
 	public int userCut(UserAccount dto);
+	
+	public UserAccount loginUserOne(UserAccountVo vo);
 }

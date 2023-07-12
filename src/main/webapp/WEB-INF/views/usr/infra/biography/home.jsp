@@ -110,15 +110,16 @@
               <img class="img-fluid" src="resources/images/myFortFolio/img_1.jpg">
             </a>
           </div>
-          <!-- <div class="item team_project col-sm-6 col-md-4 col-lg-4 mb-4">
+          
+          <div class="item team_project col-sm-6 col-md-4 col-lg-4 mb-4">
             <a href="work-single.html" class="item-wrap fancybox">
               <div class="work-info">
-                <h3>Build Indoo</h3>
+                <h3>Project TeamUP!</h3>
                 <span>team-project</span>
               </div>
-              <img class="img-fluid" src="assets/img/img_2.jpg">
+              <img class="img-fluid" src="resources/images/myFortFolio/img_2.jpg">
             </a>
-          </div> -->
+          </div>
           <!-- <div class="item back_end col-sm-6 col-md-4 col-lg-4 mb-4">
             <a href="work-single.html" class="item-wrap fancybox">
               <div class="work-info">

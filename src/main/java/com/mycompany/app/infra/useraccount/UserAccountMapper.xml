@@ -12,7 +12,6 @@
     		, userID
     		, userPW
     		, userName
-    		, userAge
     		, gender
     		, userStatus
     	</sql>
@@ -47,6 +46,19 @@
     			AND seq = #{seq}
     	</select>
     	
+    	<select id="loginUserOne" resultMap="resultMapObj">
+    		SELECT
+    			seq
+    			, userID
+    			, userPW
+    			, userName
+    		FROM
+    			userAccount
+    		WHERE 1=1
+    			AND userID = #{userID}
+    			AND userPW = #{userPW}
+    	</select>
+    	
     	<insert id="userJoin">
     		INSERT INTO
     			userAccount
@@ -54,14 +66,12 @@
     			userID
     			, userPW
     			, userName
-    			, userAge
     			, gender
     			, userStatus
     		)VALUES(
 				#{userID}
 				, #{userPW}
 				, #{userName}
-				, #{userAge}
 				, #{gender}
 				, 0
     		)

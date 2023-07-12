@@ -47,4 +47,9 @@ public class UserAccountServiceImpl implements UserAccountService {
 		return dao.selectOneCount(vo);
 	}
 
+	@Override
+	public UserAccount loginUserOne(UserAccountVo vo) {
+		return dao.loginUserOne(vo);
+	}
+
 }

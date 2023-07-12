@@ -85,9 +85,6 @@
 		                       		 	이름 : 
 		                            	<input type="text" name="userName" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userName}"></c:out>">
-		                       		 	이름 : 
-		                            	<input type="text" name=userAge class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userAge}"></c:out>">
 		                       		 	userStatus : 
 		                            	<input type="text" name="userStatus" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userStatus}"></c:out>" readonly>
