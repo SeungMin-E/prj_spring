@@ -30,15 +30,6 @@
                         <li class="nav-item">
                             <a href="/projectNSA/login" class="nav-link">로그인</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">마이페이지</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">장바구니</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">고객센터</a>
-                        </li>
                     </ul>
                 </div>
                 <div id="title_box" class="d-flex flex-row justify-content-evenly">
@@ -116,6 +107,7 @@
                     <label for = "userName" class = "form-label">이름</label>
                     <div class="input-group mt-3">
                         <input type = "text" name="userName" class = "form-control" placeholder = "이름을 입력하세요">
+                        
                     </div>
                 </div>
 
@@ -170,8 +162,42 @@
     </section>
 </body>
 
+	<script src="../resources/js/project_nsa/admin_host/vaildation.js"></script>
+	
 	<script type="text/javascript">
 		var form = $("form[name='formList']");
+		var id = $("input[name='userID']");
+    	
+    	vaildationUpdt = function(){
+    		if(nc(id) == false ) return false;
+    	}
+		
+		$(id).on("blur",function(){
+			
+			if(vaildationUpdt() == false){
+				return false();
+			}
+				$.ajax({
+					async : true
+					, cache : false
+					, type : "post"
+					, url : "/duplicate"
+					, data : {
+						"userID" : $(id).val()
+					}
+				,success : function(response){
+					if(response.du == "available"){
+						alert("이 아이디는 사용이 가능합니다.");
+					}else{
+						alert("이 아이디는 사용이 불가능합니다.");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+				
+			});
+		});
 		
 		$("#create").on("click", function(){
 			form.attr("method", "post");

@@ -59,6 +59,15 @@
     			AND userPW = #{userPW}
     	</select>
     	
+    	<select id="dulicateI"  resultType="Integer">
+    		SELECT
+    			COUNT(seq)
+    		FROM
+    			userAccount
+    		WHERE 1=1
+    			AND userID = #{userID}
+    	</select>
+    	
     	<insert id="userJoin">
     		INSERT INTO
     			userAccount

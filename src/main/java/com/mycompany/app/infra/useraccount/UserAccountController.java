@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -99,15 +102,35 @@ public class UserAccountController {
 		return "redirect:/projectNSA/main_page";
 	}
 	
+//	ID중복 체크
+	@ResponseBody
+	@RequestMapping(value="/duplicate")
+	public Map<String, Object> dualP(UserAccountVo vo){
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		int du = service.dulicateI(vo);
+		
+		if(du == 0) {
+			returnMap.put("du", "available");
+		}else {
+			returnMap.put("du", "unavailable");
+		}
+		return returnMap;
+	}
+	
+	
 //	로그인
 	@ResponseBody
 	@RequestMapping(value="/loginP")
-	public Map<String, Object> loginP(UserAccountVo vo){ 
+	public Map<String, Object> loginP(UserAccountVo vo, HttpSession httpSession){ 
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 	
 		UserAccount rtUserAccount = service.loginUserOne(vo);
 		
 		if(rtUserAccount != null) {
+			httpSession.setMaxInactiveInterval(60*60);
+			httpSession.setAttribute("sessionId", vo.getUserID());
+			
 			returnMap.put("rtUserAccount", rtUserAccount);
 			returnMap.put("rt", "success");
 		}else {
@@ -116,4 +139,20 @@ public class UserAccountController {
 		
 		return returnMap;
 	}
+	
+// 로그아웃
+	@ResponseBody
+	@RequestMapping(value="/logOutP")
+	public Map<String, Object> logoutuser(HttpSession httpSession){
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
+		
+		return returnMap;
+	}
+	
+	
+	
+	
 }

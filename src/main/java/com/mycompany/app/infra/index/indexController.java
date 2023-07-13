@@ -191,4 +191,12 @@ public class indexController {
 	}
 	
 	
+	@RequestMapping(value="/teamProject")
+	public ModelAndView team_prj() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("team/usr/index/indexUsrView");
+		return mav;
+	}
+	
+	
 }

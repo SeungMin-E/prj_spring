@@ -41,3 +41,13 @@ check = function(obj){
 				
 			}
 }
+
+/*빈값 체크*/
+nc = function(obj){
+	if($.trim(obj.val()) == "" || $.trim(obj.val()) == null ){
+				alert(obj.getName() + "을(를) 작성하셔야합니다.");
+				$(obj).focus();
+			}else{
+				
+			}
+}

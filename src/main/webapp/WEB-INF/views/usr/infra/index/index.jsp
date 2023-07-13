@@ -25,21 +25,30 @@
             <div class="">
                 <div id="head_nav_bar">
                     <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a href="/projectNSA/join" class="nav-link">회원가입</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/projectNSA/login" class="nav-link">로그인</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="myPage.html" class="nav-link">마이페이지</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">장바구니</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="QandA.html" class="nav-link">고객센터</a>
-                        </li>
+                        <c:choose>
+                       		<c:when test="${not empty sessionId }">
+                       			<li class="nav-item">
+		                            <a href="#" id="btnLogout" class="nav-link">로그아웃</a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a href="#" class="nav-link">마이페이지</a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a href="#" class="nav-link">장바구니</a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a href="#" class="nav-link">고객센터</a>
+		                        </li>	
+                       		</c:when>
+                       		<c:otherwise>
+	                       		 <li class="nav-item">
+	                            		<a href="/projectNSA/join" class="nav-link">회원가입</a>
+	                      			 </li>
+	                        		<li class="nav-item">
+	                            		<a href="/projectNSA/login" class="nav-link">로그인</a>
+	                       		 	</li>
+                       		</c:otherwise>
+                       </c:choose>
                     </ul>
                 </div>
                 <div id="title_box" class="d-flex flex-row justify-content-evenly">
@@ -373,5 +382,35 @@
             </div>
         </div>
     </footer>
+    
+    <script type="text/javascript">
+
+	
+	
+	$("#btnLogout").on("click", function(){
+		$.ajax({
+			async: true
+			, chche : false
+			, type : "post"
+			, url : "/logOutP"
+			,data : { }
+			, success : function(respone){
+				alert("로그아웃 되셨습니다.");
+				location.href = "/projectNSA/main_page";
+			}
+			, error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+		
+	});
+
+
+	validation = function() {
+//		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
+//		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
+	}
+
+</script>
 </body>
 </html>

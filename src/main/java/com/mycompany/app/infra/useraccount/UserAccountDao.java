@@ -53,4 +53,9 @@ public class UserAccountDao {
 		return userAccount;
 	}
 	
+	public int dulicateI(UserAccountVo vo) {
+		return sqlSession.selectOne(namespace + ".dulicateI", vo);
+		
+	}
+	
 }

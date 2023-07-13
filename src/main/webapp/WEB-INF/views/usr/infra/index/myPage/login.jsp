@@ -25,21 +25,13 @@
             <div class="">
                 <div id="head_nav_bar">
                     <ul class="nav justify-content-end">
-                       <li class="nav-item">
-                            <a href="/projectNSA/join" class="nav-link">회원가입</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/projectNSA/login" class="nav-link">로그인</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">마이페이지</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">장바구니</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">고객센터</a>
-                        </li>
+                       			<li class="nav-item">
+                            		<a href="/projectNSA/join" class="nav-link">회원가입</a>
+                      			 </li>
+                        		<li class="nav-item">
+                            		<a href="/projectNSA/login" class="nav-link">로그인</a>
+                       		 	</li>	
+                       		
                     </ul>
                 </div>
                 <div id="title_box" class="d-flex flex-row justify-content-evenly">
@@ -89,7 +81,7 @@
                 <h1 class="align-self-center">&nbsp;&nbsp;&nbsp;&nbsp;로그인</h1>
             </div>
             <div class="d-flex justify-content-center mt-5">
-                <form>
+                <form id="formLogin">
                     <div class="col-auto mb-3" style="width: 500px;">
                         <label for="exampleInputEmail1" class="form-label fs-3">ID</label>
                         <input type="text" name="userID" class="form-control p-3" id="userID" aria-describedby="emailHelp">
@@ -159,6 +151,24 @@
 				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 			}
 		});
+	});
+	
+	$("#btnLogout").on("click", function(){
+		$.ajax({
+			async: true
+			, chche : false
+			, tpye : "post"
+			, url : "/logOutP"
+			,data : {"sessonId" : sessonId}
+			, success : function(respone){
+				alert("로그아웃 되셨습니다.");
+				location.href = "/projectNSA/main_page";
+			}
+			, error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+		
 	});
 
 

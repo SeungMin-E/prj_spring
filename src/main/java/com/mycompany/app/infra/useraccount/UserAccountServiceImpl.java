@@ -52,4 +52,9 @@ public class UserAccountServiceImpl implements UserAccountService {
 		return dao.loginUserOne(vo);
 	}
 
+	@Override
+	public int dulicateI(UserAccountVo vo) {
+		return dao.dulicateI(vo);
+	}
+
 }

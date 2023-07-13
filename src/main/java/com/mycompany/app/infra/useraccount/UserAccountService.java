@@ -20,4 +20,6 @@ public interface UserAccountService {
 	public int userCut(UserAccount dto);
 	
 	public UserAccount loginUserOne(UserAccountVo vo);
+	
+	public int dulicateI(UserAccountVo vo);
 }
