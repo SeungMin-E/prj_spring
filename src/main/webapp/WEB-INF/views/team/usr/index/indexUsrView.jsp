@@ -14,6 +14,41 @@
         <div class="mainBox">
             <div class="mainContainer">
             <%--FORM CONTENT STARTS FROM HERE!!--%>
+            	<table class="table">
+            		<thead>
+            			<tr>
+	            			<th>No.</th>
+    	        			<th>종목</th>
+    	        			<th>파티 제목</th>
+    	        			<th>인원수</th>
+    	        			<th>날짜</th>
+    	        			<th>시간</th>
+    	        			<th>성별</th>
+    	        			<th>지역</th>
+    	        			<th>장비지참</th>
+            			</tr>
+            		</thead>
+            		<%-- <tbody>
+            			<c:when test="#">
+            				<tr>
+            					<td class="text-center" colspan="9">아무것도 없어요 있었는데? 아니 없다고요</td>
+            				</tr>
+            			</c:when>
+            			<c:otherwise> --%>
+            				<tr>
+            					<td>1</td>
+            					<td>2</td>
+            					<td>3</td>
+            					<td>4</td>
+            					<td>5</td>
+            					<td>6</td>
+            					<td>7</td>
+            					<td>8</td>
+            					<td>9</td>
+            				</tr>
+            			<%-- </c:otherwise> --%>
+            		</tbody>
+            	</table>
             <%--FORM CONTENT STARTS FROM HERE!!--%>
 			<%--FORM CONTENT ENDS FROM HERE!!--%>
        		<%--FORM CONTENT ENDS FROM HERE!!--%>

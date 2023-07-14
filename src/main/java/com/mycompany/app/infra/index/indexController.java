@@ -69,6 +69,14 @@ public class indexController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/work_two")
+	public ModelAndView workSec() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/biography/workSec");
+		
+		return mav;
+	}
 
 //	바이오그래피 페이지 끝
 	

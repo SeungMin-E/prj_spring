@@ -112,7 +112,7 @@
           </div>
           
           <div class="item team_project col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
+            <a href="/work_two" class="item-wrap fancybox">
               <div class="work-info">
                 <h3>Project TeamUP!</h3>
                 <span>team-project</span>

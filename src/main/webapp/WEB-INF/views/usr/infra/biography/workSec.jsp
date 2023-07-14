@@ -98,7 +98,7 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-8" data-aos="fade-up">
-              <img src="resources/images/myFortFolio/img_1_big.jpg" alt="Image" class="img-fluid">
+              <img src="resources/images/myFortFolio/img_2_big.jpg" alt="Image" class="img-fluid">
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <div class="sticky-content">
@@ -126,7 +126,7 @@
                   <li>API 연결(네이버 맵, 카카오 맵 사용)</li>
                 </ul>
 
-                <p><a href="#" class="readmore">Visit User Website</a></p>
+                <p><a href="/teamProject" class="readmore">Visit User Website</a></p>
                 <p><a href="#" class="readmore">Visit admin WebStie</a></p>
               </div>
             </div>
