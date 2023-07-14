@@ -14,7 +14,8 @@
         <div class="mainBox">
             <div class="mainContainer">
             <%--FORM CONTENT STARTS FROM HERE!!--%>
-            	<table class="table">
+            <div class="tableBox">
+            	<table class="">
             		<thead>
             			<tr>
 	            			<th>No.</th>
@@ -49,6 +50,7 @@
             			<%-- </c:otherwise> --%>
             		</tbody>
             	</table>
+           	</div>
             <%--FORM CONTENT STARTS FROM HERE!!--%>
 			<%--FORM CONTENT ENDS FROM HERE!!--%>
        		<%--FORM CONTENT ENDS FROM HERE!!--%>

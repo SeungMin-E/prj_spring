@@ -213,3 +213,65 @@ main{
 /*Main Frame*/
 /*Main Frame*/
 /*Main Frame*/
+
+
+/*@@@@@@@@@@@@@@  Table  CSS @@@@@@@@@@@@@@*/
+.tableBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.tableBox>table{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border-collapse: collapse;
+    border-style: hidden;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.068);
+}
+.tableBox>table>thead{
+    font-weight: 700;
+    letter-spacing: 0;
+    border-radius: 15px;
+    background-color: rgba(128, 255, 128,.4);
+}
+.tableBox>table>thead>tr>th:first-of-type{
+    border-top-left-radius: 15px;
+}
+.tableBox>table>thead>tr>th:last-of-type{
+    border-top-right-radius: 15px;
+}
+.tableBox>table>thead>tr>th,
+.tableBox>table>tbody>tr>td{
+    border-bottom: 0px solid rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+.tableBox>table>tbody>tr>td{
+    font-size: 15px;
+}
+.detailBtn {
+    font-size: 15px;
+    background-color: rgba(243, 243, 243, 0.83);
+    border: 1px rgb(146, 146, 146);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    font-weight: 500;
+}
+.detailBtn:hover{
+    transform: scale(1.2);
+    color:white;
+    background-color: darksalmon;
+}
+#nodata{
+    color: rgba(0,0,0,0.5) !important;
+    padding: 10px;
+}
+/*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
+/*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
+/*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
