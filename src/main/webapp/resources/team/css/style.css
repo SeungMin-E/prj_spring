@@ -272,6 +272,170 @@ main{
     color: rgba(0,0,0,0.5) !important;
     padding: 10px;
 }
+
+
+
 /*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
 /*@@@@@@@@@@@@@@ CodeGroupList Table  CSS @@@@@@@@@@@@@@*/
+
+/* select & input 박스 */
+/*@@@@@ CodeGroupList Table Filter CSS @@@@@*/
+/*@@@@@ CodeGroupList Table Filter CSS @@@@@*/
+
+.searchBox{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: fit-content;
+}
+
+
+.searchBox>select{
+	width: 170px;
+	height: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 5px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    color: rgb(77, 72, 72);
+    padding: 0 15px;
+    background-color: rgba(250, 184, 159, 0.1);
+}
+
+
+.searchInput:focus +span{
+    transform: scale(1.2);
+    opacity: 1;
+}
+.searchInput:focus{
+    opacity: 1;
+}
+.searchInput{
+    margin-left: 20px;
+    height: 25px;
+    border: none;
+    outline: none;
+    transition: all .2s ease-in-out;
+    border-bottom: 1px solid rgb(77, 72, 72);
+    color: rgb(77, 72, 72);
+    opacity: .2;
+    font-size: 20px;
+    padding: 15px 30px 15px 10px;
+    box-sizing: border-box;
+}
+
+.excuteBox{
+	display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: fit-content;
+}
+
+
+.inputBox>span:hover{transform: scale(1.1);}
+.inputBox>span{
+    position: absolute;
+    right: 0;
+    opacity: .2;
+    color: rgb(77, 72, 72);
+    font-weight: 900;
+    transition: .2s all ease-in-out;
+    cursor:pointer;
+}
+.inputBox{
+    position: relative;
+}
+
+select{
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 5px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    color: rgb(77, 72, 72);
+    padding: 5px 15px;
+    background-color: rgba(250, 184, 159, 0.1);
+}
+select[name='delNy']{
+    margin-left:15px;
+}
+/*@@@@@ 파티 생성 CSS @@@@@*/
+
+.mainContainer>h1{
+	font-size: 30px;
+}
+
+.insert_box{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.insert_box>input{
+	width: 400px;
+	height: 30px;
+	border-radius: 10px;
+}
+
+.input-group>input{
+	width: 400px;
+	height: 30px;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+
+.redio_box{
+	display: flex;
+	justify-content: space-between;
+	    align-items: center;
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.redio_box>span{
+	width: 15%;
+	font-size: 20px;
+	text-align: center;
+}
+
+.radio_box_radio{
+	display: flex;
+	justify-content: center;
+	align-self: center;
+    margin: 20px;
+    width: 30%;
+    height: fit-content;
+}
+
+.radio_box_radio>label{
+	font-size: 17px;
+}
+
+
+
+.insert_box>select{
+	width: 200px;
+	height: 30px;
+}
+
+.textarea_box{
+	
+}
+
+textarea{
+	resize: none;
+	margin-top: 5px;
+	width: 80%;
+	height: 100px;
+}
+/*@@@@@ CodeGroupList Table Filter CSS @@@@@*

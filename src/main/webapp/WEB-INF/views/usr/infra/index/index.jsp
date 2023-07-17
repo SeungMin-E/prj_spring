@@ -17,84 +17,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
-    <title>project NSA(예제 프로젝트)</title>
+    <title>Welcome to PrimeCube</title>
 </head>
 <body>
-    <header id="head_backg">
-        <div id="wrap" class="wrap_container">
-            <div class="">
-                <div id="head_nav_bar">
-                    <ul class="nav justify-content-end">
-                        <c:choose>
-                       		<c:when test="${not empty sessionId }">
-                       			<li class="nav-item">
-		                            <a href="#" id="btnLogout" class="nav-link">로그아웃</a>
-		                        </li>
-		                        <li class="nav-item">
-		                            <a href="#" class="nav-link">마이페이지</a>
-		                        </li>
-		                        <li class="nav-item">
-		                            <a href="#" class="nav-link">장바구니</a>
-		                        </li>
-		                        <li class="nav-item">
-		                            <a href="#" class="nav-link">고객센터</a>
-		                        </li>	
-                       		</c:when>
-                       		<c:otherwise>
-	                       		 <li class="nav-item">
-	                            		<a href="/projectNSA/join" class="nav-link">회원가입</a>
-	                      			 </li>
-	                        		<li class="nav-item">
-	                            		<a href="/projectNSA/login" class="nav-link">로그인</a>
-	                       		 	</li>
-                       		</c:otherwise>
-                       </c:choose>
-                    </ul>
-                </div>
-                <div id="title_box" class="d-flex flex-row justify-content-evenly">
-                    <i class="fa-solid fa-book-open-reader align-self-center" style="font-size: 135px; color: rgb(206, 179, 26);"></i>
-                    <div class="text-center">
-                        <h1 id="title_box_title">예제 : PROJECT NSA(문고/서점)</h1>
-                        <form class="d-flex col-auto" role="search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <nav class="nav navbar-expand-lg bg-light">
-               <div class="">
-                   <ul class="nav">
-                        <li class="nav-item">
-                            <a href="notice.html" class="nav-link">공지사항</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">베스트셀러</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">화제의신간</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">국내도서</a>
-                        </li>
-                       <li class="nav-item">
-                            <a href="#" class="nav-link">해외도서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">이벤트</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="QandA.html" class="nav-link">Q&A/1:1문의</a>
-                        </li>
-                    </ul>
-                </div> 
-            </nav>
-        </div>
-    </header>
+    <%@include file="../index/include/header.jsp" %>
     <section>
         <div class="wrap_container">
             <div id="section_content_sec1">
-                <h1>??의 강추 도서</h1>
+                <h1 class = "ms-2">PrimeCube의 강추 도서</h1>
                 <div id="section_content_nav">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
@@ -157,7 +87,7 @@
             </div>
 
             <div id="section_content_sec2" class="">
-                <h1>분류별 추천 도서(국내)</h1>
+                <h1 class = "ms-2">분류별 추천 도서(국내)</h1>
                 <div  id="section_content_nav">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
@@ -253,7 +183,7 @@
                 </div>
             </div>
             <div id="section_content_sec3">
-                <h1>분류별 추천 도서(해외)</h1>
+                <h1 class = "ms-2">분류별 추천 도서(해외)</h1>
                 <div  id="section_content_nav">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
@@ -349,39 +279,9 @@
                 </div>
             </div>
         </div>
-        <div id="popup_remote">
-            <div>
-                <button type="button" class="btn btn-outline-primary" onclick="location.href='QandA.html'" style="width :150px; height: 100px;">
-                    <i class="fa-regular fa-comment-dots fa-2xl"></i>
-                   문의하기
-                </button>
-            </div>
-            <div>
-                <button type="button" class="btn btn-outline-success" style="width :150px; height: 100px;">
-                    <i class="fa-solid fa-truck fa-2xl"></i>
-                    배송현황
-                </button>
-            </div>
-            <div>
-                <button type="button" class="btn btn-outline-info" style="width :150px; height: 100px;">
-                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
-                    장바구니
-                </button>
-            </div>
-            <div >
-                <button type="button" class="btn btn-primary" onclick="window.scrollTo(0,0)" style="width :150px">TOP</button>
-                <button type="button" class="btn btn-secondary" onclick="window.scrollTo(0,document.body.scrollHeight)" style="width :150px">BOTTOM</button>
-            </div>
-        </div>
+        <%@include file="../index/include/side_remote.jsp" %>
     </section>
-    <footer>
-        <div class="container-fluid p-3 text-center">
-            <div class="align-items-center">
-                <p>NSA Company | 대표 : 이승민 | 사업자등록번호 : 123-12-123456 | 김포시 장기동 2018-2 라베니체마치에비뉴 </p>
-                <p>copyright 2023. NSA Company Inc. all rights reserved</p>
-            </div>
-        </div>
-    </footer>
+   <%@include file="../index/include/footer.jsp" %>
     
     <script type="text/javascript">
 
@@ -411,6 +311,6 @@
 //		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
 	}
 
-</script>
+	</script>
 </body>
 </html>

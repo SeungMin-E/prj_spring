@@ -102,7 +102,7 @@
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <div class="sticky-content">
-                <h3 class="h3">Project NSA</h3>
+                <h3 class="h3">Prime Cube</h3>
                 <p class="mb-4"><span class="text-muted">web Programing</span></p>
 
                 <div class="mb-5">
@@ -125,7 +125,6 @@
                   <li>JSP</li>
                   <li>API 연결(카카오페이, 도서API, 카카오 맵 사용)</li>
                 </ul>
-
                 <p><a href="/projectNSA/main_page" class="readmore">Visit User Website</a></p>
                 <p><a href="/projectNSA/admin_join" class="readmore">Visit adminStie</a></p>
               </div>

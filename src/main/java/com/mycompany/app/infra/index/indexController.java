@@ -77,6 +77,14 @@ public class indexController {
 		
 		return mav;
 	}
+	
+//	바이오파지 팀프로젝트로 가는길
+	@RequestMapping(value="/teamProject")
+	public ModelAndView team_prj() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("team/usr/index/indexUsrView");
+		return mav;
+	}
 
 //	바이오그래피 페이지 끝
 	
@@ -175,6 +183,8 @@ public class indexController {
 		return mav;
 	}
 	
+//	project NSA 관리자 끝
+	
 //	project NSA 메인 페이지
 	
 	@RequestMapping(value="/projectNSA/main_page")
@@ -184,6 +194,7 @@ public class indexController {
 		return mav;
 	}
 	
+//	로그인
 	@RequestMapping(value="/projectNSA/login")
 	public ModelAndView nsa_loginPage() {
 		ModelAndView mav = new ModelAndView();
@@ -191,6 +202,7 @@ public class indexController {
 		return mav;
 	}
 	
+//	회원가입
 	@RequestMapping(value="/projectNSA/join")
 	public ModelAndView nsa_joinPage() {
 		ModelAndView mav = new ModelAndView();
@@ -198,13 +210,42 @@ public class indexController {
 		return mav;
 	}
 	
-	
-	@RequestMapping(value="/teamProject")
-	public ModelAndView team_prj() {
+//	Q&A 페이지
+	@RequestMapping(value="/projectNSA/question")
+	public ModelAndView nsa_question() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("team/usr/index/indexUsrView");
+		mav.setViewName("usr/infra/index/sub/Q&A");
+		return mav;
+	}
+
+//	공지사항 페이지
+	@RequestMapping(value="/projectNSA/notice")
+	public ModelAndView nsa_notice() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/sub/notice");
 		return mav;
 	}
 	
+//	베스트셀러 페이지
+	@RequestMapping(value="/projectNSA/bestSeller")
+	public String nsa_bestSeller() {
+		
+		return "usr/infra/index/books/best/bestSell";
+	}
 	
+//	화제의신간 페이지
+	@RequestMapping(value="/projectNSA/newJeans")
+	public String nsa_newBooks() {
+		return "usr/infra/index/books/newface/newBooks";
+	}
+	
+	
+//	팀프로젝트 페이지
+	@RequestMapping(value="/newParty")
+	public ModelAndView team_newParty() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("team/usr/index/newParty");
+		
+		return mav;
+	}
 }

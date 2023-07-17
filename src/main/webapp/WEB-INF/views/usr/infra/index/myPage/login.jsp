@@ -17,63 +17,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
-    <title>project NSA(예제 프로젝트)</title>
+    <title>로그인</title>
 </head>
 <body>
-    <header id="head_backg">
-        <div id="wrap" class="wrap_container">
-            <div class="">
-                <div id="head_nav_bar">
-                    <ul class="nav justify-content-end">
-                       			<li class="nav-item">
-                            		<a href="/projectNSA/join" class="nav-link">회원가입</a>
-                      			 </li>
-                        		<li class="nav-item">
-                            		<a href="/projectNSA/login" class="nav-link">로그인</a>
-                       		 	</li>	
-                       		
-                    </ul>
-                </div>
-                <div id="title_box" class="d-flex flex-row justify-content-evenly">
-                    <i class="fa-solid fa-book-open-reader align-self-center" style="font-size: 135px; color: rgb(206, 179, 26);"></i>
-                    <div class="text-center">
-                        <h1 id="title_box_title">예제 : PROJECT NSA(문고/서점)</h1>
-                        <form class="d-flex col-auto" role="search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <nav class="nav navbar-expand-lg bg-light">
-               <div class="">
-                   <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link">공지사항</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">베스트셀러</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">화제의신간</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">국내도서</a>
-                        </li>
-                       <li class="nav-item">
-                            <a class="nav-link">해외도서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">이벤트</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Q&A/1:1문의</a>
-                        </li>
-                    </ul>
-                </div> 
-            </nav>
-        </div>
-    </header>
+    <%@include file="../../index/include/header.jsp" %>
     <section>
         <div class="wrap_container">
             <div class="d-flex flex-row justify-content-center mt-5">
@@ -109,14 +56,7 @@
         </div>
     </section>
     <!-- 풋 인클루드 확정 -->
-    <footer>
-        <div class="container-fluid p-3 text-center">
-            <div class="align-items-center">
-                <p>NSA Company | 대표 : 이승민 | 사업자등록번호 : 123-12-123456 | 김포시 장기동 2018-2 라베니체마치에비뉴 </p>
-                <p>copyright 2023. NSA Company Inc. all rights reserved</p>
-            </div>
-        </div>
-    </footer>
+    <%@include file="../../index/include/footer.jsp" %>
     <!-- 푸터 끝 -->
 </body>
 

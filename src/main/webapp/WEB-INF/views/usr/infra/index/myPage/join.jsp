@@ -19,55 +19,7 @@
     <title>회원가입</title>
 </head>
 <body>
-    <header id="head_backg">
-        <div id="wrap" class="wrap_container">
-            <div class="">
-                <div id="head_nav_bar">
-                    <ul class="nav justify-content-end">
-                      <li class="nav-item">
-                            <a href="/projectNSA/join" class="nav-link">회원가입</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/projectNSA/login" class="nav-link">로그인</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="title_box" class="d-flex flex-row justify-content-center">
-                    <i class="fa-solid fa-book-open-reader align-self-center" style="font-size: 135px; color: rgb(206, 179, 26);"></i>
-                    <div class="text-center">
-                        <h1 id="title_box_title">예제 : PROJECT NSA(문고/서점)</h1>
-                    </div>
-                </div>
-            </div>
-            <nav class="nav navbar-expand-lg bg-light">
-            <div class="">
-                <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link">공지사항</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">베스트셀러</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">화제의신간</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">국내도서</a>
-                        </li>
-                    <li class="nav-item">
-                            <a class="nav-link">해외도서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">이벤트</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Q&A/1:1문의</a>
-                        </li>
-                    </ul>
-                </div> 
-            </nav>
-        </div>
-    </header>
+    <%@include file="../../index/include/header.jsp" %>
     <section>
         <!-- 섹션 웹 컨테이너 -->
         <div id="wrap" class="wrap_container">
