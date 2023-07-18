@@ -48,7 +48,7 @@
 							<select>
 								<option value="" selected>00:00</option>
 							</select>
-							<span> ~ </span>
+							<span>&nbsp;~&nbsp;</span>
 							<select>
 								<option value="" selected>24:00</option>
 							</select>

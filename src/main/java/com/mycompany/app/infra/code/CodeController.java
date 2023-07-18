@@ -15,6 +15,11 @@ public class CodeController {
 	@Autowired
 	CodeServiceImpl service;
 	
+	/**
+	 * @param vo
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/codeList")
 	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) {
 		

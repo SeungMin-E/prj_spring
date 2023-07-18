@@ -7,7 +7,15 @@ a {text-decoration: none;}
 
 
 /* 헤드 */
-#head_backg{height: 250px; box-sizing: border-box; background-color: rgba(250, 150, 150, 0.3);}
+#head_backg{
+	width: 100%; 
+	height: 250px; 
+	box-sizing: border-box; 
+	background-color: rgba(250, 150, 150, 0.3); 
+	position: fixed; z-index: 9999;
+	}
+	
+	
 .wrap_container{width: 66%; margin: auto; box-sizing: border-box; position: relative;}
 
 #title_box{height: 172px; box-sizing: border-box;}
@@ -18,7 +26,7 @@ a {text-decoration: none;}
 nav{height: 50px; padding-top: 5px; box-sizing: border-box;} 
 
 /* section */
-section {height: 800px; overflow: auto; position: relative;}
+section {padding-top: 250px; height: 1000px;}
 #section_content {height: 350px; box-sizing: border-box;}
 #section_content_sec1{background-color: aliceblue;}
 #section_content_nav1{background-color: aliceblue;}
@@ -61,7 +69,17 @@ section {height: 800px; overflow: auto; position: relative;}
 #notice_head h1{margin: 0;}
 
 /* 좌측 팝업 리모콘 */
-#popup_remote{width: 150px; height: 380px; box-sizing: border-box; position: absolute; left: 85px; bottom: 100px;}
+#popup_remote{
+	width: 150px; 
+	height: 380px; 
+	box-sizing: border-box; 
+	position: absolute; 
+	left: 85px; 
+	bottom: 100px;
+	}
 
 /* foooter */
-footer {height:150px; background-color: lavenderblush;}
+footer {
+	position: fixed; bottom : 0;
+	width: 100%; height:150px; 
+	}

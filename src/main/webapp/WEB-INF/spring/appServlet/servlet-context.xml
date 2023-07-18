@@ -23,4 +23,40 @@
 	
 	<context:component-scan base-package="com.mycompany.app" />
 	
+	<!-- session interceptor s 2023.07.18 for logincheck -->
+	
+	<!-- 유저용 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/projectNSA/**"/>
+			<exclude-mapping path="/resources/**"/>
+			<exclude-mapping path="/"/>
+			<exclude-mapping path="/aboutMe"/>
+			<exclude-mapping path="/biographyUsrView"/>
+			<exclude-mapping path="/service"/>
+			<exclude-mapping path="/contact"/>
+			<exclude-mapping path="/work"/>
+			<exclude-mapping path="/work_one"/>
+			<exclude-mapping path="/work_two"/>
+			<exclude-mapping path="/teamProject"/>
+			<exclude-mapping path="/projectNSA/main_page"/>
+			<exclude-mapping path="/projectNSA/login"/>
+			<exclude-mapping path="/projectNSA/join"/>
+			<exclude-mapping path="/loginP"/>
+			<exclude-mapping path="/indexUsrView"/>
+			<beans:bean id="checkLoginSessionInterception" class="com.mycompany.app.common.intercepctor.CheckLoginSessionInterception"/>
+		</interceptor>
+	</interceptors>
+		
+		<!-- 관리자용 -->
+		<interceptors>
+			<interceptor>
+				<mapping path="/admin_host/**"/>
+				<exclude-mapping path="/resources/**"/>
+				<exclude-mapping path="/projectNSA/login"/>
+				<beans:bean id="CheckAdminSessionInterception" class="com.mycompany.app.common.intercepctor.CheckAdminSessionInterception"/>
+			</interceptor>
+		</interceptors>
+		
+	<!-- session interceptor e 2023.07.18 for logincheck -->
 </beans:beans>

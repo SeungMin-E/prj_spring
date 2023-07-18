@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div id="section_content_sec2" class="">
+            <div id="section_content_sec2">
                 <h1 class = "ms-2">분류별 추천 도서(국내)</h1>
                 <div  id="section_content_nav">
                     <ul class="nav nav-tabs">

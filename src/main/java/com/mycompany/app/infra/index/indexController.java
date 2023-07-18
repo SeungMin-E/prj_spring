@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 
+ */
 @Controller
 public class indexController {
 	
@@ -15,15 +18,21 @@ public class indexController {
 		return "usr/infra/biography/home";	
 	}		
 
+	/**
+	 * @return
+	 */
 	@RequestMapping(value="/biographyUsrView")
 	public String biographyUsrView() {
 		return "usr/infra/biography/workFirsr";
 	}
 	
 	
+	/**	인터셉터
+	 * @return
+	 */
 	@RequestMapping("/indexUsrView")
 	public String indexUsrView() {
-		return "usr/infra/index/indexUsrView";
+		return "usr/infra/index/myPage/login";
 	}
 	
 	

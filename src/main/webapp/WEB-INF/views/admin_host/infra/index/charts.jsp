@@ -115,11 +115,11 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <%@include file="../../include/footer.jsp" %>
 
         </div>
         <!-- End of Content Wrapper -->
 
+            <%@include file="../../include/footer.jsp" %>
     </div>
     <!-- End of Page Wrapper -->
 

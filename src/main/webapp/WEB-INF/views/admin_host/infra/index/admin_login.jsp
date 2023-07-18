@@ -46,15 +46,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form id="formLogin" class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="text" name="userID" class="form-control form-control-user"
+                                                id="userID" aria-describedby="emailHelp"
+                                                placeholder="Enter userID...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="userPW" class="form-control form-control-user"
+                                                id="userPW" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -63,7 +63,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="/admin_page" class="btn btn-primary btn-user btn-block">
+                                        <a id="btnLogin"  class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
@@ -102,5 +102,61 @@
     
 
 </body>
+<script type="text/javascript">
 
+	$("#btnLogin").on("click", function(){
+		
+		if(validation() == false) return false;
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/loginP"
+			/* ,data : $("#formLogin").serialize() */
+			,data : {
+				"userID" : $("#userID").val(),
+				"userPW" : $("#userPW").val()
+				}
+			,success: function(response) {
+				if(response.rt == "success") {
+					alert(response.rtUserAccount.userName);
+					location.href = "/admin_page";
+				} else {
+					alert("그런 회원 없습니다.");
+					
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	});
+	
+	$("#btnLogout").on("click", function(){
+		$.ajax({
+			async: true
+			, chche : false
+			, tpye : "post"
+			, url : "/logOutP"
+			,data : {"sessonId" : sessonId}
+			, success : function(respone){
+				alert("로그아웃 되셨습니다.");
+				location.href = "/admin_page";
+			}
+			, error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+		
+	});
+
+
+	validation = function() {
+//		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
+//		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
+	}
+
+</script>
 </html>
