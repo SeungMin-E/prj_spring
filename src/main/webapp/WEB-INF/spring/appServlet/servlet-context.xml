@@ -30,18 +30,13 @@
 		<interceptor>
 			<mapping path="/projectNSA/**"/>
 			<exclude-mapping path="/resources/**"/>
-			<exclude-mapping path="/"/>
-			<exclude-mapping path="/aboutMe"/>
-			<exclude-mapping path="/biographyUsrView"/>
-			<exclude-mapping path="/service"/>
-			<exclude-mapping path="/contact"/>
-			<exclude-mapping path="/work"/>
-			<exclude-mapping path="/work_one"/>
-			<exclude-mapping path="/work_two"/>
-			<exclude-mapping path="/teamProject"/>
 			<exclude-mapping path="/projectNSA/main_page"/>
-			<exclude-mapping path="/projectNSA/login"/>
 			<exclude-mapping path="/projectNSA/join"/>
+			<exclude-mapping path="/projectNSA/login"/>
+			<exclude-mapping path="/projectNSA/question"/>
+			<exclude-mapping path="/projectNSA/notice"/>
+			<exclude-mapping path="/projectNSA/bestSeller"/>
+			<exclude-mapping path="/projectNSA/newJeans"/>
 			<exclude-mapping path="/loginP"/>
 			<exclude-mapping path="/indexUsrView"/>
 			<beans:bean id="checkLoginSessionInterception" class="com.mycompany.app.common.intercepctor.CheckLoginSessionInterception"/>
@@ -51,9 +46,22 @@
 		<!-- 관리자용 -->
 		<interceptors>
 			<interceptor>
-				<mapping path="/admin_host/**"/>
+				<mapping path="/**"/>
 				<exclude-mapping path="/resources/**"/>
-				<exclude-mapping path="/projectNSA/login"/>
+				<exclude-mapping path="/"/>
+				<exclude-mapping path="/aboutMe"/>
+				<exclude-mapping path="/biographyUsrView"/>
+				<exclude-mapping path="/service"/>
+				<exclude-mapping path="/contact"/>
+				<exclude-mapping path="/work"/>
+				<exclude-mapping path="/work_one"/>
+				<exclude-mapping path="/work_two"/>
+				<exclude-mapping path="/teamProject"/>
+				<exclude-mapping path="/projectNSA/**"/>
+				<exclude-mapping path="/admin_join"/>
+				<exclude-mapping path="/register"/>
+				<exclude-mapping path="/pwLost"/>
+				<exclude-mapping path="/loginP"/>
 				<beans:bean id="CheckAdminSessionInterception" class="com.mycompany.app.common.intercepctor.CheckAdminSessionInterception"/>
 			</interceptor>
 		</interceptors>

@@ -99,7 +99,7 @@ public class indexController {
 	
 //	여기부터 project nsa 관리자 페이지
 	
-	@RequestMapping(value="projectNSA/admin_join")
+	@RequestMapping(value="/admin_join")
 	public String nsa_admin_login() {
 		return "admin_host/infra/index/admin_login";
 	}

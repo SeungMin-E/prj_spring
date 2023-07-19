@@ -45,5 +45,10 @@ public class CodeDao {
 		return sqlSession.update(namespace + ".codeUpdate", dto);
 	}
 	
+//	for cache
+	public List<Code> selectListCachedCodeArrayList(){
+		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null);
+	}
+	
 	
 }

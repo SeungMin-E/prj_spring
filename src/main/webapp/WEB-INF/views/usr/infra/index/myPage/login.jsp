@@ -80,7 +80,7 @@
 				}
 			,success: function(response) {
 				if(response.rt == "success") {
-					alert(response.rtUserAccount.userName);
+					alert(response.rtUserAccount.userName + "님 프라임 큐브에 오신걸 환영합니다.");
 					location.href = "/projectNSA/main_page";
 				} else {
 					alert("그런 회원 없습니다.");
@@ -92,29 +92,21 @@
 			}
 		});
 	});
-	
-	$("#btnLogout").on("click", function(){
-		$.ajax({
-			async: true
-			, chche : false
-			, tpye : "post"
-			, url : "/logOutP"
-			,data : {"sessonId" : sessonId}
-			, success : function(respone){
-				alert("로그아웃 되셨습니다.");
-				location.href = "/projectNSA/main_page";
-			}
-			, error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
-		
-	});
 
 
 	validation = function() {
-//		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
-//		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
+
+		function checkNull(element, value, errorMessage) {
+			  if (value === "" || value === null || value === undefined) {
+			    alert(errorMessage);
+			    element.focus();
+			    return false;
+			  }
+			  
+			}
+		
+		 if(checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
+		 if(checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
 	}
 
 </script>

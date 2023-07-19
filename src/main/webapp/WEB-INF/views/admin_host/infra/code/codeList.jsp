@@ -92,10 +92,8 @@
                                  <thead>
                                      <tr>
                                          <th>seq</th>
-                                         <th>code_id</th>
                                          <th>code_value</th>
                                          <th>code_description</th>
-                                         <th>sort</th>
                                          <th>delNy</th>
                                          <th>codeGroup_seq</th>
                                      </tr>
@@ -112,10 +110,8 @@
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
 		                                            <td><c:out value="${list.seq}"></c:out></td>
-		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.code_id}"></c:out></a></td>
 		                                            <td><a href="/codeForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.code_value}"></c:out></a></td>
 		                                            <td><c:out value="${list.code_description}"></c:out></td>
-		                                            <td><c:out value="${list.sort}"></c:out></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 		                                            <td><c:out value="${list.codeGroup_seq}"></c:out></td>
 	                                        	</tr>
@@ -135,7 +131,7 @@
 	                     </button>
                     </div>
                     
-                    <div class="container-fluid px-0 mt-2">
+                   <div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
 				            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
@@ -162,6 +158,7 @@
 				        </div>
 				    </div>
 				</div>
+                   
 			</div>	
                     
 				
@@ -235,9 +232,8 @@
     		window.location.replace("/codeInsertPage");
     	});
     	
-    	goList = function(thispage) {
-    		alert("asdasdf");
-    		$("input:hidden[name=thispage]").val(thispage);
+    	goList = function(thisPage) {
+    		$("input:hidden[name=thispage]").val(thisPage);
     		$("form[name=formList]").attr("action", "codeList").submit();
     	}
     </script>

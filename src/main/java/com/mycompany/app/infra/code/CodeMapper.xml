@@ -9,10 +9,8 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
     <sql id="def">
     	seq
-    	,code_id
     	,code_value
     	,code_description
-    	,sort
     	, delNy
     	, codeGroup_seq
     </sql>
@@ -72,18 +70,14 @@
 	<insert id="codeInsert">
 		INSERT INTO
 			code(
-				code_id
     			, code_value
     			, code_description
-    			, sort
     			, delNy
     			, codeGroup_seq
 			)
 		VALUES(
-			#{code_id}
 			, #{code_value}
 			, #{code_description}
-			, #{sort}
 			, 0
 			, #{codeGroup_seq}
 		)
@@ -94,7 +88,6 @@
 		SET
 			code_value = #{code_value}
     		, code_description = #{code_description}
-    		, sort = #{sort}
 		WHERE
 			seq = #{seq}
 	</update>
@@ -113,6 +106,18 @@
 		WHERE 
 			seq = #{seq}
 	</delete>
+	
+	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT
+			seq
+			, code_value
+			, code_description
+			, codeGroup_seq
+		FROM
+			code
+		WHERE 1=1
+			AND delNy = 0
+	</select>
 	
 	    
 </mapper>    

@@ -1,13 +1,17 @@
 package com.mycompany.app.infra.code;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Code {
 	private String seq;
-	private String code_id;
 	private String code_value;
 	private String code_description;
-	private String sort;
 	private String delNy;
 	private String codeGroup_seq;
+	
+//	for cache
+	public static List<Code> cahedCodeArrayList = new ArrayList<Code>();
 	
 //	getter & setter
 	public String getSeq() {
@@ -15,12 +19,6 @@ public class Code {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
-	}
-	public String getCode_id() {
-		return code_id;
-	}
-	public void setCode_id(String code_id) {
-		this.code_id = code_id;
 	}
 	public String getCode_value() {
 		return code_value;
@@ -34,12 +32,7 @@ public class Code {
 	public void setCode_description(String code_description) {
 		this.code_description = code_description;
 	}
-	public String getSort() {
-		return sort;
-	}
-	public void setSort(String sort) {
-		this.sort = sort;
-	}
+	
 	public String getDelNy() {
 		return delNy;
 	}

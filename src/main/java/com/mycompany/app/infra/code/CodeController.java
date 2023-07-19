@@ -1,6 +1,9 @@
 package com.mycompany.app.infra.code;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,13 +22,14 @@ public class CodeController {
 	 * @param vo
 	 * @param model
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping(value="/codeList")
-	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) {
+	public String codeList(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
 		
 		vo.setAgeKeyword(vo.getAgeKeyword() == null ? "" :  vo.getAgeKeyword());
 		
-		vo.setParamPaing(service.selectOneCount(vo));
+		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
 			List<Code> list = service.codeSelectList(vo);
@@ -38,7 +42,7 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value="/codeForm")
-	public String codeForm(CodeVo vo, Model model) {
+	public String codeForm(CodeVo vo, Model model) throws Exception {
 		Code code = service.codeSelectOne(vo);
 		
 		model.addAttribute("codeItem", code);
@@ -46,7 +50,7 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value="/codeUpdate")
-	public String codeUpadate(Code dto) {
+	public String codeUpadate(Code dto) throws Exception {
 		service.codeUpdate(dto);
 		
 		return "redirect:/codeList";
@@ -60,13 +64,13 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value="/codeInsert")
-	public String codeInsert(Code dto) {
+	public String codeInsert(Code dto) throws Exception {
 		service.codeInsert(dto);
 		return "redirect:/codeList";
 	}
 	
 	@RequestMapping(value="codeDelete")
-	public String codeDelete(Code dto) {
+	public String codeDelete(Code dto) throws Exception {
 		service.codeDelete(dto);
 		
 		return "redirect:codeList";
@@ -74,12 +78,14 @@ public class CodeController {
 	
 	
 	@RequestMapping(value="/codeUelete")
-	public String codeUelete(Code dto, CodeVo vo, Model model) {
+	public String codeUelete(Code dto, CodeVo vo, Model model) throws Exception {
 		service.codeUelete(dto);
 		
 		Code code = service.codeSelectOne(vo);
 		model.addAttribute("codeItem", code);
 		return "admin_host/infra/code/codeForm";
 	}
+	
+	
 	
 }

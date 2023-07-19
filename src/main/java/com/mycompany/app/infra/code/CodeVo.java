@@ -20,11 +20,11 @@ public class CodeVo {
 	private int startPage;
 	private int endPage;
 	
-	private int startRunmForOracle = 1;
-	private int endRunmForOracle;
+	private int startRnumForOracle = 1;							// 쿼리 시작 row
+	private int endRnumForOracle;								// 쿼리 끝 row
 	private Integer RNUM;
-	
-	private int startRunMForMysql = 0;
+
+	private int startRnumForMysql = 0;							// 쿼리 시작 row
 	
 	//	get & set
 	public String getSeq() {
@@ -54,7 +54,7 @@ public class CodeVo {
 	}
 	
 	public int getRowNumToShow() {
-		return rowNumToShow;
+		return rowNumToShow; 
 	}
 	public void setRowNumToShow(int rowNumToShow) {
 		this.rowNumToShow = rowNumToShow;
@@ -90,16 +90,16 @@ public class CodeVo {
 		this.endPage = endPage;
 	}
 	public int getStartRunmForOracle() {
-		return startRunmForOracle;
+		return startRnumForOracle;
 	}
 	public void setStartRunmForOracle(int startRunmForOracle) {
-		this.startRunmForOracle = startRunmForOracle;
+		this.startRnumForOracle = startRunmForOracle;
 	}
 	public int getEndRunmForOracle() {
-		return endRunmForOracle;
+		return endRnumForOracle;
 	}
 	public void setEndRunmForOracle(int endRunmForOracle) {
-		this.endRunmForOracle = endRunmForOracle;
+		this.endRnumForOracle = endRunmForOracle;
 	}
 	public Integer getRNUM() {
 		return RNUM;
@@ -108,58 +108,60 @@ public class CodeVo {
 		RNUM = rNUM;
 	}
 	public int getStartRunMForMysql() {
-		return startRunMForMysql;
+		return startRnumForMysql;
 	}
 	public void setStartRunMForMysql(int startRunMForMysql) {
-		this.startRunMForMysql = startRunMForMysql;
+		this.startRnumForMysql = startRunMForMysql;
 	}
 	
-	public void setParamPaing(int totalRows) {
+public void setParamsPaging(int totalRows) {
+		
 //		setThisPage(3);
-		
+
 		setTotalRows(totalRows);
-		
-		if(getTotalRows() == 0) {
+
+		if (getTotalRows() == 0) {
 			setTotalPages(1);
 		} else {
 			setTotalPages(getTotalRows() / getRowNumToShow());
 		}
-		
-		if(getTotalRows() % getRowNumToShow() > 0 ) {
+
+		if (getTotalRows() % getRowNumToShow() > 0) {
 			setTotalPages(getTotalPages() + 1);
 		}
-		
-		if (getTotalPages() < getThisPage() ) {
+
+		if (getTotalPages() < getThisPage()) {
 			setThisPage(getTotalPages());
 		}
 		
 		setStartPage(((getThisPage() - 1) / getPageNumToShow()) * getPageNumToShow() + 1);
-		
+
 		setEndPage(getStartPage() + getPageNumToShow() - 1);
-		
-		if(getEndPage() > getTotalPages()) {
+
+		if (getEndPage() > getTotalPages()) {
 			setEndPage(getTotalPages());
 		}
 		
 		setEndRunmForOracle((getRowNumToShow() * getThisPage()));
 		setStartRunmForOracle((getEndRunmForOracle() - getRowNumToShow()) + 1);
 		
-		if(getStartRunmForOracle() < 1) setStartRunmForOracle(1);
+		if (getStartRunmForOracle() < 1) setStartRunmForOracle(1);
 		
-		if(thisPage == 1) {
+		if (thisPage == 1) {
 			setStartRunMForMysql(0);
 		} else {
-			setStartRunMForMysql((getRowNumToShow() * (getThisPage() - 1)));
+			setStartRunMForMysql((getRowNumToShow() * (getThisPage()-1)));
 		}
 		
-		System.out.println("getThisPage() : " + getThisPage());
-		System.out.println("getTotalRows() : " + getTotalRows());
-		System.out.println("getRowsNumToShow() : " + getRowNumToShow());
-		System.out.println("getTotalPages() : " + getTotalPages());
-		System.out.println("getStartPage() : " + getStartPage());
-		System.out.println("getEndPage() : " + getEndPage());
-		System.out.println("getStartRunmForOracle() : " + getStartRunmForOracle());
-		System.out.println("getEndRunmForOracle() : " + getEndRunmForOracle());
-		System.out.println("getStartRunMForMysql() : " + getStartRunMForMysql());
+		System.out.println("getThisPage():" + getThisPage());
+		System.out.println("getTotalRows():" + getTotalRows());
+		System.out.println("getRowNumToShow():" + getRowNumToShow());
+		System.out.println("getTotalPages():" + getTotalPages());
+		System.out.println("getStartPage():" + getStartPage());
+		System.out.println("getEndPage():" + getEndPage());		
+		System.out.println("getStartRnumForOracle():" + getStartRunmForOracle());
+		System.out.println("getEndRnumForOracle():" + getEndRunmForOracle());
+		System.out.println("getStartRnumForMysql(): " + getStartRunMForMysql());
+		
 	}
 }

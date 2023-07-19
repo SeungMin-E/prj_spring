@@ -121,8 +121,14 @@
 				}
 			,success: function(response) {
 				if(response.rt == "success") {
-					alert(response.rtUserAccount.userName);
-					location.href = "/admin_page";
+					 if(response.rtUserAccount.userID == "rain"){
+						 alert(response.rtUserAccount.userName + "관리자님 환영합니다.");
+						 location.href = "/admin_page";
+					 }else{
+						 alert("관리자 페이지는 관리자 외 로그인을 할 수 없습니다.");
+						 return false;
+					 }
+					
 				} else {
 					alert("그런 회원 없습니다.");
 					
@@ -154,8 +160,17 @@
 
 
 	validation = function() {
-//		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
-//		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
+
+		function checkNull(element, value, errorMessage) {
+			  if (value === "" || value === null || value === undefined) {
+			    alert(errorMessage);
+			    element.focus();
+			    return false;
+			  }
+			}
+		
+		 if(checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
+		 if(checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
 	}
 
 </script>

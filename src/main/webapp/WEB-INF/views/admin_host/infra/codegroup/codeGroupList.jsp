@@ -215,7 +215,6 @@
     		form.attr("method", "post");
     		form.attr("action", "/codeGroupList").submit();
     		
-//    		alert("Nothing say anyone");
     	});
     	
     	$("#create").on("click", function(){

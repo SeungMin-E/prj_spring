@@ -68,12 +68,6 @@
                         	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         	
                         	<div class="col-auto mb-3">
-                        		<!-- 코드 일련 번호 -->
-                        		<div class="input-group">
-                        			<span class="input-group-text">코드 일련번호</span>
-	                            	<input type="text" name="code_id" id="code_id" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="코드 일련번호를 정하세요">
-                        		</div>
                                	 
                                	 <!-- 코드명 -->
                                	 <div class="input-group mt-3">
@@ -86,13 +80,6 @@
                             	<div class="input-group mt-3">
 	                            	<span class="input-group-text">코드 설명</span>
 	                            	<textarea name="code_description" id="code_description" lass="form-control bg-white border-0 small" placeholder="자신의 의견을 간단히 적어주세요.">	                               	 </textarea>
-                            	</div>
-                            	
-                            	<!-- 코드 정렬 순서 -->
-                            	<div class="input-group mt-3">
-                            		<span class="input-group-text">정렬순서</span>
-	                            	<input type="text" name="sort" id="sort" class="form-control bg-white border-0 small" 
-    	                           	 aria-label="Search" aria-describedby="basic-addon2" placeholder="정렬순서를 정해주세요">
                             	</div>
                             	
                             	<!-- 소속 코드그룹 -->
@@ -184,10 +171,7 @@
     	}
     	    	
     	$("#create").on("click",function(){
-    		if($.trim($("#code_id").val()) == "" || $.trim($("#code_id").val()) == null ){
-    			alert("코드 일련번호를 적으셔야합니다.");
-    			$("#code_id").focus();
-    		}else if(vaildationInst() == false){
+    		if(vaildationInst() == false){
     			return false;
     		}else if($.trim($("#sort").val()) == "" || $.trim($("#sort").val()) == null){
     			alert("순서가 몇번인가요?");

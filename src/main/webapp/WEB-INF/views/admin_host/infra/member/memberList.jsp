@@ -101,6 +101,8 @@
                                  </thead>
                                  
                                  <tbody>
+                  
+                                 
                                   	<c:choose>
 										<c:when test="${fn:length(list) eq 0}">
 											<tr>
@@ -114,7 +116,14 @@
 		                                            <td><a href="/userOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.userID}"></c:out></a></td>
 		                                            <td><c:out value="${list.userPW}"></c:out></td>
 		                                            <td><c:out value="${list.userName}"></c:out></td>
-		                                            <td><c:out value="${list.gender}"></c:out></td>
+		                                            <td>
+	                                            	   <c:set var="CodeGen" value="${CodeServiceImpl.selectListCachedCode('1') }"/>
+                                							<c:forEach items="${CodeGen}" var="listgen" varStatus="status">
+                                							<c:if test="${list.gender eq listgen.seq}">
+                                								<c:out value="${listgen.code_value}"/>
+                                							</c:if>
+                               							 </c:forEach> 
+													</td>
 		                                            <td><c:out value="${list.userStatus}"></c:out></td>
 	                                        	</tr>
 	                                       	</c:forEach>
@@ -208,11 +217,8 @@
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
-    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
     
     <script type="text/javascript">
     
