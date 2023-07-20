@@ -257,4 +257,11 @@ public class indexController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/PartyTest")
+	public ModelAndView team_test() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("team/usr/index/partyStatus");
+		return mav;
+	}
 }

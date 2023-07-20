@@ -57,6 +57,8 @@
 				<exclude-mapping path="/work_one"/>
 				<exclude-mapping path="/work_two"/>
 				<exclude-mapping path="/teamProject"/>
+				<exclude-mapping path="/newParty"/>
+				<exclude-mapping path="/PartyTest"/>
 				<exclude-mapping path="/projectNSA/**"/>
 				<exclude-mapping path="/admin_join"/>
 				<exclude-mapping path="/register"/>
