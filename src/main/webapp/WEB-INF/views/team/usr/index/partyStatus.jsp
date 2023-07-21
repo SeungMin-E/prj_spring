@@ -15,7 +15,6 @@
         <div class="mainBox">
             <div class="mainContainer">
             <%--FORM CONTENT STARTS FROM HERE!!--%>
-            <h1 class="">Party Status</h1>
 			<%--FORM CONTENT ENDS FROM HERE!!--%>
 			
             <%--FORM CONTENT STARTS FROM HERE!!--%>
@@ -45,30 +44,6 @@
 		              </div>
 		          </div>
 		          <!-- 0213 참여자 제한 팝업 end -->
-		
-		          <!-- 초대하기 팝업 시작-->
-		          <div class="invite-btn" style="display: block">
-		            <a href="#"><i class="fa-solid fa-user-plus"></i>초대하기</a>
-		          </div>
-		
-		          <div class="invite-popup-wrap">
-		            <div class="url-copy">
-		              <p>접속URL</p>
-		              <form onsubmit="return false">
-		                <input readonly type="text" />
-		                <label class="fa-regular fa-clone"></label>
-		              </form>
-		            </div>
-		            <div class="url-receive-user">
-		              <p>초대하기</p>
-		              <form onsubmit="return false">
-		                <input type="text" placeholder="이메일주소(,로 구분)" />
-		                <button>전송</button>
-		              </form>
-		            </div>
-		          </div>
-		          <!-- 초대하기 팝업 끝-->
-		          
 		           <article class="header">
 		            <ul>
 		              <li></li>
@@ -79,16 +54,105 @@
 		
 		          <article class="contents">
 		          
-		          <!-- 아이프레임 -->
-		            <div class="video">
-		              <iframe id="ytube_link" width="100%" height="100%" src="" frameborder="0"></iframe>
-		              <ul class="like">
-		                <li><span id="likeCounter"></span></li>
-		                <li><i id="sendLike" class="fab fa-gratipay"></i></li>
-		              </ul>
-		            </div>
-            <!-- 아이프레임 끝 -->
-		            
+		          <!-- 파티 스테이터스 -->
+			            <div class="chat">
+			              	<div class="overflow-auto pb-2 bg-white">
+			              		<div class="party_name d-flex justify-content-between">
+			              			<h5 class="text-white my-1">참여자 명단</h5>
+			              			<span class="text-white ">@ / 10 명</span><!-- DB 연결하면 c:out으로 넣는걸로. -->
+			              		</div>
+			              		<div class="chat_field">
+			              			<div class="overflow-auto">
+			              			
+			              			<div class="d-flex justify-content-evenly my-3">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "col-auto">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              			<div class="d-flex justify-content-evenly mb-3">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              			<div class="d-flex justify-content-evenly mb-3 ">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              			<div class="d-flex justify-content-evenly mb-3 ">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              			<div class="d-flex justify-content-evenly mb-3 ">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              			<div class="d-flex justify-content-around mb-3 ">
+			              				<!-- 프로필 사진 -->
+							              <div class = "col-auto">
+							                <div class="">
+							                  <img src="resources/images/myFortFolio/person_2.jpg" alt="Image" class="img-fluid" style="width:100px; height : 100px;">
+							                </div>
+							              </div>
+			              				<!-- 프로필 -->
+			              				<div class = "">
+			              					<p>닉네임 : </p>
+			              					<p>이메일 : </p>
+			              					<p>&nbsp;&nbsp; 성별 : </p>
+			              				</div>
+			              			</div>
+			              		</div>
+			              		</div>
+			              	</div>
+			            </div>
+	            	  	<!--파티 스테이터스 -->
 		            <!-- 채팅 영역 -->
 		            <div class="chat">
 		              <!-- 에러 표시 팝업 -->
@@ -543,7 +607,7 @@
 		                      </li>
 		                    </ul>
 		                    <div class="file">
-		                      <a fref="#!">
+		                      <a href="#!">
 		                        <!-- <i class="fas fa-file-arrow-up"></i> -->
 		                        <i class="fa-solid fa-paperclip"></i>
 		                      </a>
@@ -556,9 +620,33 @@
 		
 		                  <!-- 이모지 및 전송 버튼 끝 -->
 		                </div>
-		
-		               </article>
+		            </div>
 		              <!-- 채팅 끝 -->
+
+		               </article>
+		              
+							<!-- 초대하기 팝업 시작-->
+					          <div class="invite-btn" style="display: block">
+					            <a href="#"><i class="fa-solid fa-user-plus"></i>초대하기</a>
+					          </div>
+					
+					          <div class="invite-popup-wrap">
+					            <div class="url-copy">
+					              <p>접속URL</p>
+					              <form onsubmit="return false">
+					                <input readonly type="text" />
+					                <label class="fa-regular fa-clone"></label>
+					              </form>
+					            </div>
+					            <div class="url-receive-user">
+					              <p>초대하기</p>
+					              <form onsubmit="return false">
+					                <input type="text" placeholder="이메일주소(,로 구분)" />
+					                <button>전송</button>
+					              </form>
+					            </div>
+					          </div>
+					          <!-- 초대하기 팝업 끝-->
 		
 		              <!-- 비밀 채팅 시작 / 노출시 .active -->
 		              <div id="draggable" class="newchat-popup-wrap">
@@ -963,7 +1051,7 @@
 		                    </li>
 		                  </ul>
 		                  <div class="newchat-popup-file">
-		                    <a fref="#!">
+		                    <a href="#!">
 		                      <!-- <i class="fas fa-file-arrow-up"></i> -->
 		                      <i class="fa-solid fa-paperclip"></i>
 		                    </a>
@@ -975,14 +1063,14 @@
 		                </div>
 		                <!-- 이모지 및 전송 버튼 끝 -->
 		              </div>
-		            </div>
+		            	</div>
+		        	</div>
 		        </div>
+
             	<!-- 채팅 끝 -->
             	
             	
             </div>
        		<%--FORM CONTENT ENDS FROM HERE!!--%>
-            </div>
-        </div>
     </main>
 </div>

@@ -30,13 +30,13 @@
 			  	<div id="carouselExampleFade" class="carousel slide carousel-fade">
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img src="..." class="d-block w-100" alt="...">
+				      <img src="https://cdn.pixabay.com/photo/2016/03/09/15/29/books-1246674_1280.jpg" class="d-block w-100" alt="테스트 중1">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="..." class="d-block w-100" alt="...">
+				      <img src="https://cdn.pixabay.com/photo/2017/08/07/19/07/books-2606859_1280.jpg" class="d-block w-100" alt="테스트 중2">
 				    </div>
 				    <div class="carousel-item">
-				      <img src="..." class="d-block w-100" alt="...">
+				      <img src="https://cdn.pixabay.com/photo/2016/03/16/21/25/book-1261801_1280.jpg" class="d-block w-100" alt="테스트 중3">
 				    </div>
 				  </div>
 				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

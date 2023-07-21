@@ -80,7 +80,6 @@
 				}
 			,success: function(response) {
 				if(response.rt == "success") {
-					alert(response.rtUserAccount.userName + "님 프라임 큐브에 오신걸 환영합니다.");
 					location.href = "/projectNSA/main_page";
 				} else {
 					alert("그런 회원 없습니다.");

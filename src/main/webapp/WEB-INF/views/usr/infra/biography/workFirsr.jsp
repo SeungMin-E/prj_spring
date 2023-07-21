@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
   <meta charset="utf-8">
@@ -98,7 +98,7 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-8" data-aos="fade-up">
-              <img src="resources/images/myFortFolio/img_1_big.jpg" alt="Image" class="img-fluid">
+              <img src="resources/images/project_nsa/usr_page/logo.jpg" alt="Image" class=""  />
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <div class="sticky-content">
@@ -131,6 +131,7 @@
             </div>
           </div>
         </div>
+       </div>
     </section>
 
     <!-- ======= Testimonials Section ======= -->
