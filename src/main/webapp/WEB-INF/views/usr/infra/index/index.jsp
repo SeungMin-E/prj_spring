@@ -284,9 +284,11 @@
    <%@include file="../index/include/footer.jsp" %>
     
     <script type="text/javascript">
-
-	
-	
+    
+	$("#search_books").on("click", function(){
+		location.href = "/projectNSA/search";
+	});
+    
 	$("#btnLogout").on("click", function(){
 		$.ajax({
 			async: true

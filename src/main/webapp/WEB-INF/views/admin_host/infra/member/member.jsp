@@ -85,7 +85,15 @@
 		                       		 	이름 : 
 		                            	<input type="text" name="userName" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userName}"></c:out>">
-		                       		 	userStatus : 
+		                       		 	성별 : 
+		                       		 	<c:set var="CodeGen" value="${CodeServiceImpl.selectListCachedCode('1') }" />
+		                       		 	<c:forEach items="${CodeGen}" var="genderName" varStatus="status">
+		                       		 		<c:if test="${user.gender eq genderName.seq}">
+				                            	<input type="text" name="userGen" class="form-control bg-light border-0 small mb-4" 
+				                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${genderName.code_value}"></c:out>">
+		                       		 		</c:if>
+		                       		 	</c:forEach>
+		                       		 	delNy : 
 		                            	<input type="text" name="userStatus" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${user.userStatus}"></c:out>" readonly>
 		                       		 </div>

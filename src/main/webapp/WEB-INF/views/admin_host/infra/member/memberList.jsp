@@ -96,7 +96,7 @@
                                          <th>PW</th>
                                          <th>이름</th>
                                          <th>성별</th>
-                                         <th>userStatus</th>
+                                         <th>delNy</th>
                                      </tr>
                                  </thead>
                                  

@@ -16,7 +16,7 @@ public class CodeGroupController {
 	CodeGroupServiceImpl service;
 	
 	@RequestMapping(value="/codeGroupList")
-	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) {
+	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
 		
 		vo.setGetGenkeyword(vo.getGetGenkeyword() == null ? "" : vo.getGetGenkeyword());
 		
@@ -44,7 +44,7 @@ public class CodeGroupController {
 	}
 	
 	@RequestMapping(value="/codeGroupFrom")
-	public String codeGroupForm(CodeGroupVo vo, Model model) {
+	public String codeGroupForm(CodeGroupVo vo, Model model) throws Exception {
 		
 		CodeGroup codeGroup = service.selectOne(vo);
 		
@@ -57,28 +57,28 @@ public class CodeGroupController {
 	}
 	
 	@RequestMapping(value="/codeGroupUpdate")
-	public String codeGroupUpdate(CodeGroup dto) {
+	public String codeGroupUpdate(CodeGroup dto) throws Exception {
 		service.updateOne(dto);
 		
 		return "redirect:/codeGroupList";
 	}
 	
 	@RequestMapping(value="/codeGroupDelete")
-	public String codeGroupDelete(CodeGroup dto) {
+	public String codeGroupDelete(CodeGroup dto) throws Exception {
 		service.deleteOne(dto);
 		
 		return "redirect:/codeGroupList";
 	}
 	
 	@RequestMapping(value="/codeGroupCreate")
-	public String codeGroupInsert(CodeGroup dto) {
+	public String codeGroupInsert(CodeGroup dto) throws Exception {
 		service.insertOne(dto);
 		
 		return "redirect:/codeGroupList";
 	}
 	
 	@RequestMapping(value="/codeGroupuele")
-	public String codeGroupUele(CodeGroup dto, CodeGroupVo vo , Model model) {
+	public String codeGroupUele(CodeGroup dto, CodeGroupVo vo , Model model) throws Exception {
 		service.uele(dto);
 		
 		CodeGroup codeGroup = service.selectOne(vo);
@@ -88,14 +88,14 @@ public class CodeGroupController {
 	}
 	
 	@RequestMapping(value="/codeGroupInsert")
-	public String codeGroupInsertPage() {
+	public String codeGroupInsertPage() throws Exception {
 		return "admin_host/infra/codegroup/codeGroupInsert";
 	}
 	
 	
 //	카나리아니까 건들지 마세요. (테스트하는데라 말없이 괜히 건들어서서 악성코드나 바이러스 걸려도 나는 모름 )
 	@RequestMapping(value="/test_page")
-	public ModelAndView test_page() {
+	public ModelAndView test_page() throws Exception {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("admin_host/infra/index/ad_index_test");
 		return mav;

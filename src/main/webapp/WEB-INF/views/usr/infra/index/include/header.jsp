@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+
 <header id="head_backg">
         <div id="wrap" class="wrap_container">
             <div class="">
@@ -47,8 +49,8 @@
                     <div class="text-center col-auto">
                         <h1 class="mb-1" id="title_box_title">Prime Cube</h1>
                         <p>'Nil desperadum'</p>
-                        <form class="d-flex col-auto" role="search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                        <form class="d-flex col-auto" role="search" id="search_books">
+                            <button class="btn btn-outline-success" id="search_books" type="button"><i class="bi bi-search"></i></button>
                             <input class="form-control me-2 col-5 mx-auto" type="search" placeholder="Search" aria-label="Search">
                         </form>
                     </div>
