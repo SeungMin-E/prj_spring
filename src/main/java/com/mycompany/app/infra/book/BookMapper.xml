@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapper -->
+<mapper namespace="com.mycompany.app.infra.book.BookMapper">
+				   
+	<!-- resultMapObject (select 용) -->
+	<resultMap id="resultMapObj" type="com.mycompany.app.infra.book.Book"/>
+
+	<sql id="book_col">
+		seq
+		, bookSerialNum
+		, bookTitle
+		, bookReleaseDate
+		, publisher
+		, price
+		, bookTheme
+		, delNy
+	</sql>
+
+	<sql id="book_db">
+		FROM
+		BookInfo
+		WHERE 1=1
+		<if test="bookTitleSearch != null and !bookTitleSearch.equals('')">AND bookTitle LIKE CONCAT('%',#{bookTitleSearch},'%')</if>
+	</sql>
+	
+	<select id="bookOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="book_db"/>
+	</select>
+
+	<select id="bookAll" resultMap="resultMapObj">
+		SELECT cc.* FROM(
+			SELECT
+				<include refid="book_col" />
+				<include refid="book_db" />
+		) cc
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+	</select>
+
+	<select id="bookOne" resultMap="resultMapObj">
+		SELECT
+		<include refid="book_col" />
+		FROM
+		BookInfo
+		WHERE 1=1
+		AND seq = #{seq}
+	</select>
+
+	<insert id="bookSingUp">
+		INSERT INTO BookInfo(
+		bookSerialNum
+		, bookTitle
+		, bookReleaseDate
+		, publisher
+		, price
+		, bookTheme
+		, delNy
+		)
+		VALUES(
+		#{bookSerialNum}
+		, #{bookTitle}
+		, #{bookReleaseDate}
+		, #{publisher}
+		, #{price}
+		, #{bookTheme}
+		, 0
+		)
+	</insert>
+	
+	<update id="bookRelesed">
+		UPDATE BookInfo
+		SET
+			bookTitle = #{bookTitle}
+			, bookReleaseDate = #{bookReleaseDate}
+			, publisher = #{publisher}
+			, price = #{price}
+			, bookTheme = #{bookTheme}
+		WHERE 1=1
+			AND seq = #{seq}
+			AND bookSerialNum = #{bookSerialNum}
+	</update>
+	
+	<update id="bookUelete">
+		UPDATE BookInfo
+		SET
+			delNy = 1
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
+
+	<update id="bookUeleteCancel">
+		UPDATE BookInfo
+		SET
+			delNy = 0
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
+	
+	<delete id="bookDel">
+		DELETE FROM
+			BookInfo
+		WHERE 1=1
+			AND seq = #{seq}
+	</delete>
+
+</mapper>

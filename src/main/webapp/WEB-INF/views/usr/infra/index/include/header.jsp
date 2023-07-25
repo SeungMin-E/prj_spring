@@ -18,7 +18,7 @@
 		                            <a href="#" id="btnLogout" class="nav-link">로그아웃</a>
 		                        </li>
 		                        <li class="nav-item">
-		                            <a href="#" class="nav-link">마이페이지</a>
+		                            <a href="/Project/mypage" class="nav-link">마이페이지</a>
 		                        </li>
 		                        <li class="nav-item">
 		                            <a href="#" class="nav-link">장바구니</a>

@@ -152,7 +152,11 @@ public class UserAccountController {
 		return returnMap;
 	}
 	
-	
+//	마이페이지
+	@RequestMapping(value="/Project/mypage")
+	public String myPage() {
+		return "usr/infra/index/myPage/myPage";
+	}
 	
 	
 }
