@@ -79,7 +79,7 @@
                             	<!-- 코드에 대한 상세 설명 -->
                             	<div class="input-group mt-3">
 	                            	<span class="input-group-text">코드 설명</span>
-	                            	<textarea name="code_description" id="code_description" lass="form-control bg-white border-0 small" placeholder="자신의 의견을 간단히 적어주세요.">	                               	 </textarea>
+	                            	<textarea name="code_description" id="code_description" lass="form-control bg-white border-0 small"></textarea>
                             	</div>
                             	
                             	<!-- 소속 코드그룹 -->
@@ -173,9 +173,6 @@
     	$("#create").on("click",function(){
     		if(vaildationInst() == false){
     			return false;
-    		}else if($.trim($("#sort").val()) == "" || $.trim($("#sort").val()) == null){
-    			alert("순서가 몇번인가요?");
-    			$("#sort").focus();
     		}else if($.trim($("#codeGroup_seq").val()) == "" || $.trim($("#codeGroup_seq").val()) == null ){
     			alert("이 코드는 어디 코드그룹에 속해 있나요?");
     			$("#codeGroup_seq").focus();

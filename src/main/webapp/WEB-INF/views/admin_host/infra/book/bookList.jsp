@@ -54,22 +54,23 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
 					
 					
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">UserList</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Book 관리</h1>
                         
                         <!-- Search -->
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-		                        
 		                        <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		                        
 		                        <div class="input-group">
-		                            <input type="text" name="userGenOption" value="<c:out value="${vo.userNameWord}"/>" class="form-control bg-white border-0 small" placeholder="이름으로 유저 검색하기"		                                aria-label="Search" aria-describedby="basic-addon2">
+		                            <input type="text" name="bookTitleSearch" value="<c:out value="${vo.bookTitleSearch}"/>" class="form-control bg-white border-0 small" placeholder="찾고싶은 책 제목을 검색하세요"
+		                                aria-label="Search" aria-describedby="basic-addon2">
 		                            <div class="input-group-append">
 		                                <button class="btn btn-primary" id="btn" type="button">
 		                                    <i class="fas fa-search fa-sm"></i>
@@ -81,8 +82,7 @@
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
-					
-					
+				
 					
 					
                     <!-- Content Row -->
@@ -91,17 +91,17 @@
                                  <thead>
                                      <tr>
                                          <th>Seq</th>
-                                         <th>ID</th>
-                                         <th>PW</th>
-                                         <th>이름</th>
-                                         <th>성별</th>
+                                         <th>bookSerialNum</th>
+                                         <th>bookTitle</th>
+                                         <th>bookReleaseDate</th>
+                                         <th>publisher</th>
+                                         <th>price</th>
+                                         <th>bookTheme</th>
                                          <th>delNy</th>
                                      </tr>
                                  </thead>
                                  
                                  <tbody>
-                  
-                                 
                                   	<c:choose>
 										<c:when test="${fn:length(list) eq 0}">
 											<tr>
@@ -111,19 +111,14 @@
 										<c:otherwise><!-- ${list} 자바에서 넘겨준 객체 이름 --><!-- var="list" jstl 블럭에서 사용할 변수 이름 -->
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
-		                                            <td><c:out value="${list.seq}"></c:out></td>
-		                                            <td><a href="/userOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.userID}"></c:out></a></td>
-		                                            <td><c:out value="${list.userPW}"></c:out></td>
-		                                            <td><c:out value="${list.userName}"></c:out></td>
-		                                            <td>
-	                                            	   <c:set var="CodeGen" value="${CodeServiceImpl.selectListCachedCode('1') }"/>
-                                							<c:forEach items="${CodeGen}" var="listgen" varStatus="status">
-                                							<c:if test="${list.gender eq listgen.seq}">
-                                								<c:out value="${listgen.code_value}"/>
-                                							</c:if>
-                               							 </c:forEach> 
-													</td>
-		                                            <td><c:out value="${list.userStatus}"></c:out></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.seq}"></c:out></a></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookSerialNum}"></c:out></a></td>
+		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
+		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
+		                                            <td><c:out value="${list.publisher}"></c:out></td>
+		                                            <td><c:out value="${list.price}"></c:out></td>
+		                                            <td><c:out value="${list.bookTheme}"></c:out></td>
+		                                            <td><c:out value="${list.delNy}"></c:out></td>
 	                                        	</tr>
 	                                       	</c:forEach>
 										</c:otherwise>
@@ -131,13 +126,13 @@
                                  </tbody>
                              </table>
                     	</div>
-				<form name="formList2">
+                    
+                    <!-- Content Row -->
                     <div class="row">
 	                    <button class="btn btn-primary" id="create" type="button">
-	                        추가
+	                        도서 추가
 	                     </button>
                     </div>
-				</form>
 				<div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
@@ -165,9 +160,7 @@
 				        </div>
 				    </div>
 				</div>
-                    </div>
-                    <!-- Content Row -->
-			</div>
+
             <!-- End of Main Content -->
 			 <!-- Footer -->
             <%@include file="../../include/footer.jsp" %>
@@ -176,7 +169,8 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-
+	</div>
+</div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -216,8 +210,11 @@
     <script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
+    <script src="resources/vender/project_nsa/admin_host/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
+    <script src="resources/js/project_nsa/admin_host/demo/chart-area-demo.js"></script>
+    <script src="resources/js/project_nsa/admin_host/demo/chart-pie-demo.js"></script>
     
     <script type="text/javascript">
     
@@ -226,18 +223,17 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/userList").submit();
+    		form.attr("action", "/codeGroupList").submit();
     		
-//    		alert("Nothing say anyone");
     	});
     	
     	$("#create").on("click", function(){
-    		window.location.replace("/newChallgerPage");
+    		window.location.replace("/BookInsertPage");
     	});
     	
     	goList = function(thisPage) {
     		$("input:hidden[name=thisPage]").val(thisPage);
-    		$("form[name=formList]").attr("action", "userList").submit();
+    		$("form[name=formList]").attr("action", "codeGroupList").submit();
     	}
     </script>
           

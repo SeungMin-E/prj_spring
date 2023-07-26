@@ -30,7 +30,7 @@ public class BookController {
 			
 		}
 		
-		return "";
+		return "admin_host/infra/book/bookList";
 	}
 	
 	@RequestMapping(value="/BookOne")
@@ -38,8 +38,9 @@ public class BookController {
 		Book book = service.bookOne(vo);
 		model.addAttribute("book", book);
 		
-		return "";
+		return "admin_host/infra/book/bookForm";
 	}
+	
 	
 	@RequestMapping(value="/BookRelese")
 	public String bookRelesed(Book dto) throws Exception{
@@ -55,21 +56,28 @@ public class BookController {
 		Book book = service.bookOne(vo);
 		model.addAttribute("item", book);
 		
-		return "";
+		return "redirect:/BookOne";
 	}
 	
 	@RequestMapping(value="/BookNotUele")
 	public String bookUeleteCancel(Book dto, BookVo vo, Model model) {
 		service.bookUeleteCancel(dto);
 		
-		return "redirect:/";
+		return "redirect:/BookOne";
 	}
 	
 	@RequestMapping(value="/BookDelete")
 	public String BookExcute(Book dto) throws Exception{
 		service.bookDel(dto);
 		
-		return "redirect:/";
+		return "redirect:/BookListPage";
+	}
+	
+	@RequestMapping(value="/BookInsertPage")
+	public ModelAndView bookInsertPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin_host/infra/book/bookInsert");
+		return mav;
 	}
 	
 	@RequestMapping(value="/BookInsert")
@@ -77,6 +85,8 @@ public class BookController {
 		service.bookSingUp(dto);
 		return "";
 	}
+	
+	
 	// 유저 페이지	
 	@RequestMapping(value="/projectNSA/search")
 	public ModelAndView bookSearching() {

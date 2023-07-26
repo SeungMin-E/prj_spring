@@ -70,13 +70,13 @@
 	<insert id="codeInsert">
 		INSERT INTO
 			code(
-    			, code_value
+    			 code_value
     			, code_description
     			, delNy
     			, codeGroup_seq
 			)
 		VALUES(
-			, #{code_value}
+			#{code_value}
 			, #{code_description}
 			, 0
 			, #{codeGroup_seq}

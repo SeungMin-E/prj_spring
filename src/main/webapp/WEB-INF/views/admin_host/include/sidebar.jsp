@@ -128,6 +128,12 @@
                     <i class="fa-regular fa-user fa-spin-pulse"></i>
                     <span>Member</span></a>
             </li>
+            <!-- member -->
+             <li class="nav-item">
+                <a class="nav-link" href="BookListPage">
+                    <i class="fa-solid fa-book-tanakh fa-bounce"></i>
+                    <span>Book</span></a>
+            </li>
 			
 
             <!-- Divider -->

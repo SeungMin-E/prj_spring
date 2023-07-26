@@ -107,7 +107,6 @@
 							onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 1, 1, 0, 0, 3);">
 					</div>
 			<div class="d-flex justify-content-center mt-5">
-				<form>
 					<!-- 인적사항 내용 창 -->
 					<div class="d-flex flex-column">
 						<div class="col-auto mb-3" style="width: 500px;">
@@ -127,7 +126,7 @@
 						</div>
 					</div>
 
-
+	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
 					<!-- 이미지 첨부 테스트 -->
 					<div class="col-sm-6 mt-3 mt-sm-0">
 						<c:set var="type" value="2" />
@@ -172,7 +171,7 @@
 
 
 					<!-- 파일첨부 테스트 -->
-
+				
 					<div class="col-sm-6 mt-3 mt-sm-0">
 						<c:set var="type" value="3" />
 						<!-- #-> -->
@@ -214,7 +213,20 @@
 							</ul>
 						</div>
 					</div>
-
+					
+					 <select id="ifmmCountryResidence" name="ifmmCountryResidence" class="form-select form-select-sm">
+		                <option value="">::선택::</option>
+		                <c:forEach items="${listNationality}" var="listNationality" varStatus="status">
+		                	<option value="${listNationality.ifnaSeq }" <c:if test="${listNationality.ifnaSeq eq item.ifmmCountryResidence}">selected</c:if>>${listNationality.ifnaName }</option>
+		                </c:forEach>
+		              </select>
+		              
+		              <select id="ifmmAdminNy" name="ifmmAdminNy" class="form-select form-select-sm">
+						<option value="0" <c:if test="${item.ifmmAdminNy eq 0 }">selected</c:if>>N</option>
+						<option value="1" <c:if test="${item.ifmmAdminNy eq 1 }">selected</c:if>>Y</option>
+		              </select>
+				</form>
+				</div>
 
 					<!-- 변경 툴 -->
 					<div class="d-grid gap-2 col-10 mx-auto">
@@ -223,9 +235,7 @@
 						<button class="btn btn-primary" type="button">회원 탈퇴</button>
 					</div>
 					<!-- 오븐 확인하고 빠진거나 부족한거 수정 예정 -->
-				</form>
 			</div>
-		</div>
 	</section>
 	<%@include file="../../index/include/footer.jsp"%>
 	

@@ -66,7 +66,7 @@
                     <div class="col">
                     	<div class="card mb-4">
 	                    	<div class="card-header py-3">
-	                    		<h6 class="m-0 font-weight-bold text-primary">CodeList</h6>
+	                    		<h6 class="m-0 font-weight-bold text-primary">코드 상세</h6>
 	                    	</div>
                     		<div class="card-body">
 								<form name="formTarget" method="post"
@@ -75,18 +75,12 @@
 		                        		SEQ : 
 			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${codeItem.seq}"></c:out>' readonly>
-		                       		 	CODE_ID : 
-		                            	<input type="text" name="code_id" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_id}"></c:out>" readonly>
 		                       		 	CODE_VAL : 
 		                            	<input type="text" name="code_value" id="code_value" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_value}"></c:out>">
 		                       		 	CODE_DESCRIPTION : 
 		                            	<input type="text" name="code_description" id="code_description" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.code_description}"></c:out>">
-		                       		 	SROT : 
-		                            	<input type="text" name="sort" id="sort" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.sort}"></c:out>">
 		                       		 	DELNY : 
 		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${codeItem.delNy}"></c:out>" readonly>
