@@ -36,7 +36,7 @@ public class BookController {
 	@RequestMapping(value="/BookOne")
 	public String bookOneForm(BookVo vo, Model model)throws Exception{
 		Book book = service.bookOne(vo);
-		model.addAttribute("book", book);
+		model.addAttribute("bookItem", book);
 		
 		return "admin_host/infra/book/bookForm";
 	}
@@ -83,7 +83,7 @@ public class BookController {
 	@RequestMapping(value="/BookInsert")
 	public String BookCreate(Book dto) throws Exception {
 		service.bookSingUp(dto);
-		return "";
+		return "admin_host/infra/book/bookList";
 	}
 	
 	

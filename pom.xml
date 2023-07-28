@@ -220,6 +220,24 @@
 		</dependency>
 				
 		<!--google json 2023.07.24 -->
+		
+		<!-- fileupload s 2022.03.30 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- fileupload e 2022.03.30 -->
+		
+		<!-- joda time 2023.07.28 -->
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<dependency>
+		    <groupId>joda-time</groupId>
+		    <artifactId>joda-time</artifactId>
+		    <version>2.12.5</version>
+		</dependency>
+
+		<!-- joda time 2023.07.28 -->
 
 	</dependencies>
     <build>

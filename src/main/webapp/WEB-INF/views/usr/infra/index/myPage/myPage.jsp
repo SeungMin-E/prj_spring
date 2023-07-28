@@ -188,8 +188,11 @@
 							name="<c:out value="${name }"/>DeletePathFile" /> <label
 							for="uploadFile" class="form-label input-file-button">파일첨부</label>
 						<input class="form-control form-control-sm"
-							id="<c:out value="${name }"/>" name="<c:out value="${name }"/>"
-							type="file" multiple="multiple" style="display: none;"
+							id="<c:out value="${name }"/>" 
+							name="<c:out value="${name }"/>"
+							type="file" 
+							multiple="multiple" 
+							style="display: none;"
 							onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 2, 0, 0, 2);">
 						<div class="addScroll">
 							<ul id="<c:out value="${name }"/>Preview" class="list-group">

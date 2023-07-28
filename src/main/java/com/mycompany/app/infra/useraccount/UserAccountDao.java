@@ -6,7 +6,6 @@ import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -15,6 +14,9 @@ public class UserAccountDao {
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
+	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "D://factory/ws_sts4_4180/bella/src/main/webapp";
+	public static final String UPLOAD_PATH_PREFIX = "D://factory/ws_sts4_4180/bella/src/main/webapp/resources/uploaded";
+	public static final String UPLOAD_PATH_PREFIX_FOR_VIEW = "/resources/uploaded";
 	
 	private static String namespace = "com.mycompany.app.infra.useraccount.UserAccountMapper";
 	
@@ -57,5 +59,8 @@ public class UserAccountDao {
 		return sqlSession.selectOne(namespace + ".dulicateI", vo);
 		
 	}
+	
+	public int insertUploaded(UserAccount dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
+	
 	
 }

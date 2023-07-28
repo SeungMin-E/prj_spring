@@ -1,5 +1,12 @@
 package com.mycompany.app.infra.useraccount;
 
+import java.util.UUID;
+
+import org.apache.ibatis.javassist.compiler.ast.Member;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
+
 public class UserAccountVo {
 	private String seq;
 	private String userID;
@@ -8,6 +15,24 @@ public class UserAccountVo {
 	private String userGenOption;
 	private String userDelNy;
 	private String userAgeOption;
+	
+//	파일업로드
+	private MultipartFile[] uploadImg;
+	private Integer uploadImgType;	
+	private Integer uploadImgMaxNumber;
+	private String[] uploadImgDeleteSeq;
+	private String[] uploadImgDeletePathFile;
+	
+	private Integer type;
+	private Integer defaultNy;
+	private Integer sort;
+	private String path;
+	private String originalName;
+	private String uuidName;
+	private String ext;
+	private long size;
+	private Integer delNy;
+	private String pseq;
 	
 	
 //	paging
@@ -140,6 +165,98 @@ public class UserAccountVo {
 		this.startRnumForMysql = startRnumForMysql;
 	}
 	
+	
+	
+public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	public Integer getDefaultNy() {
+		return defaultNy;
+	}
+	public void setDefaultNy(Integer defaultNy) {
+		this.defaultNy = defaultNy;
+	}
+	public Integer getSort() {
+		return sort;
+	}
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getOriginalName() {
+		return originalName;
+	}
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
+	}
+	public String getUuidName() {
+		return uuidName;
+	}
+	public void setUuidName(String uuidName) {
+		this.uuidName = uuidName;
+	}
+	public String getExt() {
+		return ext;
+	}
+	public void setExt(String ext) {
+		this.ext = ext;
+	}
+	public long getSize() {
+		return size;
+	}
+	public void setSize(long size) {
+		this.size = size;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+	public String getPseq() {
+		return pseq;
+	}
+	public void setPseq(String pseq) {
+		this.pseq = pseq;
+	}
 public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);
@@ -190,4 +307,6 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
+
 }

@@ -111,11 +111,19 @@
 										<c:otherwise><!-- ${list} 자바에서 넘겨준 객체 이름 --><!-- var="list" jstl 블럭에서 사용할 변수 이름 -->
 											<c:forEach items="${list}" var="list" varStatus="status">
 												<tr>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.seq}"></c:out></a></td>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookSerialNum}"></c:out></a></td>
-		                                            <td><a href="/codeGroupFrom?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
+		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.seq}"></c:out></a></td>
+		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookSerialNum}"></c:out></a></td>
+		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
 		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
-		                                            <td><c:out value="${list.publisher}"></c:out></td>
+		                                            <td>
+		                                            	<c:set var = "CodePublisher" value="${CodeServiceImpl.selectListCachedCode('23') }"/>
+		                                            	<c:forEach items="${CodePublisher}" var="puble" varStatus="status">
+		                                            		<c:if test = "${list.publisher eq  puble.seq}">
+		                                            			<c:out value="${puble.code_value }" />
+		                                            		</c:if>
+		                                            	</c:forEach>
+		                                            	<%-- <c:out value="${list.publisher}"></c:out> --%>
+		                                            </td>
 		                                            <td><c:out value="${list.price}"></c:out></td>
 		                                            <td><c:out value="${list.bookTheme}"></c:out></td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>

@@ -1,15 +1,11 @@
 package com.mycompany.app.infra.useraccount;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -157,6 +153,7 @@ public class UserAccountController {
 	public String myPage() {
 		return "usr/infra/index/myPage/myPage";
 	}
+	
 	
 	
 }

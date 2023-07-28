@@ -2,6 +2,8 @@ package com.mycompany.app.infra.useraccount;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface UserAccountService {
 	
 
@@ -22,4 +24,8 @@ public interface UserAccountService {
 	public UserAccount loginUserOne(UserAccountVo vo);
 	
 	public int dulicateI(UserAccountVo vo);
+	
+	public void uploadFiles(MultipartFile[] multipartFiles, UserAccount dto, String tableName, int type, int maxNumber) throws Exception;
+	
+	
 }

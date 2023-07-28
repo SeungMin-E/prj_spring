@@ -126,25 +126,7 @@
 								<div class="input-group mt-3">
 									<span class="input-group-text">장르</span> 
 									<select>
-										<optgroup label="문학">
-											<option value="5">대하소설</option>
-											<option value="6">장편소설</option>
-											<option value="7">경장편소설</option>
-											<option value="8">중편소설</option>
-											<option value="9">단편소설</option>
-											<option value="10">초단편소설</option>
-											<option value="11">연작소설</option>
-											<option value="12">시</option>
-											<option value="13">희곡</option>
-										</optgroup>
-										<optgroup label="비문학">
-											<option value="15">에세이</option>
-											<option value="16">논픽션</option>
-											<option value="17">자서전</option>
-											<option value="18">기록물</option>
-											<option value="19">사상서</option>
-											<option value="20">비평</option>
-										</optgroup>
+										
 									</select>
 								</div>
 							</div>
