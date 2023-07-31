@@ -74,16 +74,14 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="/BookInsertPage")
-	public ModelAndView bookInsertPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("admin_host/infra/book/bookInsert");
-		return mav;
+	public String bookInsertPage() {
+		return "admin_host/infra/book/bookInsert";
 	}
 	
 	@RequestMapping(value="/BookInsert")
 	public String BookCreate(Book dto) throws Exception {
 		service.bookSingUp(dto);
-		return "admin_host/infra/book/bookList";
+		return "redirect:/BookListPage";
 	}
 	
 	

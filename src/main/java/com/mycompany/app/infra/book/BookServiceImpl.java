@@ -48,7 +48,7 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public int bookDel(Book dto) {
-		return bookDel(dto);
+		return dao.bookDel(dto);
 	}
 
 	

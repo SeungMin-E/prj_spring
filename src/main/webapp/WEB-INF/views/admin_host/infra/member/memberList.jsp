@@ -117,7 +117,7 @@
 		                                            <td><c:out value="${list.userName}"></c:out></td>
 		                                            <td>
 	                                            	   <c:set var="CodeGen" value="${CodeServiceImpl.selectListCachedCode('1') }"/>
-                                							<c:forEach items="${CodeGen}" var="listgen" varStatus="status">
+                               							<c:forEach items="${CodeGen}" var="listgen" varStatus="status">
                                 							<c:if test="${list.gender eq listgen.seq}">
                                 								<c:out value="${listgen.code_value}"/>
                                 							</c:if>

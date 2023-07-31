@@ -77,16 +77,16 @@
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${bookItem.seq}"></c:out>' readonly>
 		                       		 	BOOKSERIALNUM : 
 		                            	<input type="text" name="bookSerialNum" id="bookSerialNum" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookSerialNum}"></c:out>">
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookSerialNum}"></c:out>" readonly>
 		                       		 	BOOKTITLE : 
 		                            	<input type="text" name="bookTitle" id="bookTitle" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTitle}"></c:out>">
 		                       		 	BOOKRELEASEDATE : 
 		                            	<input type="text" name="bookReleaseDate" id="bookReleaseDate" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookReleaseDate}"></c:out>">
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookReleaseDate}"></c:out>" readonly>
 		                       		 	PUBLISHER : 
 		                            	<input type="text" name="publisher" id="publisher" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.publisher}"></c:out>">
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.publisher}"></c:out>" readonly>
 		                       		 	PRICE : 
 		                            	<input type="text" name="price" id="price" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.price}"></c:out>">
@@ -173,7 +173,7 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/codeForm").submit();
+    		form.attr("action", "/BookOne").submit();
 //    		alert("Nothing say anyone");
     	});
     	
@@ -203,7 +203,7 @@
     	
     	$("#gosave").on("click" , function(){
     		if(vaildationInst() == false) return false;
-    		target.attr("action", "/BookInsert").submit();
+    		target.attr("action", "/BookRelese").submit();
     	
     	});
     	

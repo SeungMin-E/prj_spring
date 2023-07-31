@@ -116,16 +116,25 @@
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
 		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
 		                                            <td>
-		                                            	<c:set var = "CodePublisher" value="${CodeServiceImpl.selectListCachedCode('23') }"/>
-		                                            	<c:forEach items="${CodePublisher}" var="puble" varStatus="status">
-		                                            		<c:if test = "${list.publisher eq  puble.seq}">
-		                                            			<c:out value="${puble.code_value }" />
+		                                            	<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
+		                                            	<c:forEach items="${CodePub}" var="pub" varStatus="status">
+		                                            		<c:if test = "${list.publisher eq  pub.seq}">
+		                                            			<c:out value="${pub.code_value }" />
 		                                            		</c:if>
 		                                            	</c:forEach>
-		                                            	<%-- <c:out value="${list.publisher}"></c:out> --%>
+		                                            	<%-- <c:out value="${list.publisher}"/> --%>
+		                                            	<%-- <c:out value="${CodeServiceImpl.selectListCachedCode('5')}"/> --%>
 		                                            </td>
 		                                            <td><c:out value="${list.price}"></c:out></td>
-		                                            <td><c:out value="${list.bookTheme}"></c:out></td>
+		                                            <td>
+		                                            	<c:set var = "CodeTheme" value="${CodeServiceImpl.selectListCachedCode('3') }"/>
+		                                            	<c:forEach items="${CodeTheme }" var = "Theme" varStatus="status">
+		                                            		<c:if test="${list.bookTheme eq  Theme.seq}">
+		                                            			<c:out value="${Theme.code_value }"></c:out>
+		                                            		</c:if>
+		                                            	</c:forEach>
+		                                            	<%-- <c:out value="${list.bookTheme}"></c:out> --%>
+		                                            </td>
 		                                            <td><c:out value="${list.delNy}"></c:out></td>
 	                                        	</tr>
 	                                       	</c:forEach>
@@ -231,7 +240,7 @@
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
     		form.attr("method", "post");
-    		form.attr("action", "/codeGroupList").submit();
+    		form.attr("action", "/BookListPage").submit();
     		
     	});
     	
@@ -241,7 +250,7 @@
     	
     	goList = function(thisPage) {
     		$("input:hidden[name=thisPage]").val(thisPage);
-    		$("form[name=formList]").attr("action", "codeGroupList").submit();
+    		$("form[name=formList]").attr("action", "BookListPage").submit();
     	}
     </script>
           

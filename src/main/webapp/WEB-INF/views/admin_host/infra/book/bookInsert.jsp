@@ -38,6 +38,9 @@
 	href="resources/vender/project_nsa/admin_host/datatables/dataTables.bootstrap4.min.css"
 	rel="stylesheet">
 
+<!-- datepicker css -->
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
 <!-- custom font awesome -->
 <script src="https://kit.fontawesome.com/e402926c7b.js"
 	crossorigin="anonymous"></script>
@@ -74,13 +77,13 @@
 					</div>
 					<!-- Content Row -->
 					<div class="row col-auto">
-						<form name="formTarget" method="post"
+						<form name="formTarget" id="formTarget" method="post"
 							class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 							<div class="mb-3">
 
 								<!-- 일련번호 -->
 								<div class="input-group mt-3">
-									<span class="input-group-text">책 제목 명</span> <input type="text"
+									<span class="input-group-text">일련번호</span> <input type="text"
 										name="bookSerialNum" id="bookSerialNum"
 										class="form-control bg-white border-0 small"
 										aria-label="Search" aria-describedby="basic-addon2"
@@ -90,7 +93,7 @@
 								<!-- 책 제목 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">책 제목 명</span> <input type="text"
-										name="codeGroup_name" id="codeGroup_name"
+										name="bookTitle" id="bookTitle"
 										class="form-control bg-white border-0 small"
 										aria-label="Search" aria-describedby="basic-addon2"
 										placeholder="책 제목을 적으세요">
@@ -108,7 +111,7 @@
 								<!-- 금액 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">금액</span> <input type="text"
-										name="bookReleaseDate" id="bookReleaseDate"
+										name="price" id="price"
 										class="form-control bg-white border-0 small"
 										aria-label="Search" aria-describedby="basic-addon2"
 										placeholder="금액이 결정되면 작성">
@@ -117,22 +120,33 @@
 								<!-- 출판사 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">출판사</span> 
-									<select>
-										<option value="" selected>출판사를 선택하세요</option>
+									<select name="publisher">
+									<c:set var="CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
+										<c:forEach items="${CodePub}" var="list" varStatus="status">
+											<option value="${list.seq }">
+												<c:out value="${ list.code_value}"/>
+											</option>
+										</c:forEach>
 									</select>
 								</div>
 
 								<!-- 장르 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">장르</span> 
-									<select>
-										
+									<select name="bookTheme">
+										<c:set var="CodeTheme" value="${CodeServiceImpl.selectListCachedCode('3') }"/>
+											<c:forEach items="${CodeTheme}" var="list" varStatus="status">
+												<option value="${ list.seq}">
+													<c:out value="${list.code_value }"/>
+												</option>
+											</c:forEach>
 									</select>
 								</div>
 							</div>
 
 							<div>
 								<button type="button" id="create">저장</button>
+								<button type="button" id="back">목록</button>
 							</div>
 						</form>
 					</div>
@@ -190,44 +204,50 @@
 
 	<!-- Custom scripts for all pages-->
 	<script src="resources/js/project_nsa/admin_host/sb-admin-2.min.js"></script>
+	
+	<!-- datepicker jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<!-- 유효성검사 -->
 	<script src="resources/js/project_nsa/admin_host/vaildation.js"></script>
 
 	<script type="text/javascript">
-		var form = $("form[name='formList']");
 		var target = $("form[name=formTarget]");
-		var objName = $("#codeGroup_name");
+		var bookName = $("#bookTitle");
+		
 
-		$("#btn").on("click", function() {
-			/* 자기 자신을 다시한번 호출을 해준다. */
-			form.attr("method", "post");
-			form.attr("action", "/codeForm").submit();
-			//    		alert("Nothing say anyone");
-		});
-
+		
 		vaildationInst = function() {
 			if (vaildationUpdt() == false)
 				return false;
 		}
 
 		vaildationUpdt = function() {
-			if (check(objName) == false)
+			if (check(bookName) == false)
 				return false;
 		}
 
 		$("#create").on("click", function() {
 
-			if (vaildationInst() == false)
-				return false;
+			if (vaildationInst() == false) return false;
 			target.attr("action", "/BookInsert").submit();
 		});
+		
+		$("#back").on("click", function() {
+			window.location.replace("/BookListPage");
+		});
 
-		goList = function(thisPage) {
-			$("input:hidden[name=thisPage]").val(thisPage);
-			$("form[name=formList2]").attr("action", "/BookInsertPage")
-					.submit();
-		}
+		$(function() {
+			$("#bookReleaseDate").datepicker({
+				dateFormat : 'yy-mm-dd'
+				, showAnim : 'fadeIn'
+				, closeText : '닫기'
+				
+			});
+		});
+
+		
 	</script>
 
 </body>
