@@ -94,6 +94,7 @@
                                          <th>bookSerialNum</th>
                                          <th>bookTitle</th>
                                          <th>bookReleaseDate</th>
+                                         <th>nation</th>
                                          <th>publisher</th>
                                          <th>price</th>
                                          <th>bookTheme</th>
@@ -115,6 +116,16 @@
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookSerialNum}"></c:out></a></td>
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
 		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
+		                                            <td>
+		                                            	<c:set var = "CodeNat" value="${CodeServiceImpl.selectListCachedCode('6') }"/>
+		                                            	<c:forEach items="${CodeNat}" var="nat" varStatus="status">
+		                                            		<c:if test = "${list.nation eq  nat.seq}">
+		                                            			<c:out value="${nat.code_value }" />
+		                                            		</c:if>
+		                                            	</c:forEach>
+		                                            	<%-- <c:out value="${list.publisher}"/> --%>
+		                                            	<%-- <c:out value="${CodeServiceImpl.selectListCachedCode('5')}"/> --%>
+		                                            </td>
 		                                            <td>
 		                                            	<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
 		                                            	<c:forEach items="${CodePub}" var="pub" varStatus="status">

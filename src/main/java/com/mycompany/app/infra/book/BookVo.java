@@ -7,6 +7,7 @@ public class BookVo {
 	private String bookSerialNum;
 	private String bookTitle;
 	private String bookReleaseDate;
+	private String nation;
 	private String publisher;
 	private String price;
 	private String bookTheme;
@@ -47,6 +48,12 @@ public class BookVo {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+	public String getNation() {
+		return nation;
+	}
+	public void setNation(String nation) {
+		this.nation = nation;
 	}
 	public String getBookSerialNum() {
 		return bookSerialNum;

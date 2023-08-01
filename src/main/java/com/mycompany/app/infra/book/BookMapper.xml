@@ -14,6 +14,7 @@
 		, bookSerialNum
 		, bookTitle
 		, bookReleaseDate
+		, nation
 		, publisher
 		, price
 		, bookTheme
@@ -55,6 +56,7 @@
 		bookSerialNum
 		, bookTitle
 		, bookReleaseDate
+		, nation
 		, publisher
 		, price
 		, bookTheme
@@ -64,6 +66,7 @@
 		#{bookSerialNum}
 		, #{bookTitle}
 		, #{bookReleaseDate}
+		, #{nation}
 		, #{publisher}
 		, #{price}
 		, #{bookTheme}
@@ -76,6 +79,7 @@
 		SET
 			bookTitle = #{bookTitle}
 			, bookReleaseDate = #{bookReleaseDate}
+			, nation = #{nation}
 			, publisher = #{publisher}
 			, price = #{price}
 			, bookTheme = #{bookTheme}

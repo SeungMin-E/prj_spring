@@ -119,6 +119,19 @@
 
 								<!-- 출판사 -->
 								<div class="input-group mt-3">
+									<span class="input-group-text">국내/해외</span> 
+									<select name="nation">
+									<c:set var="CodeNat" value="${CodeServiceImpl.selectListCachedCode('6') }"/>
+										<c:forEach items="${CodeNat}" var="list" varStatus="status">
+											<option value="${list.seq }">
+												<c:out value="${ list.code_value}"/>
+											</option>
+										</c:forEach>
+									</select>
+								</div>
+								
+								<!-- 출판사 -->
+								<div class="input-group mt-3">
 									<span class="input-group-text">출판사</span> 
 									<select name="publisher">
 									<c:set var="CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>

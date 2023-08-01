@@ -7,13 +7,14 @@ public class Book {
 	private String bookSerialNum;
 	private String bookTitle;
 	private String bookReleaseDate;
+	private String nation;
 	private String publisher;
 	private String price;
 	private String bookTheme;
 	private String delNy;
 	
-
-	//	getter & setter
+//	getter & setter
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -37,6 +38,12 @@ public class Book {
 	}
 	public void setBookReleaseDate(String bookReleaseDate) {
 		this.bookReleaseDate = bookReleaseDate;
+	}
+	public String getNation() {
+		return nation;
+	}
+	public void setNation(String nation) {
+		this.nation = nation;
 	}
 	public String getPublisher() {
 		return publisher;

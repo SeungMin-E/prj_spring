@@ -74,6 +74,7 @@
 				<exclude-mapping path="/register"/>
 				<exclude-mapping path="/pwLost"/>
 				<exclude-mapping path="/loginP"/>
+				<exclude-mapping path="/publicCorona1List"/>
 				<beans:bean id="CheckAdminSessionInterception" class="com.mycompany.app.common.intercepctor.CheckAdminSessionInterception"/>
 			</interceptor>
 		</interceptors>
