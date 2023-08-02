@@ -69,10 +69,10 @@
                             <a href="/projectNSA/newJeans" class="nav-link">화제의신간</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">국내도서</a>
+                            <a href="/projectNSA/internation" class="nav-link">국내도서</a>
                         </li>
                        <li class="nav-item">
-                            <a href="#" class="nav-link">해외도서</a>
+                            <a href="/projectNSA/global" class="nav-link">해외도서</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">이벤트</a>

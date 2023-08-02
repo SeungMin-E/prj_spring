@@ -25,93 +25,41 @@
         <div class="wrap_container">
         
         	<!-- 메뉴와 도서 타이틀 -->
-			<div>
-				<h2>국내도서</h2>
-				<nav>
-					<ul>
-						<li>소설</li>
-						<li>비문학</li>
-						<li>수험서</li>
-						<li>문학</li>
-						<li>코믹 / 만화</li>
+			<div class="pt-3">
+				<nav class="nav navbar-expand-lg">
+				<h5 class="p-2">국내도서</h5>
+					<ul class="nav">
+						<li class="nav-item"><a class="nav-link" href="#">소설</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">비문학</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">수험서</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">문학</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">코믹 / 만화</a></li>
 					</ul>
 				</nav>
 			</div>
 			<!-- /메뉴와 도서 타이틀 -->
 			
 			<!-- 메인 컨텐츠 -->
-			<div class="d-flex justify-space-around">
-				<div>
-					<article>
-						<img />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
+			<div class="overflow-y-auto ">
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0}">
+						판매되는 책이 없습니다.
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list }" var="list" varStatus="status">
+							<c:if test="${status.index % 4 == 0}">
+			                    <div class="w-100"></div><!-- 4개마다 행 바꾸기 위해 추가한 부분 -->
+			                </c:if>
+							<div class = "float-start col-3 p-4">
+								<img src="..."/>
+								<h4><c:out value="${list.bookTitle }" /></h4>
+								<p>저자 : </p>
+								<p>금액 : <c:out value="${list.price }"/></p>
+							</div>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
 			</div>
-			
-			
-			<!-- 메인 컨텐츠 -->
-			<div class="d-flex justify-space-around">
-				<div>
-					<article>
-						<img src=".." />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img src=".." />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img src=".." />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-				<div>
-					<article>
-						<img src=".." />
-						<h4>title</h4>
-						<p>writer</p>
-						<p>price</p>
-					</article>
-				</div>
-			</div>
-			
         </div>
         <%@include file="../../../index/include/side_remote.jsp" %>
     </section>

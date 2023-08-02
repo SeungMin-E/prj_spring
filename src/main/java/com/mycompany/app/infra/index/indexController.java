@@ -243,19 +243,8 @@ public class indexController {
 		return mav;
 	}
 
-//	베스트셀러 페이지
-	@RequestMapping(value = "/projectNSA/bestSeller")
-	public String nsa_bestSeller() {
 
-		return "usr/infra/index/books/best/bestSell";
-	}
-
-//	화제의신간 페이지
-	@RequestMapping(value = "/projectNSA/newJeans")
-	public String nsa_newBooks() {
-		return "usr/infra/index/books/newface/newBooks";
-	}
-
+	
 //	팀프로젝트 페이지
 	@RequestMapping(value = "/newParty")
 	public ModelAndView team_newParty() {
@@ -271,6 +260,7 @@ public class indexController {
 		mav.setViewName("team/usr/index/partyStatus");
 		return mav;
 	}
+	
 	
 //	api 구간
 	@RequestMapping(value="/publicCorona1List")
