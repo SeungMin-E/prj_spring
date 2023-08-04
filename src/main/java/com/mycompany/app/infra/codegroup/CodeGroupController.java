@@ -7,7 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.mycompany.app.infra.index.indexController;
 
 @Controller
 public class CodeGroupController {
@@ -100,5 +103,4 @@ public class CodeGroupController {
 		mav.setViewName("admin_host/infra/index/ad_index_test");
 		return mav;
 	}
-	
 }

@@ -40,7 +40,7 @@
 			<!-- /메뉴와 도서 타이틀 -->
 			
 			<!-- 메인 컨텐츠 -->
-			<div class="overflow-y-auto ">
+			<div class="overflow-y-auto col-auto">
 				<c:choose>
 					<c:when test="${fn:length(list) eq 0}">
 						판매되는 책이 없습니다.
@@ -50,12 +50,17 @@
 							<c:if test="${status.index % 4 == 0}">
 			                    <div class="w-100"></div><!-- 4개마다 행 바꾸기 위해 추가한 부분 -->
 			                </c:if>
-							<div class = "float-start col-3 p-4">
-								<img src="..."/>
-								<h4><c:out value="${list.bookTitle }" /></h4>
-								<p>저자 : </p>
-								<p>금액 : <c:out value="${list.price }"/></p>
-							</div>
+								<div class = "card float-sm-start  mt-2 m-auto col-3  bg-primary-subtle" style="height: 400px;">
+									<img class="card-img-top col-auto" src="..." style="height: 190px"/>
+									<div class="card-body p-4">
+										<h4><c:out value="${list.bookTitle }" /></h4>
+										<p>저자 : </p>
+										<p>금액 : <c:out value="${list.price }"/></p>
+									</div>
+									<div class="card-footer">
+										<small class="text-body-secondary"><c:out value="${list.bookReleaseDate }" /></small>
+									</div>
+								</div>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
