@@ -127,7 +127,13 @@ public class BookController {
 	
 // 	해외도서 페이지
 	@RequestMapping(value="/projectNSA/global")
-	public String nsa_overseasBook() {
+	public String nsa_overseasBook(@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
+
+		vo.setBookTitleSearch(vo.getBookTitleSearch() == null ? "" : vo.getBookTitleSearch());
+		
+		List<Book> list = service.bookAll(vo);
+		model.addAttribute("list", list);
+		
 		return "usr/infra/index/books/overseas/global_book";
 	}
 	

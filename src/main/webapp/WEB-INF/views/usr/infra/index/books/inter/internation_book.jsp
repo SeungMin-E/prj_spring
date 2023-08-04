@@ -50,17 +50,27 @@
 							<c:if test="${status.index % 4 == 0}">
 			                    <div class="w-100"></div><!-- 4개마다 행 바꾸기 위해 추가한 부분 -->
 			                </c:if>
-								<div class = "card float-sm-start  mt-2 m-auto col-3  bg-primary-subtle" style="height: 400px;">
+			                  <c:if test="${list.nation == 13 }">
+								<div class = "card float-sm-start  mt-2 m-auto col-3  bg-primary-subtle" style="height: 440px;">
 									<img class="card-img-top col-auto" src="..." style="height: 190px"/>
 									<div class="card-body p-4">
 										<h4><c:out value="${list.bookTitle }" /></h4>
 										<p>저자 : </p>
 										<p>금액 : <c:out value="${list.price }"/></p>
+										<p>출판사 : 
+											<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
+		                                    <c:forEach items="${CodePub}" var="pub" varStatus="status">
+		                                     <c:if test = "${list.publisher eq  pub.seq}">
+		                                    	<c:out value="${pub.code_value }" />
+                                       		 </c:if>
+                                      	 	</c:forEach>										
+										</p>
 									</div>
 									<div class="card-footer">
 										<small class="text-body-secondary"><c:out value="${list.bookReleaseDate }" /></small>
 									</div>
 								</div>
+			                  </c:if>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>

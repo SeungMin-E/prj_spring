@@ -92,7 +92,7 @@
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.price}"></c:out>">
 		                       		 	BOOKTHEME : 
 		                            	<input type="text" name="bookTheme" id="bookTheme" class="form-control bg-light border-0 small mb-4" 
-		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTheme}"></c:out>">
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTheme}"></c:out>" readonly>
 		                       		 	DELNY : 
 		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.delNy}"></c:out>" readonly>

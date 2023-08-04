@@ -117,7 +117,7 @@
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
 		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
 		                                            <td>
-		                                            	<c:set var = "CodeNat" value="${CodeServiceImpl.selectListCachedCode('6') }"/>
+		                                            	<c:set var = "CodeNat" value="${CodeServiceImpl.selectListCachedCode('4') }"/>
 		                                            	<c:forEach items="${CodeNat}" var="nat" varStatus="status">
 		                                            		<c:if test = "${list.nation eq  nat.seq}">
 		                                            			<c:out value="${nat.code_value }" />

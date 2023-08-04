@@ -121,7 +121,7 @@
 								<div class="input-group mt-3">
 									<span class="input-group-text">국내/해외</span> 
 									<select name="nation">
-									<c:set var="CodeNat" value="${CodeServiceImpl.selectListCachedCode('6') }"/>
+									<c:set var="CodeNat" value="${CodeServiceImpl.selectListCachedCode('4') }"/>
 										<c:forEach items="${CodeNat}" var="list" varStatus="status">
 											<option value="${list.seq }">
 												<c:out value="${ list.code_value}"/>

@@ -35,9 +35,9 @@ public class CodeGroupRESTController {
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 //	@PostMapping("")
-	public String insert(@RequestBody CodeGroup dto)throws Exception{
+	public String insert(CodeGroup dto)throws Exception{
 		service.insertOne(dto);
-		
+		System.out.println(dto.getCodeGroup_name());
 		return dto.getSeq();
 	}
 	
