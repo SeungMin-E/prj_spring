@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><?xml version="1.0" encoding="UTF-8"?>
+    
+    <mapper namespace="com.mycompany.app.infra.noticeBoard.NoticeBoardMapper">
+    	
+    	<sql id="dpt_full">
+    		SELECT
+    			seq
+    			, DPT_SN
+    			, DPT_name
+    		FROM
+    			Dpt
+    	</sql>
+    	
+    	<sql id="notice">
+    		SELECT
+    			seq
+    			, noticeTitle
+    			, noticeContent
+    			, noticeDate
+    			, DPT_seq
+    		FROM 
+    			NoticeBoard
+    	</sql>
+    
+    </mapper>
