@@ -137,4 +137,13 @@ public class BookController {
 		return "usr/infra/index/books/overseas/global_book";
 	}
 	
+//	도서상세페이지
+	@RequestMapping(value="/projectNSA/BookOne")
+	public String bookOneInfo(BookVo vo, Model model)throws Exception{
+		Book book = service.bookOne(vo);
+		model.addAttribute("bookItem", book);
+		
+		return "usr/infra/index/books/bookinfo";
+	}
+	
 }

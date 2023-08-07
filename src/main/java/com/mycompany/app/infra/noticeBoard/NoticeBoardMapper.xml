@@ -1,28 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><?xml version="1.0" encoding="UTF-8"?>
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-    <mapper namespace="com.mycompany.app.infra.noticeBoard.NoticeBoardMapper">
+    <!-- mapper -->
+    <mapper namespace = "com.mycompany.app.infra.noticeBoard.NoticeBoardMapper">
+    
+    <!-- resultMap -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.noticeBoard.NoticeBoard"/>
     	
-    	<sql id="dpt_full">
+    	<sql id="_notice">
     		SELECT
-    			seq
-    			, DPT_SN
-    			, DPT_name
-    		FROM
-    			Dpt
+    			notice_seq
+			    ,noticeTitle
+			    ,(
+					SELECT
+						DPT_name
+					FROM
+						DPT
+					WHERE  1 = 1
+						AND seq = DPT_seq
+			    ) as DPT_name
+			    , noticeContent
+			    , noticeDate
     	</sql>
     	
-    	<sql id="notice">
-    		SELECT
-    			seq
-    			, noticeTitle
-    			, noticeContent
-    			, noticeDate
-    			, DPT_seq
+    	<sql id="notice_">
     		FROM 
-    			NoticeBoard
+    			notice
+    		WHERE 1=1
+    			AND DPT_seq = #{DPT_seq}
     	</sql>
-    
+    	
+    	<select id="noticeOneCount" resultType="integer">
+    		SELECT
+    			COUNT(*)
+    		FROM 
+    			notice
+    		WHERE 1=1
+    			AND DPT_seq = #{DPT_seq}
+    	</select>
+    	
+    	<select id="noticeList" resultMap="resultMapObj">
+    		SELECT dd.* FROM(
+    			<include refid="_notice"/>
+	    		<include refid="notice_"/>
+    		)dd
+    		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+    	</select>
+    	
+    	<select id="noticeMe" resultMap="resultMapObj">
+    		SELECT
+			notice_seq
+			, noticeTitle
+		    , (
+				SELECT
+					DPT_name
+				FROM
+					DPT
+				WHERE  1 = 1
+					AND seq = DPT_seq
+		    ) as DPT_name
+		    ,	noticeContent
+		    , 	noticeDate
+		FROM
+			notice
+		WHERE
+			notice_seq = #{notice_seq}
+		
+    	</select>
+    	
+    	<insert id="newNotice">
+    		INSERT INTO notice(
+				noticeTitle
+			    , noticeContent
+			    , noticeDate
+			    , DPT_seq
+			) VALUES(
+				#{noticeTitle}
+			    , #{noticeContent}
+			    , #{noticeDate}
+			    , #{DPT_seq}
+			)
+    	</insert>
+    	
+    	<update id="noticeUpdate">
+    		UPDATE notice
+    		SET
+    			noticeTitle = #{noticeTitle}
+    			,noticeContent = #{noticeContent}
+    		WHERE 1 = 1
+    			AND notice_seq = #{notice_seq}
+    	</update>
+    	
+    	<delete id="cancel">
+    		DELET FROM 
+    			notice
+    		WHERE 1 = 1
+    			AND notice_seq = #{notice_seq}
+    		
+    	</delete>
     </mapper>

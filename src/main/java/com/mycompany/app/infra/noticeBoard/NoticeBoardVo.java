@@ -3,17 +3,22 @@ package com.mycompany.app.infra.noticeBoard;
 public class NoticeBoardVo {
 	
 //	부서 DTO
+	private String seq;
 	private String DPT_SN;
 	private String DPT_name;
 	
 //	공지사항 DTO
-	private String seq;
+	private String notice_seq;
 	private String noticeTitle;
 	private String noticeContent;
 	private String noticeDate;
 	private String DPT_seq;
 	
-//	페이지 처리
+	
+//	공지사항 검색코드
+	private String noticeTitleSer;
+
+	//	페이지 처리
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
@@ -32,6 +37,18 @@ public class NoticeBoardVo {
 
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
 
+	
+//	getter & setter
+	
+	
+	public String getSeq() {
+		return seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+
 	public String getDPT_SN() {
 		return DPT_SN;
 	}
@@ -48,12 +65,12 @@ public class NoticeBoardVo {
 		DPT_name = dPT_name;
 	}
 
-	public String getSeq() {
-		return seq;
+	public String getNotice_seq() {
+		return notice_seq;
 	}
 
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setNotice_seq(String notice_seq) {
+		this.notice_seq = notice_seq;
 	}
 
 	public String getNoticeTitle() {
@@ -86,6 +103,14 @@ public class NoticeBoardVo {
 
 	public void setDPT_seq(String dPT_seq) {
 		DPT_seq = dPT_seq;
+	}
+
+	public String getNoticeTitleSer() {
+		return noticeTitleSer;
+	}
+
+	public void setNoticeTitleSer(String noticeTitleSer) {
+		this.noticeTitleSer = noticeTitleSer;
 	}
 
 	public int getThisPage() {
@@ -175,8 +200,56 @@ public class NoticeBoardVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
-	
-	
-	
-	
+
+public void setParamsPaging(int totalRows) {
+		
+//		setThisPage(3);
+
+		setTotalRows(totalRows);
+
+		if (getTotalRows() == 0) {
+			setTotalPages(1);
+		} else {
+			setTotalPages(getTotalRows() / getRowNumToShow());
+		}
+
+		if (getTotalRows() % getRowNumToShow() > 0) {
+			setTotalPages(getTotalPages() + 1);
+		}
+
+		if (getTotalPages() < getThisPage()) {
+			setThisPage(getTotalPages());
+		}
+		
+		setStartPage(((getThisPage() - 1) / getPageNumToShow()) * getPageNumToShow() + 1);
+
+		setEndPage(getStartPage() + getPageNumToShow() - 1);
+
+		if (getEndPage() > getTotalPages()) {
+			setEndPage(getTotalPages());
+		}
+		
+		setEndRnumForOracle((getRowNumToShow() * getThisPage()));
+		setStartRnumForOracle((getEndRnumForOracle() - getRowNumToShow()) + 1);
+		
+		if (getStartRnumForOracle() < 1) setStartRnumForOracle(1);
+		
+		if (thisPage == 1) {
+			setStartRnumForMysql(0);
+		} else {
+			setStartRnumForMysql((getRowNumToShow() * (getThisPage()-1)));
+		}
+		
+		System.out.println("getThisPage():" + getThisPage());
+		System.out.println("getTotalRows():" + getTotalRows());
+		System.out.println("getRowNumToShow():" + getRowNumToShow());
+		System.out.println("getTotalPages():" + getTotalPages());
+		System.out.println("getStartPage():" + getStartPage());
+		System.out.println("getEndPage():" + getEndPage());		
+		System.out.println("getStartRnumForOracle():" + getStartRnumForOracle());
+		System.out.println("getEndRnumForOracle():" + getEndRnumForOracle());
+		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
+		
+	}
 }
+	

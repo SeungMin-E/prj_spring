@@ -17,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
-    <title>project NSA(예제 프로젝트)</title>
+    <title>공지사항</title>
 </head>
 <body>
     <%@include file="../../index/include/header.jsp" %>
@@ -32,6 +32,8 @@
                 <!-- 검색 박스 -->
                 <div class="align-self-center" style="width: 300px;">
                         <form class="d-flex col-auto" role="search">
+                        	 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                         </form>
@@ -42,49 +44,63 @@
                 <thead>
                     <tr>
                         <th>번호</th>
-                        <th>관련 부서</th>
-                        <th>공지 제목</th>
+                        <th>제목</th>
+                        <th>공지사항</th>
+                        <th>담당</th>
+                        <th>공지일자</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>관리자</td>
-                        <td>공지사항 게시판입니다.</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>마케팅</td>
-                        <td>오픈 이벤트 공지 안내</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>관리자</td>
-                        <td>공지사항 테스트 1</td>
-                    </tr>
-            
+                <c:choose>
+                   <c:when test="${fn:length(list) eq 0 }">
+                   		<tr>
+                   			<td class="text-center" colspan="9">공지사항이 없습니다.</td>
+                   		</tr>
+                   </c:when>
+            	   <c:otherwise>
+             	   		<c:forEach items="${list }" var="list" varStatus="status">
+            	   			<tr>
+            	   				<td><c:out value="${list.notice_seq }"/></td>
+            	   				<td><c:out value="${list.noticeTitle }"/></td>
+            	   				<td><c:out value="${list.noticeContent }"/></td>
+            	   				<td><c:out value="${list.DPT_name }"/></td>
+            	   				<td><c:out value="${list.noticeDate }"/></td>
+            	   			</tr>
+            	   		</c:forEach>
+            	   	</c:otherwise>
+           	   	</c:choose>
                 </tbody>
            </table>
+           
            <!-- 페이지 박스 -->
-           <div class="d-flex justify-content-center">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
-                        </a>
-                    </li>
-                    </ul>
-                </nav>
-           </div>
+           <div class="container-fluid px-0 mt-2">
+				    <div class="row">
+				        <div class="col">
+				            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+				            <ul class="pagination justify-content-center mb-0">
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+								<c:if test="${vo.startPage gt vo.pageNumToShow}">
+				                	<li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+								</c:if>
+								<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+									<c:choose>
+										<c:when test="${i.index eq vo.thisPage}">
+				                			<li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+										</c:when>
+											<c:otherwise>             
+				                				<li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+											</c:otherwise>
+									</c:choose>
+								</c:forEach>                
+								<c:if test="${vo.endPage ne vo.totalPages}">                
+				                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
+								</c:if>
+				                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+           <!-- 페이지 박스 -->
         </div>
         <!-- 사이드바 -->
         <%@include file="../../index/include/side_remote.jsp" %>

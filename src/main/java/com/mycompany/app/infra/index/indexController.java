@@ -235,15 +235,6 @@ public class indexController {
 		return mav;
 	}
 
-//	공지사항 페이지
-	@RequestMapping(value = "/projectNSA/notice")
-	public ModelAndView nsa_notice() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("usr/infra/index/sub/notice");
-		return mav;
-	}
-
-
 	
 //	팀프로젝트 페이지
 	@RequestMapping(value = "/newParty")

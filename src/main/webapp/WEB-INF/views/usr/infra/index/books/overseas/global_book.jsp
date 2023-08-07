@@ -53,7 +53,7 @@
 			                  <c:if test="${list.nation == 14 }">								<div class = "card float-sm-start  mt-2 m-auto col-3  bg-primary-subtle" style="height: 400px;">
 									<img class="card-img-top col-auto" src="..." style="height: 190px"/>
 									<div class="card-body p-4">
-										<h4><c:out value="${list.bookTitle }" /></h4>
+										<h4><a href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle }" /></a></h4>
 										<p>저자 : </p>
 										<p>금액 : <c:out value="${list.price }"/></p>
 										<p>출판사 : 

@@ -2,18 +2,19 @@ package com.mycompany.app.infra.noticeBoard;
 
 public class NoticeBoard {
 	
-	private String seq;
+	private String notice_seq;
 	private String noticeTitle;
 	private String noticeContent;
 	private String noticeDate;
 	private String DPT_seq;
 	
 	
-	public String getSeq() {
-		return seq;
+//	getter & setter
+	public String getNotice_seq() {
+		return notice_seq;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public void setNotice_seq(String notice_seq) {
+		this.notice_seq = notice_seq;
 	}
 	public String getNoticeTitle() {
 		return noticeTitle;
