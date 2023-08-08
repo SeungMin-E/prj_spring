@@ -6,6 +6,8 @@ public class BookVo {
 	private String seq;
 	private String bookSerialNum;
 	private String bookTitle;
+	private String bookChapter;
+	private String bookContent;
 	private String bookReleaseDate;
 	private String nation;
 	private String publisher;
@@ -246,4 +248,16 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+public String getBookChapter() {
+	return bookChapter;
+}
+public void setBookChapter(String bookChapter) {
+	this.bookChapter = bookChapter;
+}
+public String getBookContent() {
+	return bookContent;
+}
+public void setBookContent(String bookContent) {
+	this.bookContent = bookContent;
+}
 }

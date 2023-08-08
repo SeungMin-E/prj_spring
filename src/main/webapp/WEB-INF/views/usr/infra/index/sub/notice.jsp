@@ -32,7 +32,7 @@
                 <!-- 검색 박스 -->
                 <div class="align-self-center" style="width: 300px;">
                         <form class="d-flex col-auto" role="search">
-                        	 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+                        	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
@@ -46,7 +46,7 @@
                         <th>번호</th>
                         <th>제목</th>
                         <th>공지사항</th>
-                        <th>담당</th>
+                        <th>담당부서</th>
                         <th>공지일자</th>
                     </tr>
                 </thead>

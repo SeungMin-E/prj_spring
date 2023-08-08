@@ -7,6 +7,7 @@ public class NoticeBoard {
 	private String noticeContent;
 	private String noticeDate;
 	private String DPT_seq;
+	private String DPT_name;
 	
 	
 //	getter & setter
@@ -39,6 +40,12 @@ public class NoticeBoard {
 	}
 	public void setDPT_seq(String dPT_seq) {
 		DPT_seq = dPT_seq;
+	}
+	public String getDPT_name() {
+		return DPT_name;
+	}
+	public void setDPT_name(String dPT_name) {
+		DPT_name = dPT_name;
 	}
 	
 	

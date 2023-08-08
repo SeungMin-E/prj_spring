@@ -15,6 +15,7 @@ public class NoticeBoardVo {
 	private String DPT_seq;
 	
 	
+	
 //	공지사항 검색코드
 	private String noticeTitleSer;
 

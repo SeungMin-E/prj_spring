@@ -32,7 +32,7 @@
                     <h2><c:out value="${bookItem.bookTitle }"/></h2>
                     <p>저자(글)는 아직 보류</p>
                     <p>
-                   		책 내용도 아직 보류
+                   		<c:out value="${bookItem.bookContent }"/>
                     </p>
                 </div>
            </div>
@@ -44,18 +44,7 @@
                     </div>
                     <div class="overflow-auto mt-3" style="height: 250px;">
                         <ul>
-                            <li>머리말_그는 도대체 왜 그럴까?</li>
-                            <li>1장 슬픔에 등돌린 가족</li>
-                            <li>2장 상냥하고 활달한 학습장애아</li>
-                            <li>3장 자기 파괴의 욕망, 알코올 중독</li>
-                            <li>4장 내가 바로 하느님</li>
-                            <li>5장 세상을 조롱하는 무법자</li>
-                            <li>6장 불안을 투사하는 사디스트</li>
-                            <li>7장 진실을 감추는 뒤틀린 혀</li>
-                            <li>8장 오이디푸스의 파멸</li>
-                            <li>9장 두려움과 복수</li>
-                            <li>10장 세상을 파괴하는 과대망상</li>
-                            <li>에필로그<br>옮긴이 후기</li>
+                            <li><c:out value="${bookItem.bookChapter }" /></li>
                         </ul>
                     </div>
                 </div>

@@ -98,6 +98,24 @@
 										aria-label="Search" aria-describedby="basic-addon2"
 										placeholder="책 제목을 적으세요">
 								</div>
+								
+								<!-- 책 목차 -->
+								<div class="input-group mt-3">
+									<span class="input-group-text">목차</span> <input type="text"
+										name="bookChapter" id="bookChapter"
+										class="form-control bg-white border-0 small"
+										aria-label="Search" aria-describedby="basic-addon2"
+										placeholder="목차 내용을 적으세요">
+								</div>
+								
+								<!-- 책 내용 설명 -->
+								<div class="input-group mt-3">
+									<span class="input-group-text">내용 설명</span> <input type="text"
+										name="bookContent" id="bookContent"
+										class="form-control bg-white border-0 small"
+										aria-label="Search" aria-describedby="basic-addon2"
+										placeholder="내용설명 적으세요">
+								</div>
 
 								<!-- 등록일자 -->
 								<div class="input-group mt-3">

@@ -29,5 +29,12 @@ public class NoticeBoardController {
 		return "usr/infra/index/sub/notice";
 	}
 	
+	@RequestMapping(value="/projectNSA/notice_check")
+	public String check_notice(NoticeBoardVo vo, Model model) {
+		NoticeBoard noticeBoard = service.selectOne(vo);
+		model.addAttribute("notice", noticeBoard);
+		return "usr/infra/index/sub/content";
+	}
+	
 	
 }

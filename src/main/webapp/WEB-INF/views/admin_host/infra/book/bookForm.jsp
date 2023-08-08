@@ -73,7 +73,7 @@
 		                        	class="d-none d-sm-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		                        	<div class="col-8">
 		                        		SEQ : 
-			                        	<input type="text" name="seq" class="form-control bg-light border-0 small mb-4" 
+			                        	<input type="text" name="seq" id="seq" class="form-control bg-light border-0 small mb-4" 
 		                                	aria-label="Search" aria-describedby="basic-addon2" value='<c:out value="${bookItem.seq}"></c:out>' readonly>
 		                       		 	BOOKSERIALNUM : 
 		                            	<input type="text" name="bookSerialNum" id="bookSerialNum" class="form-control bg-light border-0 small mb-4" 
@@ -81,9 +81,18 @@
 		                       		 	BOOKTITLE : 
 		                            	<input type="text" name="bookTitle" id="bookTitle" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTitle}"></c:out>">
+		                       		 	BOOKCHAPTER : 
+		                            	<input type="text" name="bookChapter" id="bookChapter" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookChapter}"></c:out>">
+		                       		 	BOOKCONTENT : 
+		                            	<input type="text" name="bookContent" id="bookContent" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookContent}"></c:out>">
 		                       		 	BOOKRELEASEDATE : 
 		                            	<input type="text" name="bookReleaseDate" id="bookReleaseDate" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookReleaseDate}"></c:out>" readonly>
+		                       		 	NATION : 
+		                            	<input type="text" name="nation" id="nation" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.nation}"></c:out>" readonly>
 		                       		 	PUBLISHER : 
 		                            	<input type="text" name="publisher" id="publisher" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.publisher}"></c:out>" readonly>
@@ -94,7 +103,7 @@
 		                            	<input type="text" name="bookTheme" id="bookTheme" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTheme}"></c:out>" readonly>
 		                       		 	DELNY : 
-		                            	<input type="text" name="delNy" class="form-control bg-light border-0 small mb-4" 
+		                            	<input type="text" name="delNy" id="delNy" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.delNy}"></c:out>" readonly>
 		                       		 	
 		                       		 </div>
@@ -167,8 +176,7 @@
     
     	var form = $("form[name='formList']");
     	var target = $("form[name='formTarget']");
-    	var objVal = $("#code_value");
-    	var objDec = $("#code_description");
+    	
     	
     	$("#btn").on("click",function(){
     		/* 자기 자신을 다시한번 호출을 해준다. */
@@ -198,10 +206,11 @@
     	}
     	
     	vaildationUpdt = function(){
-    		if(check(objVal) == false || check(objDec) == false) return false;
+    		if(check($("#bookTitle")) == false || check($("#bookChapter")) || check($("#bookContent")) ) return false;
     	}
     	
     	$("#gosave").on("click" , function(){
+    		
     		if(vaildationInst() == false) return false;
     		target.attr("action", "/BookRelese").submit();
     	

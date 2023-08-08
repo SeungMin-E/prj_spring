@@ -15,8 +15,7 @@ ttest = function(){
 }*/
 
 check = function(obj){
-	alert(obj);
-	
+	/*alert(obj);*/
 	myRe = /[^?a-zA-Z0-9/]/;
 	
 /*	if(myRe.test($.trim(obj.val())) == false){
@@ -31,6 +30,7 @@ check = function(obj){
 			}*/
 
 	if($.trim(obj.val()) == "" || $.trim(obj.val()) == null){
+				alert(obj.val());
 				alert("작성하지 않은 곳이 있습니다. 작성하셔야합니다.");
 				$(obj).focus();
 				return false;

@@ -29,16 +29,14 @@
     		FROM 
     			notice
     		WHERE 1=1
-    			AND DPT_seq = #{DPT_seq}
+    			
     	</sql>
     	
     	<select id="noticeOneCount" resultType="integer">
     		SELECT
     			COUNT(*)
-    		FROM 
-    			notice
-    		WHERE 1=1
-    			AND DPT_seq = #{DPT_seq}
+				<include refid="notice_"/>  
+    			
     	</select>
     	
     	<select id="noticeList" resultMap="resultMapObj">
