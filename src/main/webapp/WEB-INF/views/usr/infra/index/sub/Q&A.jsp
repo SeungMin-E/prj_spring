@@ -22,109 +22,131 @@
 </head>
 <body>
     <%@include file="../../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">
-            <div id="notice_head" class="d-flex flex-row justify-content-between mt-1 mb-1">
-                <div class="d-flex flex-row justify-content-evenly col-3" style="width: 450px;">
-                    <h1 class="fa-bounce">Q&A</h1><span class="align-self-end">1대1 문의하기 이전에 확인해보세요</span>
-                </div>
-                <!-- 검색 박스 -->
-                <div class="align-self-center" style="width: 300px;">
-                        <form class="d-flex col-auto" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                        </form>
-                </div>
-            </div>
-           <!-- Q&A (일단 틀을 잡고 DB잡으면 DB로 채우려고 계획했으나 일단 테이블만 짜놓을 생각) -->
-           <table class="table"> 
-                <thead>
-                    <tr>
-                        <th>분류</th>
-                        <th>문의내용</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>계정 문의</td>
-                        <td>회원가입이 안됩니다.</td>
-                    </tr>
-                    <tr>
-                        <td>계정 문의</td>
-                        <td>로그인이 안됩니다.</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Q&A 테스트 1</td>
-                    </tr>
-            
-                </tbody>
-           </table>
-           <!-- 페이지 박스 -->
-           <div class="d-flex justify-content-center">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
-                        </a>
-                    </li>
-                    </ul>
-                </nav>
-           </div>
-           <div class="d-flex flex-row justify-content-end">
-                <span class="fa-bounce">
-                    Q&A를 보고도 해결이 되지 않으신가요?
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-                <div class="mx-3">
-                  
-                    <!-- 모달 테스트중 -->
-                    
-                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">1:1 문의</button>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">1대1 문의 (자세하게 작성해주시면 감사하겠습니다!)</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">문의 제목:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">문의 내용:</label>
-                                    <textarea class="form-control" id="message-text" style="height: 500px"></textarea>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                                <button type="button" class="btn btn-primary">전송</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                                        
-                </div>
-           </div>
+    
+     <section class = "quick-page">
+      <div class = "quick-bg">
+        <h3>STORYBOUND</h3>
+        <h2>FAQs</h2>
+        <div class = "line">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <%@include file="../../index/include/side_remote.jsp" %>
+        <p class = "text">문제를 쉽고 빠르게 해결하고 원활하게 이용 할 수 있도록 정리하였습니다.</p>
+        <p class = "text">부디 도움이 되길 바라겠습니다. 감사합니다!</p>
+      </div>
     </section>
+
+    <section class="quick-body">
+      <div class="quick-container">
+        <div class="accordion">
+          <h1>Frequently Asked Questions</h1>
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              How do I place an order?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                To place an order on STORYBOUND, simply browse our collection, select the books you want, and proceed to the checkout page. Provide your shipping details and payment information to complete the order.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              What payment methods do you accept?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                We accept various payment methods, including credit cards (Visa, Mastercard, American Express) and PayPal.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              How long does shipping take?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                The shipping time depends on your location and the shipping method chosen during checkout. Typically, it takes 3-5 business days for domestic orders and 7-14 business days for international orders.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Can I return or exchange a book?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, we have a flexible return and exchange policy. If you are not satisfied with your purchase, please contact our customer support within 30 days of receiving the book to initiate the return or exchange process.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Do you offer gift wrapping services?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, we offer gift wrapping services for an additional fee. You can select the gift wrapping option during the checkout process and provide any specific instructions for the gift wrapping.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              How can I contact customer support?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                You can contact our customer support team by emailing support@storybound.com or by filling out the contact form on our website. We strive to respond to all inquiries within 24 hours.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Can I track my order?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, once your order is shipped, we will provide you with a tracking number. You can use this tracking number to track the status of your shipment on our website or the shipping carrier's website.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Are the books on STORYBOUND new or used?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                The books on STORYBOUND are primarily new unless otherwise stated. We take pride in offering high-quality, brand new books to our customers.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+             FAQs를 보고도 해결이 되지 않으신가요?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+              	이 버튼을 눌러주시면 1:1 문의로 넘어갑니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%-- <%@include file="../../index/include/side_remote.jsp" %> --%>
+    </section>
+
+
     <%@include file="../../index/include/footer.jsp" %>
-        <script type="text/javascript">
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/project_nsa/user/script.js"></script>	
+    <script type="text/javascript">
 
 	
 	

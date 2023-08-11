@@ -219,14 +219,6 @@ public class indexController {
 		return mav;
 	}
 
-//	회원가입
-	@RequestMapping(value = "/projectNSA/join")
-	public ModelAndView nsa_joinPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("usr/infra/index/myPage/join");
-		return mav;
-	}
-
 //	Q&A 페이지
 	@RequestMapping(value = "/projectNSA/question")
 	public ModelAndView nsa_question() {

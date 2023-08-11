@@ -12,57 +12,128 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../resources/css/project_nsa/user/UserPage.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
     <title>로그인</title>
 </head>
 <body>
+	<!-- header -->
     <%@include file="../../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">
-            <div class="d-flex flex-row justify-content-center mt-5">
-                <i class="fa-sharp fa-solid fa-book align-self-center" style="font-size: 135px; color: rgb(206, 179, 26);"></i>
-                <h1 class="align-self-center">&nbsp;&nbsp;&nbsp;&nbsp;로그인</h1>
+    	
+    	
+  <div class="account-container">
+        
+    <div class="forms-container">
+       <!-- 로그인 -->
+        <div class="signin-signup" >
+            <form id="formLogin" class="sign-in-form">
+        
+                <h2 class="title">로그인</h2>
+            
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="userID" id="userID" placeholder="Username"/>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="userPW" id="userPW" placeholder="Password"/>
+                </div>
+
+                
+                <input type="button" name="btnLogin" id="btnLogin" value="Login" class="account-btn solid"/>
+                    
+                <p class="social-text">소설미디어 로그인</p>
+            
+                <div class="social-media">
+                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-google"></i></a>
+                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </form>
+     		
+     		<!-- 회원가입  -->
+            <form  name="formList" class="sign-up-form">
+                
+                <h2 class="title">회원가입</h2>
+                
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="userID" placeholder="Username"/>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email"/>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="userPW" placeholder="Password"/>
+                </div>
+				
+				<div class="input-field">
+					<i class="fa-solid fa-venus-mars"></i>
+                    <select>
+                    	<option value="" selected>::성별을 선택해주세요::</option>
+                    	<option value="1">남</option>
+                    	<option value="2">여</option>
+                    	<option value="3">기타(밝히지 않음)</option>
+                    </select>
+                </div>
+               
+                <input type="button" id="create" class="account-btn" value="Sign up"/>
+               
+                <p class="social-text">Or Sign up with social platforms</p>
+            
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"> <i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+        <div class="panels-container">
+            
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here?</h3>
+                    <p>회원가입하시고 프라임 큐브의 회원으로서 만끽하시면 감사합니다.</p>
+                    <button class="account-btn transparent" id="sign-up-btn">Sign up</button>
+                </div>  
             </div>
-            <div class="d-flex justify-content-center mt-5">
-                <form id="formLogin">
-                    <div class="col-auto mb-3" style="width: 500px;">
-                        <label for="exampleInputEmail1" class="form-label fs-3">ID</label>
-                        <input type="text" name="userID" class="form-control p-3" id="userID" aria-describedby="emailHelp">
-                    </div>
-                    <div class="col-auto mb-3" style="width: 500px;">
-                        <label for="exampleInputPassword1" class="form-label fs-3">PW</label>
-                        <input type="password" name="userPW" class="form-control p-3" id="userPW">
-                    </div>
-                    <div class="col-auto mb-3 d-flex justify-content-center">
-                        <div class="mb-3 form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">아이디 저장</label>
-                        </div>
-                        <div class="mb-3 form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                            <label class="form-check-label" for="exampleCheck2">자동 로그인</label>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="button" name="btnLogin" id="btnLogin" class="btn btn-primary">로그인</button>
-                    </div>
-                    <!-- 오븐 확인하고 빠진거나 부족한거 수정 예정 -->
-                </form>
+
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>이미 가입하셨나요?</h3>
+                <p>여기서 로그인하시고 프라임 큐브를 만끽해주세여!</p>
+                <button class="account-btn transparent" id="sign-in-btn"> Sign in</button>
             </div>
         </div>
-    </section>
-    <!-- 풋 인클루드 확정 -->
-    <%@include file="../../index/include/footer.jsp" %>
-    <!-- 푸터 끝 -->
+    
+    </div>
+</div>
+
+  <script type="text/javascript">
+   
+  </script>
+    	
+    	
 </body>
 
-
+<script src="../resources/js/project_nsa/admin_host/vaildation.js"></script>
 <script type="text/javascript">
-
+	
+	/* 로그인 */
 	$("#btnLogin").on("click", function(){
 		
 		if(validation() == false) return false;
@@ -107,6 +178,59 @@
 		 if(checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
 		 if(checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
 	}
+	
+	/* 회원가입 */
+	var form = $("form[name='formList']");
+	var id = $("input[name='userID']");
+    	
+    	vaildationUpdt = function(){
+    		if(nc(id) == false ) return false;
+    	}
+		
+		$(id).on("blur",function(){
+			
+			if(vaildationUpdt() == false){
+				return false();
+			}
+				$.ajax({
+					async : true
+					, cache : false
+					, type : "post"
+					, url : "/duplicate"
+					, data : {
+						"userID" : $(id).val()
+					}
+				,success : function(response){
+					if(response.du == "available"){
+						alert("이 아이디는 사용이 가능합니다.");
+					}else{
+						alert("이 아이디는 사용이 불가능합니다.");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+				
+			});
+		});
+		
+		$("#create").on("click", function(){
+			form.attr("method", "post");
+			form.attr("action", "/getReadyForTheNextBattle").submit();
+		});
+	
+	/* 페이지 전환 */
+	 const sign_in_btn = document.querySelector("#sign-in-btn");
+	    const sign_up_btn = document.querySelector("#sign-up-btn");
+	    const container = document.querySelector(".account-container");
+
+	    sign_up_btn.addEventListener("click", () => {
+	    container.classList.add("sign-up-mode");
+	    });
+
+	    sign_in_btn.addEventListener("click", () => {
+	    container.classList.remove("sign-up-mode");
+	    });
 
 </script>
 </html>

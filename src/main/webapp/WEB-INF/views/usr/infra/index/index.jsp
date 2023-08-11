@@ -12,277 +12,630 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../resources/css/project_nsa/user/UserPage.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
     <title>Welcome to PrimeCube</title>
 </head>
 <body>
     <%@include file="../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">
-            <div id="section_content_sec1">
-                <h1 class = "ms-2">PrimeCube의 강추 도서</h1>
-                <div id="section_content_nav">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link">추천도서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">베스트셀러</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">화제의 신간!</a>
-                        </li>
-                    </ul>
+       	<!-- Hero Section -->
+
+        <section class="hero" id="hero">
+
+            <div class="row">
+                
+                <div class="content">
+                    <h1>Get books up to 50% Off!</h1>
+                    <p>Embark on an extraordinary literary journey from the comfort of your own home. Our online bookstore is your gateway to a vast universe of stories, knowledge, and imagination.</p>
+                    <a href="shop.html" class="hero-btn">Shop Now</a>
                 </div>
-                <div id="" class="col-auto d-flex justify-content-around mx-auto p-4">
-                    <figure class="figure">
-                        <img src="..." class="figure-img img-fluid rounded text-center" alt="...">
-                        <figcaption>A caption for the above image.</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="..." class="figure-img img-fluid rounded text-center" alt="...">
-                        <figcaption>A caption for the above image.</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="..." class="figure-img img-fluid rounded text-center" alt="...">
-                        <figcaption>A caption for the above image.</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="..." class="figure-img img-fluid rounded text-center" alt="...">
-                        <figcaption>A caption for the above image.</figcaption>
-                    </figure>
+
+                <div class="swiper books-slider">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide"><img src="img/book-31.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="img/book-32.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="img/book-33.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="img/book-34.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="img/book-35.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="img/book-36.jpg" alt=""></a>
+                    </div>
                 </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
+            </div>
+            
+        </section>
+
+        <section class="support"> 
+ 
+            <div class="support-icons">
+                <i class="fas fa-plane"></i>
+                    <div class="support-content">
+                        <h3>Free Shipping</h3>
+                        <p>Orders over &#8369;699.99</p>
+                    </div>
             </div>
 
-            <div id="section_content_sec2">
-                <h1 class = "ms-2">분류별 추천 도서(국내)</h1>
-                <div  id="section_content_nav">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link">소설</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">비문학</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">문학</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">수험서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">코믹/만화</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="#" class="col-auto d-flex justify-content-around mx-auto p-4">
-                    <figure>
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791191891287.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="메리골드 마음세탁소">
-                        <figcaption>메리골드 마음세탁소</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791161571188.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="불편한 편의점(벚꽃 에디션)">
-                        <figcaption>불편한 편의점(벚꽃 에디션)</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788998441012.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="모순">
-                        <figcaption>모순</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791167913678.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="단 하루의 부활">
-                        <figcaption>단 하루의 부활</figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
+            <div class="support-icons">
+                <i class="fas fa-headset"></i>
+                    <div class="support-content">
+                        <h3>24/7 Support</h3>
+                        <p>Call us anytime</p>
+                    </div>
             </div>
-            <div id="section_content_sec3">
-                <h1 class = "ms-2">분류별 추천 도서(해외)</h1>
-                <div  id="section_content_nav">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link">소설</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">비문학</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">문학</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">수험서</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">코믹/만화</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-auto d-flex justify-content-around mx-auto p-4">
-                    <figure class="figure">
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791168473690.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="세이노의 가르침">
-                        <figcaption>세이노의 가르침</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791192579504.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="바다가 들리는 편의점">
-                        <figcaption>바다가 들리는 편의점</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791169791977.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="스즈메의 문단속">
-                        <figcaption>스즈메의 문단속</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788973814725.jpg" width="200" height="200" class="figure-img img-fluid rounded text-center" alt="멋진 신세계">
-                        <figcaption>멋진 신세계</figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
-                <div id="#" class="">
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                    <figure>
-                        <figcaption></figcaption>
-                    </figure>
-                </div>
+
+            <div class="support-icons">
+                <i class="fas fa-lock"></i>
+                    <div class="support-content">
+                        <h3>Secure Payment</h3>
+                        <p>100% secure payment</p>
+                    </div>
             </div>
-        </div>
-        <%@include file="../index/include/side_remote.jsp" %>
-    </section>
+            
+            <div class="support-icons">
+                <i class="fas fa-arrow-rotate-left"></i>
+                    <div class="support-content">
+                        <h3>Easy Return</h3>
+                        <p>10 days return</p>
+                    <div>
+            </div>
+        </section>
+
+        <section class="featured" id="featured">
+            <h1 class="heading"><span>Featured Books</span></h1>
+            <p>Check out our selection of books on sale</p>
+            <div class="swiper featured-slider">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-1.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>The Hunger Games</h3>
+                        <div class="price">&#8369;410.94<span>&#8369;821.88</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-2.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>Catching Fire</h3>
+                        <div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-3.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>Mockingjay</h3>
+                        <div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-4.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>The Raven Boys</h3>
+                        <div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-5.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>The Raven Boys</h3>
+                        <div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-6.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>The Dream Thieves</h3>
+                        <div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-7.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>Blue Lily, Lily Blue</h3>
+                        <div class="price">&#8369;333.59 <span>&#8369;667.18</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-8.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>The Raven King</h3>
+                        <div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-9.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>Six of Crows</h3>
+                        <div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="featured-icons">
+                        <a href="#" class="fas fa-search"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                        </div>
+                    <div class="images">
+                        <img src="img/book-10.jpg">
+                    </div>
+                    <div class="content">
+                        <h3>Crooked Kingdom</h3>
+                        <div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+                        <a href="#" class="featured-btn">Add to Cart</a>
+                    </div>
+                    </div>
+                
+                </div>
+
+                <div class="swiper-button-next swiper-button-black"></div>
+                <div class="swiper-button-prev"></div>
+
+            </div>
+        </section>
+
+        <section class="arrivals" id="arrivals">
+            
+            <h1 class="heading"><span>New Arrivals</span></h1>
+            <p>New books are here! Find the perfect book for you.</p>
+
+            <div class="swiper arrivals-slider">
+
+                <div class="swiper-wrapper">
+                    
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-11.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>A History of Burning</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-12.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>Yellowface</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-13.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>Deep As The Sky, Red As The Sea</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-14.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>Alone With You In The Ether</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-15.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>Daisy Jones & The Six</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-16.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>If We Were Villains</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-17.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>The Secret History</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-18.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>Normal People</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-19.jpg" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>The Picture of Dorian Gray</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="swiper-slide box">
+                        <div class="arrivals-image">
+                            <img src="img/book-20.png" alt="">
+                        </div>
+                        <div class="arrivals-content">
+                          <h3>The Master & Margarita</h3>
+                          <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                          <div class="arrivals-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                          </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="swiper arrivals-slider">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-21.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>The Poppy War</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-22.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>The Dragon Republic</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-23.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>The Burning God</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-24.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Throne of Glass</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-25.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Crown of Midnight</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-26.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Heir of Fire</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-27.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Queen of Shadows</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-28.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Empire of Storms</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-29.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Tower of Dawn</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+    
+                        <a href="#" class="swiper-slide box">
+                            <div class="arrivals-image">
+                                <img src="img/book-30.jpg" alt="">
+                            </div>
+                            <div class="arrivals-content">
+                              <h3>Kingdom of Ash</h3>
+                              <div class="arrivals-price">&#8369;666.66<span>&#8369;999.99</span></div>
+                              <div class="arrivals-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                              </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="deal">
+            <div class="content">
+                <h3>Deal of the Day</h3>
+                <h1>Enjoy Exclusive Discounts on Books Today!</h1>
+                <p>Indulge your passion for reading while saving big with our exclusive selection of discounted books. Explore a treasure trove of literary gems at unbeatable prices, where quality meets affordability. </p>
+                <a href="shop.html" class="deal-btn">Shop Now</a>
+            </div>
+
+            <div class="image">
+                <img src="img/deal.jpg" alt="">
+            </div>
+        </section>
+		<%@include file="../index/include/reviews.jsp" %>
+
+
+       	
+        <%-- <%@include file="../index/include/side_remote.jsp" %> --%>
    <%@include file="../index/include/footer.jsp" %>
     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/project_nsa/user/script.js"></script>
+
+    <!--Custom JS file link-->
     <script type="text/javascript">
     
 	$("#search_books").on("click", function(){
