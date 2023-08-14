@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -21,67 +21,149 @@
 </head>
 <body>
     <%@include file="../../../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">
-        
-        	<!-- 메뉴와 도서 타이틀 -->
-			<div class="pt-3">
-				<nav class="nav navbar-expand-lg">
-				<h5 class="p-2">해외도서</h5>
-					<ul class="nav">
-						<li class="nav-item"><a class="nav-link" href="#">소설</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">비문학</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">수험서</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">문학</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">코믹 / 만화</a></li>
-					</ul>
-				</nav>
-			</div>
-			<!-- /메뉴와 도서 타이틀 -->
-			
-			<!-- 메인 컨텐츠 -->
-			<div class="overflow-y-auto col-auto">
-				<c:choose>
-					<c:when test="${fn:length(list) eq 0}">
-						판매되는 책이 없습니다.
-					</c:when>
-					<c:otherwise>
-						<c:forEach items="${list }" var="list" varStatus="status">
-							<c:if test="${status.index % 4 == 0}">
-			                    <div class="w-100"></div><!-- 4개마다 행 바꾸기 위해 추가한 부분 -->
-			                </c:if>
-			                  <c:if test="${list.nation == 14 }">								<div class = "card float-sm-start  mt-2 m-auto col-3  bg-primary-subtle" style="height: 400px;">
-									<img class="card-img-top col-auto" src="..." style="height: 190px"/>
-									<div class="card-body p-4">
-										<h4><a href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle }" /></a></h4>
-										<p>저자 : </p>
-										<p>금액 : <c:out value="${list.price }"/></p>
-										<p>출판사 : 
-											<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
-		                                    <c:forEach items="${CodePub}" var="pub" varStatus="status">
-		                                     <c:if test = "${list.publisher eq  pub.seq}">
-		                                    	<c:out value="${pub.code_value }" />
-                                       		 </c:if>
-                                      	 	</c:forEach>										
-										</p>
-									</div>
-									<div class="card-footer">
-										<small class="text-body-secondary"><c:out value="${list.bookReleaseDate }" /></small>
+    
+    <section class = "hero-page">
+	    <div class = "hero-bg">
+			<h3>PrimeCube</h3>
+		      <h2>해외도서</h2>
+		      <div class = "line">
+				<div></div>
+				<div></div>
+				<div></div>
+			  </div>
+			  <p class = "text">국내 외 해외도서를 다루고 있습니다.</p>
+	  	</div>
+	  </section>
+	  
+	  <section class="shop-section">
+		<div class="container">
+			<div class="row">
+	
+				<div class="col-lg-3 blog-form">
+					<h2 class="blog-sidebar-title"><b>Cart</b></h2>
+					<hr />
+					<p class="blog-sidebar-text">No products in the cart...</p>
+					<div>&nbsp;</div>
+					<div>&nbsp;</div>
+	
+					<h2 class="blog-sidebar-title"><b>Categories</b></h2>
+					<hr />
+					
+					<p class="blog-sidebar-list"><b><span class="list-icon"> > </span><a href="genre.html">Genre</a></b></p>
+					<p class="blog-sidebar-list"><b><span class="list-icon"> > </span><a href="bestseller.html">베스트셀러</a></b></p>
+					<p class="blog-sidebar-list"><b><span class="list-icon"> > </span><a href="usedbooks.html">신간도서</a></b></p>
+					<p class="blog-sidebar-list"><b><span class="list-icon"> > </span><a href="rarebook.html">Rare Books</a></b></p>
+					
+					<div>&nbsp;</div>
+					<div>&nbsp;</div>
+	
+					<h2 class="blog-sidebar-title"><b>Filter</b></h2>
+					<hr />
+	
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="Search" aria-label="Receipient's username" aria-describely="basic-addon2">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+						</div>
+						
+					</div>
+	
+					<p class="tags">Price $4 - $25</p>
+					<button type="button" class="btn btn-dark btn-lg">Filter</button>
+	
+					<div>&nbsp;</div>
+					<div>&nbsp;</div>
+					<h2 class="blog-sidebar-title"><b>Tags</b></h2>
+					<p class="product-sidebar-list"><b>#accessory, #arabica</b></p>
+					<p class="product-sidebar-list"><b>#candy, #bean, #cup</b></p>
+					<p class="product-sidebar-list"><b>#ethopian, #latte</b></p>
+	
+	
+				</div>
+				<!--END  <div class="col-lg-3 blog-form">-->
+	
+				<div class="col-lg-9" style="padding-left: 30px;">
+					<div class="row">
+						<div class="col">
+							Showing all results
+						</div>
+	
+						<div class="col">
+							<select class="form-control">
+								<option value="">Default Sorting</option>
+								<option value="popularity">Sorting by popularity</option>
+								<option value="average">Sorting by average</option>
+								<option value="latest">Sorting by latest</option>
+								<option value="low">Sorting by low</option>
+								<option value="high">Sorting by high</option>
+							</select>
+						</div>
+	
+					</div>
+					<!-- Sorting by <div class="row"> -->
+					<div>&nbsp;</div>
+					<div>&nbsp;</div>
+	
+					<div class="row">
+						<c:choose>
+							<c:when test="${fn:length(list) eq 0}">
+								<div class="col-sm-3 col-md-6 col-lg-4">
+									<div class="card">
+										<div class="card-body text-center">
+											<h5 class="card-title"><b>판매되는 책이 없습니다.</b></h5>
+										</div>
 									</div>
 								</div>
-			                  </c:if>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
-			</div>			
-        	</div>
-        <%@include file="../../../index/include/side_remote.jsp" %>
-    </section>
+							</c:when>
+							<c:otherwise>
+								<c:forEach items="${list }" var="list" varStatus="status">
+										<c:if test="${status.index % 4 == 0}">
+				                    		<div>&nbsp;</div><!-- 4개마다 행 바꾸기 위해 추가한 부분 -->
+				                		</c:if>
+				                  		<c:if test="${list.nation == 14 }">
+						                  	<div class="col-sm-3 col-md-6 col-lg-4">
+												<div class="card">
+													<div class="card-body text-center">
+														<a href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"><img src="#" class="product-image"></a>
+														<h5 class="card-title"><b><c:out value="${list.bookTitle }"/></b></h5>
+														<p class="card-text small"><c:out value="${list.bookContent }"></c:out></p>
+														<p class="tags">price : <c:out value="${list.price }"/></p>
+														<p class="tags">
+															<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
+						                                    <c:forEach items="${CodePub}" var="pub" varStatus="status">
+						                                     <c:if test = "${list.publisher eq  pub.seq}">
+						                                    	<c:out value="${pub.code_value }" />
+				                                       		 </c:if>
+				                                      	 	</c:forEach>
+														</p>
+														<p class="tags"><c:out value="${list.bookReleaseDate }" /></p>
+														<a href="#" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+													</div>
+												</div>
+											</div>
+				                  		</c:if>	
+										<div>&nbsp;</div>
+										<div>&nbsp;</div>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<!-- Sorting by <div class="row"> -->
+	
+				</div>
+				<!--END  <div class="col-lg-9">-->
+	
+			</div>
+		</div>
+	</section>
+
+        <%-- <%@include file="../../../index/include/side_remote.jsp" %> --%>
+	
    <%@include file="../../../index/include/footer.jsp" %>
     
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/project_nsa/user/script.js"></script>
     <script type="text/javascript">
-
-	
 	
 	$("#btnLogout").on("click", function(){
 		$.ajax({

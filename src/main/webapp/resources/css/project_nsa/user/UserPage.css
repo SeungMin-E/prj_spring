@@ -80,6 +80,7 @@ header {
     font-size: 30px;
     font-weight: 800;
     color: #fff;
+    text-decoration: none;
 }
 
 .nav a {
@@ -125,6 +126,7 @@ header {
     transform: scale(1);
     opacity: 1;
 }
+
 
 .header-icons i{
     cursor: pointer;

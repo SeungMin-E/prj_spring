@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -25,7 +25,7 @@
     
      <section class = "quick-page">
       <div class = "quick-bg">
-        <h3>STORYBOUND</h3>
+        <h3>Prime Cube</h3>
         <h2>FAQs</h2>
         <div class = "line">
           <div></div>
@@ -40,99 +40,92 @@
     <section class="quick-body">
       <div class="quick-container">
         <div class="accordion">
-          <h1>Frequently Asked Questions</h1>
+          <h1>자주 묻는 질문들</h1>
           <div class="accordion-item">
             <div class="accordion-item-header">
-              How do I place an order?
+              주문은 어떻게 하면 될까요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                To place an order on STORYBOUND, simply browse our collection, select the books you want, and proceed to the checkout page. Provide your shipping details and payment information to complete the order.
+                Prime Cube에서 주문 하려면 도서목록을 검색하시고 원하시는 책이 있다면 선택하신 다음에 결제를 누르시면 결제 페이지로 넘어갑니다.
+                주문을 완료하려면 결제수단 등록 및 주소를 등록해주시면 됩니다.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <div class="accordion-item-header">
-              What payment methods do you accept?
+              가능한 결제 수단이 있을까요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                We accept various payment methods, including credit cards (Visa, Mastercard, American Express) and PayPal.
+                저희는 카카오페이를 지원하고 있습니다. 편의성을 제공하기 위해서 추후 결제수단을 추가 할 예정입니다.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <div class="accordion-item-header">
-              How long does shipping take?
+              배송기간은 얼마나 걸리나요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                The shipping time depends on your location and the shipping method chosen during checkout. Typically, it takes 3-5 business days for domestic orders and 7-14 business days for international orders.
+                국내는 1 ~ 4일 정도이고 해외는 최소 7일 이상 정도 입니다. 
               </div>
             </div>
           </div>
           
           <div class="accordion-item">
             <div class="accordion-item-header">
-              Can I return or exchange a book?
+              책을 교환 및 환불이 될까요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                Yes, we have a flexible return and exchange policy. If you are not satisfied with your purchase, please contact our customer support within 30 days of receiving the book to initiate the return or exchange process.
+                네 가능합니다. 책이 파손되었다면 교환이 가능하고, 책이 마음에 들지 않는 경우 14일 이내로 고객문의로 통해서 반품 및 교환 요청하시면 됩니다.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <div class="accordion-item-header">
-              Do you offer gift wrapping services?
+              선물 포장 서비스도 제공이 되나요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                Yes, we offer gift wrapping services for an additional fee. You can select the gift wrapping option during the checkout process and provide any specific instructions for the gift wrapping.
+               	네 추가요금을 지불하면 선물포장 서비스도 제공하고 있습니다. 주문하실때 선물포장이라는 체크박스를 누르시면 선물포장해서 드립니다.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <div class="accordion-item-header">
-              How can I contact customer support?
+              문의는 어떻게 하면 되나요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                You can contact our customer support team by emailing support@storybound.com or by filling out the contact form on our website. We strive to respond to all inquiries within 24 hours.
+                1대1 문의 신청을 하거나 support@PrimeCube.com으로 문의를 주시면 됩니다.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <div class="accordion-item-header">
-              Can I track my order?
+              주문을 하면 배송 조회가 가능할까요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                Yes, once your order is shipped, we will provide you with a tracking number. You can use this tracking number to track the status of your shipment on our website or the shipping carrier's website.
+                네 주문을 하시면 배송조회 서비스를 제공해 드리고 있습니다. 배송조회를 클릭하시면 송장번호와 배송현황 안내를 제공해드리고 있습니다.
+                보다 더 자세한 배송조회를 원하신다면 해당 택배사 홈페이지에서 송장번호로 조회하시면 됩니다.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <div class="accordion-item-header">
-              Are the books on STORYBOUND new or used?
+              여기서 파는 책들은 새 도서인가요? 아니면 중고 도서인가요?
             </div>
             <div class="accordion-item-body">
               <div class="accordion-item-body-content">
-                The books on STORYBOUND are primarily new unless otherwise stated. We take pride in offering high-quality, brand new books to our customers.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-             FAQs를 보고도 해결이 되지 않으신가요?
-            </div>
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-              	이 버튼을 눌러주시면 1:1 문의로 넘어갑니다.
+                저희가 파는 책들은 다른 명시가 되어 있지 않다면 좋은 품질의 새 책입니다. 항상 좋은 품질 제공하고 있습니다.
+                만약에 책이 중고이거나 파손이 되었다면 무상으로 교환해드리고 있으니 걱정하지 않으셔도 됩니다.
               </div>
             </div>
           </div>
@@ -147,8 +140,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="../../../resources/js/project_nsa/user/script.js"></script>	
     <script type="text/javascript">
-
-	
 	
 	$("#btnLogout").on("click", function(){
 		$.ajax({
@@ -173,6 +164,23 @@
 //		 if(!checkNull($("#userID"), $.trim($("#userID").val()), "아이디를 입력해 주세요!")) return false;
 //		 if(!checkNull($("#userPW"), $.trim($("#userPW").val()), "비밀번호를 입력해 주세요!")) return false;
 	}
+	
+	 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+	 accordionItemHeaders.forEach(accordionItemHeader => {
+	   accordionItemHeader.addEventListener("click", event => {
+
+	     accordionItemHeader.classList.toggle("active");
+	     const accordionItemBody = accordionItemHeader.nextElementSibling;
+	     if(accordionItemHeader.classList.contains("active")) {
+	       accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+	     }
+	     else {
+	       accordionItemBody.style.maxHeight = 0;
+	     }
+	     
+	   });
+	 });
 
 	</script>
 </body>

@@ -190,13 +190,13 @@
 				</div>
 
             <!-- End of Main Content -->
-			 <!-- Footer -->
-            <%@include file="../../include/footer.jsp" %>
 
         </div>
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+			 <!-- Footer -->
+            <%@include file="../../include/footer.jsp" %>
 	</div>
 </div>
     <!-- Scroll to Top Button-->

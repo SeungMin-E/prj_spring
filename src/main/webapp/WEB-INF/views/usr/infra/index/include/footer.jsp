@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -20,7 +20,7 @@
                 <div class="col-footer">
                     <h4>Main Menu</h4>
                     <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/projectNSA/main_page"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
                         <li><a href="shop.html"><i class="fas fa-chevron-right"></i> Shop</a></li>
                         <li><a href="review.html"><i class="fas fa-chevron-right"></i> Review</a></li>
@@ -30,7 +30,7 @@
                 <div class="col-footer">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="/projectNSA/question"><i class="fas fa-chevron-right"></i> FAQs</a></li>
                         <li><a href="privacypolicy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
                         <li><a href="terms&conditions.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                     </ul>
