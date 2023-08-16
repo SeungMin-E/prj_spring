@@ -11,190 +11,240 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../resources/css/project_nsa/user/UserPage.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../../../resources/css/project_nsa/user/UserPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="icon" href="img/book-logo.png" type="image">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
     <title>Welcome to PrimeCube</title>
 </head>
 
 <body>
 	<%@include file="../../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">   <!-- 틀 -->
-           <div class="d-flex justify-content-between mt-5" style="height: 400px;">
-                <div class="text-center" style="width: 37.5%;">
-                    <img src="D:/factory/factory_download/8991799116_1.jpg" class="border border-dark" style="height: 400px;">
-                </div>
-                <div class="overflow-auto" style="width: 62.5%;">
-                    <h2><c:out value="${bookItem.bookTitle }"/></h2>
-                    <p>저자(글)는 아직 보류</p>
-                    <p>
-                   		<c:out value="${bookItem.bookContent }"/>
-                    </p>
-                </div>
-           </div>
-           <!-- 도서 상세페이지 하단 : 리뷰 및 평점 넣기 -->
-           <div class="d-flex justify-content-around mt-5 mb-5" style="height: 300px;">
-                <div>
-                    <div>
-                        <h2>목차</h2>
-                    </div>
-                    <div class="overflow-auto mt-3" style="height: 250px;">
-                        <ul>
-                            <li><c:out value="${bookItem.bookChapter }" /></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="d-flex flex-column mb-3">
-                	<c:set var="dcPrice" value="${bookItem.price - (bookItem.price * 0.1) }"/>
-                	<fmt:parseNumber var="dcP" integerOnly="true" value="${dcPrice }"/>
-                    <div>10% <c:out value="${dcP}"/>원 <del><c:out value="${bookItem.price }원"/></del></div>
-                    <div class="d-flex  justify-content-around">
-                        <div>적립/혜택</div>
-                        <div>
-                            360P
-                            <i class="fa-solid fa-circle-chevron-down"></i></i>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-around mb-3">
-                        <div>배송안내</div>
-                        <div>
-                            <p>도서포함 15,000원 이상 무료 배송</p>
-                            <p>당일배송 오늘 도착 예정 <i class="fa-sharp fa-solid fa-circle-question"></i></p> <!-- 이건 DB 연결하면 자연히 수정 -->
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p>
-                    	<a href="#">
-                    		<c:set var = "CodePub" value="${CodeServiceImpl.selectListCachedCode('5') }"/>
-		                                    <c:forEach items="${CodePub}" var="pub" varStatus="status">
-		                                     <c:if test = "${bookItem.publisher eq  pub.seq}">
-		                                    	<c:out value="${pub.code_value }" />
-                                       		 </c:if>
-                                      	 	</c:forEach>										
-                    	</a> · <c:out value="${bookItem.bookReleaseDate }" />
-                    </p>
-                    <p><i class="fa-solid fa-trophy mb-3"></i>리뷰 평점</p>
-                    <div id="reviwe_total" class="d-flex justify-content-evenly">
-                        <i class="fa-solid fa-asterisk fa-flip fa-2xl"></i>
-                        <i class="fa-solid fa-asterisk fa-flip fa-2xl"></i>
-                        <i class="fa-solid fa-asterisk fa-flip fa-2xl"></i>
-                        <i class="fa-solid fa-asterisk fa-flip fa-2xl"></i>
-                    </div>
-                    <p class="text-center mt-3">총 4/4 점</p>
-                </div>
-           </div>
-           <!-- 리뷰 집계 / 박스 -->
-           <div id="re_box" class="d-flex justify-content-around">
-                <div class="" style="width: 40%;">
-                    <div class="mb-3">평점</div>
-                    <div>4점</div>
-                    <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                    <div>3점</div>
-                    <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                    <div>2점</div>
-                    <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                    <div>1점</div>
-                    <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="d-flex flex-row justify-content-evenly" style="width: 40%;" >
-                    <div class="mt-3">
-                        <div class="vertical_bar">
-                            <div id="" class="vertical_bar_fill"></div>
-                        </div>
-                        <p class="mt-3">좋아요</p>
-                    </div>
-                    <div class="mt-3">
-                        <div class="vertical_bar">
-                            <div id="" class="vertical_bar_fill"></div>
-                        </div>
-                        <p class="mt-3">도움되요</p>
-                    </div>
-                    <div class="mt-3">
-                        <div class="vertical_bar">
-                            <div id="" class="vertical_bar_fill"></div>
-                        </div>
-                        <p class="mt-3">추천해요</p>
-                    </div>
-                    <div class="mt-3">
-                        <div class="vertical_bar">
-                            <div id="" class="vertical_bar_fill"></div>
-                        </div>
-                        <p class="mt-3">훌륭해요</p>
-                    </div>
-                </div>
-           </div>
+	
+	<section class = "hero-page">
+		<div class = "hero-bg">
+		<h3>PrimeCube</h3>
+		  <h2>Review Section</h2>
+		  <div class = "line">
+			  <div></div>
+			  <div></div>
+			  <div></div>
+		  </div>
+		  <p class = "text">위에 책에 대한 설명과 리뷰입니다.</p>
+		</div>
+	</section>
+	
+	
+	<section class="review-details-page">
+		<div class="review-details-container">
+		<div class = "card-wrapper">
+			<div class = "card">
+				<div class = "product-imgs">
+					<div class = "img-display">
+					<div class = "img-showcase">
+						<img src = "../../../../resources/images/project_nsa/usr_page/book-1.jpg">
+					</div>
+					</div>
+				</div>
+		 
+			  <div class = "review-content">
+				<h2 class = "product-title"><c:out value="${bookItem.bookTitle }"/></h2>
+				<a href = "#" class = "product-link">author</a>
+				<div class = "product-rating">
+				  <i class = "fas fa-star"></i>
+				  <i class = "fas fa-star"></i>
+				  <i class = "fas fa-star"></i>
+				  <i class = "fas fa-star"></i>
+				  <i class = "fas fa-star-half-alt"></i>
+				  <span>4.7(21)</span>
+				</div>
+  
+				<div class = "product-price">
+				  <p class = "last-price">Old Price: <span><fmt:formatNumber value="${bookItem.price}"  pattern="#,###"/>원</span></p>
+				  <p class = "new-price">Discounted Price: 
+				  	<span>
+						<c:set var="dcPrice" value="${bookItem.price - (bookItem.price * 0.1) }"/>
+						<fmt:parseNumber var="dcP" integerOnly="true" value="${dcPrice }"/>
+						<fmt:formatNumber value="${dcP}"  pattern="#,###"/>원 (10%)
+				  	</span>
+				  </p>
+				</div>
+  
+				<div class = "product-detail">
+				  <h2>Description: </h2>
+				  <p><c:out value="${bookItem.bookContent }"/></p> 
+				  <ul>
+					<li><i class="fa fa-check"></i> Format: <span>Paperback</span></li>
+					<li><i class="fa fa-check"></i> Available: <span>in stock</span></li>
+					<li>
+						<i class="fa fa-check"></i> Category: 
+						<span>
+							<c:set var="theme" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
+							<c:forEach items = "${theme }" var="category" varStatus="status">
+								<c:if test = "${bookItem.bookTheme eq  category.seq}">
+	                         		<c:out value="${category.code_value }" />
+	                            </c:if>
+							</c:forEach>
+						</span>
+					</li>
+					<li><i class="fa fa-check"></i> 배송 가능 지역: <span>한국 전역</span></li>
+					<li><i class="fa fa-check"></i> 배송비 : <span>무료</span></li>
+				  </ul>
+				</div>
+  
+				<div class = "purchase-info">
+				  <input type = "number" min = "0" value = "1">
+				  <button type = "button" class = "btn"><i class = "fas fa-shopping-cart"></i>
+					Add to Cart 
+				  </button>
+				  <button type = "button" class = "btn"> <i class = "fas fa-heart"></i> Add to Wishlist</button>
+				</div>
+  
+				<div class = "social-links">
+				  <p>Share At:  </p>
+				  <a href = "#">
+					<i class = "fab fa-facebook-f"></i>
+				  </a>
+				  <a href = "#">
+					<i class = "fab fa-twitter"></i>
+				  </a>
+				  <a href = "#">
+					<i class = "fab fa-instagram"></i>
+				  </a>
+				  <a href = "#">
+					<i class = "fab fa-whatsapp"></i>
+				  </a>
+				  <a href = "#">
+					<i class = "fab fa-pinterest"></i>
+				  </a>
+				</div>
+		  	</div>
+		</div>
+	  </div>
+	</div>
+	</section>         
+	
+	<section class="related">
+	<div class="featured" id="featured">
+		<h1 class="heading"><span>Related Products</span></h1>
+		<div class="swiper featured-slider">
+			<div class="swiper-wrapper">
 
-           <!-- 리뷰 -->
-           <div id="#" class="mt-3">
-            <!-- 리뷰 메뉴 -->
-            <div id="section_content_nav">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link">전체리뷰</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">구매리뷰</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">한달 후 리뷰</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">좋아요!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">별로에요</a>
-                    </li>
-                </ul>
-            </div>
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-2.jpg">
+				</div>
+				<div class="content">
+					<h3>Catching Fire</h3>
+					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
 
-            <!-- 리뷰박스 -->
-            <div class="d-flex flex-column text-center" style="height: 100px;">
-                <div><!-- 리뷰어(이거 다 DB해서 끌어와야함) -->
-                    <div class="d-flex">
-                        <span class="p-2 w-20"><i class="fa-regular fa-thumbs-up"></i></span>
-                        <span class="p-2 w-20">구매자</span>
-                        <span class="p-2 w-30">유저ID(이건 DB끌어오고)</span>
-                        <span class="p-2 w-20">리뷰날짜(이것도 DB끌어오고)</span>
-                        <span class="p-2 w-10">신고 / 차단</span>
-                    </div>
-                    <!-- 리뷰 -->
-                    <div class="d-flex mt-1" style="height: 80px;">
-                        <div class="overflow-auto">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
-                    </div>
-                </div>
-                <div><!-- 리뷰어(이거 다 DB해서 끌어와야함) -->
-                    <div class="d-flex">
-                        <span class="p-2 w-20"><i class="fa-regular fa-thumbs-up"></i></span>
-                        <span class="p-2 w-20">구매자</span>
-                        <span class="p-2 w-30">유저ID(이건 DB끌어오고)</span>
-                        <span class="p-2 w-20">리뷰날짜(이것도 DB끌어오고)</span>
-                        <span class="p-2 w-10">신고 / 차단</span>
-                    </div>
-                    <!-- 리뷰 -->
-                    <div class="d-flex mt-1" style="height: 80px;">
-                        <div class="overflow-auto">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-3.jpg">
+				</div>
+				<div class="content">
+					<h3>Mockingjay</h3>
+					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
 
-        </div>
-        <!-- 좌측 팝업 리모콘 -->
-        <%@include file="../../index/include/side_remote.jsp" %>
-    </section>
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-4.jpg">
+				</div>
+				<div class="content">
+					<h3>The Raven Boys</h3>
+					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-5.jpg">
+				</div>
+				<div class="content">
+					<h3>The Raven Boys</h3>
+					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-6.jpg">
+				</div>
+				<div class="content">
+					<h3>The Dream Thieves</h3>
+					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-7.jpg">
+				</div>
+				<div class="content">
+					<h3>Blue Lily, Lily Blue</h3>
+					<div class="price">&#8369;333.59 <span>&#8369;667.18</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-8.jpg">
+				</div>
+				<div class="content">
+					<h3>The Raven King</h3>
+					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-9.jpg">
+				</div>
+				<div class="content">
+					<h3>Six of Crows</h3>
+					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+
+				<div class="swiper-slide box">
+				<div class="images">
+					<img src="img/book-10.jpg">
+				</div>
+				<div class="content">
+					<h3>Crooked Kingdom</h3>
+					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
+					<a href="#" class="featured-btn">Add to Cart</a>
+				</div>
+				</div>
+			
+			</div>
+
+			<div class="swiper-button-next swiper-button-black"></div>
+			<div class="swiper-button-prev"></div>
+
+		</div>
+	</div>
+</section>
     <%@include file="../../index/include/footer.jsp" %>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<!--Custom JS file link-->
+	<script src="../../../resources/js/project_nsa/user/script.js"></script>
 </body>
 </html>

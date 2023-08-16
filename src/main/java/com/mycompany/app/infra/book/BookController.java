@@ -125,16 +125,6 @@ public class BookController {
 		return "usr/infra/index/books/inter/internation_book";
 	}
 	
-	@RequestMapping(value="/projectNSA/internation/genre")
-	public String nsa_interBook_genre(@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
-		
-		vo.setBookTitleSearch(vo.getBookTitleSearch() == null ? "" : vo.getBookTitleSearch());
-		
-		List<Book> list = service.bookAll(vo);
-		model.addAttribute("list", list);
-		
-		return "usr/infra/index/books/inter/inter_genre";
-	}
 	
 // 	해외도서 페이지
 	@RequestMapping(value="/projectNSA/global")
