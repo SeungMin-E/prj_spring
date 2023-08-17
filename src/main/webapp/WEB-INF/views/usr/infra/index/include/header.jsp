@@ -19,6 +19,7 @@
 		<a href="/projectNSA/notice">공지사항<span></span></a>
 		<a href="/projectNSA/internation" class="nav-link">국내도서<span></span></a>
 		<a href="/projectNSA/global" class="nav-link">해외도서<span></span></a>
+		<a href="/projectNSA/contact" class="nav-link">문의<span></span></a>
 	</nav>
 		<c:choose>
 			<c:when test="${not empty sessionId }">

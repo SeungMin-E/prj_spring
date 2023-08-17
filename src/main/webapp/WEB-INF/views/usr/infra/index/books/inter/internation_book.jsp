@@ -172,7 +172,7 @@ section {
 <title>Welcome to PrimeCube</title>
 </head>
 <body>
-	<%@include file="../../../index/include/header.jsp"%>
+	<%@ include file="../../../index/include/header.jsp" %>
 
 	<section class="hero-page">
 		<div class="hero-bg">

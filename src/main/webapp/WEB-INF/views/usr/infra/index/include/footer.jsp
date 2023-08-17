@@ -38,10 +38,10 @@
                 <div class="col-footer">
                     <h4>Contact us</h4>
                     <ul>
-                        <li><a href=""><i class="fa fa-location-arrow"></i>김포시 장기동 2018-2 라베니체마치에비뉴</a></li>
-                        <li><a href=""><i class="fas fa-mobile-alt"></i> +82 010 5035 5926</a></li>
-                        <li><a href=""><i class="far fa-envelope"></i> rainy2368@gmail.com</a></li>
-                        <li><a href=""><i class="fas fa-globe-europe"></i> https://github.com/SeungMin-E</a></li>
+                        <li><a href="#"><i class="fa fa-location-arrow"></i>김포시 장기동 2018-2 라베니체마치에비뉴</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt"></i> +82 010 5035 5926</a></li>
+                        <li><a href="#"><i class="far fa-envelope"></i> rainy2368@gmail.com</a></li>
+                        <li><a href="https://github.com/SeungMin-E"><i class="fas fa-globe-europe"></i> https://github.com/SeungMin-E</a></li>
                     </ul>
                 </div>
             </div>

@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../resources/css/project_nsa/user/UserPage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e402926c7b.js" crossorigin="anonymous"></script>
@@ -21,26 +20,28 @@
 </head>
 <body>
     <%@include file="../../index/include/header.jsp" %>
-    <section>
-        <div class="wrap_container">
-            <div id="notice_head" class="d-flex flex-row justify-content-between mt-1 mb-1">
-                <div class="d-flex flex-row justify-content-evenly col-3">
-                    <i class="fa-solid fa-exclamation" style="font-size: 40px;"></i>
-                    <h1>공지사항</h1>
-                    <i class="fa-solid fa-exclamation" style="font-size: 40px;"></i>
-                </div>
-                <!-- 검색 박스 -->
-                <div class="align-self-center" style="width: 300px;">
-                        <form class="d-flex col-auto" role="search">
-                        	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                        </form>
-                </div>
-            </div>
-           <!-- 공지사항 게시판 (일단 틀을 잡고 DB잡으면 DB로 채워진다.) -->
-           <table class="table"> 
+    
+    <section class="hero" id="hero">
+    	<div class="row">
+    		<div class="content">
+    			<h1>공지사항</h1>
+    			<p>중요한 내용들을 공지할 예정이니 확인하여주시면 감사합니다.</p>
+    			<p>확인하시고 착오 없으시길 바랍니다.</p>
+    		</div>
+    	</div>
+    </section>
+    
+    <section class="">
+   	<div class="">
+      <form class="d-flex col-auto" role="search">
+       	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+     </div>
+    
+    	 <table class="table"> 
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -72,7 +73,6 @@
                 </tbody>
            </table>
            
-           <!-- 페이지 박스 -->
            <div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
@@ -100,11 +100,9 @@
 				        </div>
 				    </div>
 				</div>
-           <!-- 페이지 박스 -->
-        </div>
-        <!-- 사이드바 -->
-        <%@include file="../../index/include/side_remote.jsp" %>
     </section>
+    
+    
     <!-- footer -->
     <%@include file="../../index/include/footer.jsp" %>
 </body>

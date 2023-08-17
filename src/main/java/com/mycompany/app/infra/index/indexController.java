@@ -58,7 +58,10 @@ public class indexController {
 		return mav;
 	}
 
-	
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/service")
 	public ModelAndView service() {
 		ModelAndView mav = new ModelAndView();
@@ -226,7 +229,14 @@ public class indexController {
 		mav.setViewName("usr/infra/index/sub/Q&A");
 		return mav;
 	}
-
+	
+//	contact 페이지
+	@RequestMapping(value="/projectNSA/contact")
+	public ModelAndView nsa_contact() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/sub/contact");
+		return mav;
+	}
 	
 //	팀프로젝트 페이지
 	@RequestMapping(value = "/newParty")

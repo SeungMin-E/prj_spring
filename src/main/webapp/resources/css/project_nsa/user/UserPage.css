@@ -1503,6 +1503,7 @@ form.sign-in-form {
 }
 
 .review-content{
+	width: 538px;
     padding: 2rem 1rem;
     background-color:var(--violet)
 }
