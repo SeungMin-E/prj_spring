@@ -99,6 +99,15 @@
 										placeholder="책 제목을 적으세요">
 								</div>
 								
+								<!-- 작가명 -->
+								<div class="input-group mt-3">
+									<span class="input-group-text">작가</span> <input type="text"
+										name="AnthorName" id="AnthorName"
+										class="form-control bg-white border-0 small"
+										aria-label="Search" aria-describedby="basic-addon2"
+										placeholder="작가 명을 작성하세요">
+								</div>
+								
 								<!-- 책 목차 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">목차</span> <input type="text"
@@ -135,7 +144,7 @@
 										placeholder="금액이 결정되면 작성">
 								</div>
 
-								<!-- 출판사 -->
+								<!-- 국가 -->
 								<div class="input-group mt-3">
 									<span class="input-group-text">국내/해외</span> 
 									<select name="nation">

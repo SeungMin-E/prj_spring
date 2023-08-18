@@ -177,13 +177,13 @@ section {
 	<section class="hero-page">
 		<div class="hero-bg">
 			<h3>PrimeCube</h3>
-			<h2>국내도서</h2>
+			<h2></h2>
 			<div class="line">
 				<div></div>
 				<div></div>
 				<div></div>
 			</div>
-			<p class="text">국내도서를 다루고 있습니다.</p>
+			<p class="text"></p>
 			<section id="genres">
 				<div class="container">
 					<div class="genre-section">
@@ -200,6 +200,10 @@ section {
 								onclick="filterBooks('11', this)">수험서</a></li>
 							<li class="genre-item"><a href="#"
 								onclick="filterBooks('12', this)">코믹 / 만화</a></li>
+							<li class="genre-item"><a href="#"
+								onclick="filterBooks('13', this)">국내</a></li>
+							<li class="genre-item"><a href="#"
+								onclick="filterBooks('14', this)">해외</a></li>
 						</ul>
 					</div>
 				</div>
@@ -226,10 +230,10 @@ section {
 					<hr />
 
 					<p class="blog-sidebar-list">
-						<b><span class="list-icon"> > </span><a href="bestseller.html">베스트셀러</a></b>
+						<b><span class="list-icon"> > </span><a href="/projectNSA/bestSeller">베스트셀러</a></b>
 					</p>
 					<p class="blog-sidebar-list">
-						<b><span class="list-icon"> > </span><a href="usedbooks.html">신간도서</a></b>
+						<b><span class="list-icon"> > </span><a href="/projectNSA/newJeans">신간도서</a></b>
 					</p>
 					<p class="blog-sidebar-list">
 						<b><span class="list-icon"> > </span><a href="rarebook.html">Rare
@@ -292,26 +296,24 @@ section {
 									</c:when>
 									<c:otherwise>
 										<c:forEach items="${list }" var="list" varStatus="status">
-											<c:if test="${list.nation == 13 }">
-												<li class="book-item ${list.bookTheme}">
-													<div class="icons">
-														<a
-															href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"
-															class="fas fa-search"></a> <a href="#"
-															class="fas fa-heart"></a> <a href="#" class="fas fa-eye"></a>
-													</div> <img src="#" alt="Book Cover">
-													<div class="content">
-														<h3>
-															<c:out value="${list.bookTitle }" />
-														</h3>
-														<div class="price">
-															<c:out value="${list.price }" />
-															원 <span><c:out value="${list.price }" />원</span>
-														</div>
-														<a href="#" class="featured-btn">Add to Cart</a>
+											<li class="book-item ${list.bookTheme} ${list.nation}">
+												<div class="icons">
+													<a
+														href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"
+														class="fas fa-search"></a> <a href="#"
+														class="fas fa-heart"></a> <a href="#" class="fas fa-eye"></a>
+												</div> <img src="#" alt="Book Cover">
+												<div class="content">
+													<h3>
+														<c:out value="${list.bookTitle }" />
+													</h3>
+													<div class="price">
+														<c:out value="${list.price }" />
+														원 <span><c:out value="${list.price }" />원</span>
 													</div>
-												</li>
-											</c:if>
+													<a href="#" class="featured-btn">Add to Cart</a>
+												</div>
+											</li>
 										</c:forEach>
 									</c:otherwise>
 								</c:choose>

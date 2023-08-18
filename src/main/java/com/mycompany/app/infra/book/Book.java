@@ -6,6 +6,7 @@ public class Book {
 	private String seq;
 	private String bookSerialNum;
 	private String bookTitle;
+	private String anthorName;
 	private String bookChapter;
 	private String bookContent;
 	private String bookReleaseDate;
@@ -35,6 +36,7 @@ public class Book {
 	public void setBookTitle(String bookTitle) {
 		this.bookTitle = bookTitle;
 	}
+	
 	public String getBookReleaseDate() {
 		return bookReleaseDate;
 	}
@@ -82,5 +84,11 @@ public class Book {
 	}
 	public void setBookContent(String bookContent) {
 		this.bookContent = bookContent;
+	}
+	public String getAnthorName() {
+		return anthorName;
+	}
+	public void setAnthorName(String anthorName) {
+		this.anthorName = anthorName;
 	}
 }

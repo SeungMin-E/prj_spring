@@ -93,6 +93,7 @@
                                          <th>Seq</th>
                                          <th>bookSerialNum</th>
                                          <th>bookTitle</th>
+                                         <th>AnthorName</th>
                                          <th>bookReleaseDate</th>
                                          <th>nation</th>
                                          <th>publisher</th>
@@ -115,6 +116,7 @@
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.seq}"></c:out></a></td>
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookSerialNum}"></c:out></a></td>
 		                                            <td><a href="/BookOne?seq=<c:out value="${list.seq}"/>"><c:out value="${list.bookTitle}"></c:out></a></td>
+		                                            <td><c:out value="${list.anthorName}"></c:out></td>
 		                                            <td><c:out value="${list.bookReleaseDate}"></c:out></td>
 		                                            <td>
 		                                            	<c:set var = "CodeNat" value="${CodeServiceImpl.selectListCachedCode('4') }"/>

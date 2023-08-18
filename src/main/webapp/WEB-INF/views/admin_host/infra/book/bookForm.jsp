@@ -81,6 +81,9 @@
 		                       		 	BOOKTITLE : 
 		                            	<input type="text" name="bookTitle" id="bookTitle" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookTitle}"></c:out>">
+		                       		 	ANTHORNAME : 
+		                            	<input type="text" name="bookTitle" id="bookTitle" class="form-control bg-light border-0 small mb-4" 
+		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.AnthorName}"></c:out>" readonly>
 		                       		 	BOOKCHAPTER : 
 		                            	<input type="text" name="bookChapter" id="bookChapter" class="form-control bg-light border-0 small mb-4" 
 		                               	 aria-label="Search" aria-describedby="basic-addon2" value="<c:out value="${bookItem.bookChapter}"></c:out>">

@@ -84,14 +84,25 @@ public class BookController {
 	}
 	
 //	책 추가
+	/**
+	 * 
+	 * @param dto
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="/BookInsert")
 	public String BookCreate(Book dto) throws Exception {
 		service.bookSingUp(dto);
 		return "redirect:/BookListPage";
 	}
 	
+//	이 밑에부터는 유저페이지
 	
-	// 유저 페이지	
+// 유저 페이지(검색)	
+/**
+ * 	
+ * @return
+ */
 	@RequestMapping(value="/projectNSA/search")
 	public ModelAndView bookSearching() {
 		ModelAndView mav = new ModelAndView();
@@ -101,19 +112,27 @@ public class BookController {
 	}
 	
 //	베스트셀러 페이지
+
 	@RequestMapping(value = "/projectNSA/bestSeller")
 	public String nsa_bestSeller() {
 		
 		return "usr/infra/index/books/best/bestSell";
 	}
 
-//	화제의신간 페이지
+//	신간 페이지
 	@RequestMapping(value = "/projectNSA/newJeans")
 	public String nsa_newBooks() {
 		return "usr/infra/index/books/newface/newBooks";
 	}
 
-//	국내도서 페이지
+//	도서 페이지
+	/**
+	 * 
+	 * @param vo
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="/projectNSA/internation")
 	public String nsa_interBook(@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
 		
@@ -126,30 +145,14 @@ public class BookController {
 	}
 	
 	
-// 	해외도서 페이지
-	@RequestMapping(value="/projectNSA/global")
-	public String nsa_overseasBook(@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
-
-		vo.setBookTitleSearch(vo.getBookTitleSearch() == null ? "" : vo.getBookTitleSearch());
-		
-		List<Book> list = service.bookAll(vo);
-		model.addAttribute("list", list);
-		
-		return "usr/infra/index/books/overseas/global_book";
-	}
-	
-	@RequestMapping(value="/projectNSA/global/genre")
-	public String nsa_overseasBook_genre(@ModelAttribute("vo") BookVo vo, Model model) throws Exception {
-		
-		vo.setBookTitleSearch(vo.getBookTitleSearch() == null ? "" : vo.getBookTitleSearch());
-		
-		List<Book> list = service.bookAll(vo);
-		model.addAttribute("list", list);
-		
-		return "usr/infra/index/books/overseas/over_genre";
-	}
-	
 //	도서상세페이지
+	/**
+	 * 
+	 * @param vo
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="/projectNSA/BookOne")
 	public String bookOneInfo(BookVo vo, Model model)throws Exception{
 		Book book = service.bookOne(vo);

@@ -29,7 +29,7 @@
 <script src="https://kit.fontawesome.com/e402926c7b.js"
 	crossorigin="anonymous"></script>
 
-<title>Welcome to PrimeCube</title>
+<title>마이페이지 - Prime Cube</title>
 </head>
 <body>
 	<!-- include head 확정 -->

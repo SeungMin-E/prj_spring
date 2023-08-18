@@ -20,14 +20,13 @@
     <!-- custom css -->
     <style>
         body {
-            background-image: url('img/background2.jpg');
+            background-image: url('../../../resources/images/project_nsa/usr_page/background2.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
 
         header {
-            background-color: #a200ffee;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -230,11 +229,10 @@
        </div> 
    <%@include file="../../../index/include/footer.jsp" %>
     
-    
+   	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="../../../resources/js/project_nsa/user/script.js"></script>
     <script type="text/javascript">
 
-	
-	
 	$("#btnLogout").on("click", function(){
 		$.ajax({
 			async: true

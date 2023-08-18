@@ -24,7 +24,7 @@
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
                         <li><a href="shop.html"><i class="fas fa-chevron-right"></i> Shop</a></li>
                         <li><a href="review.html"><i class="fas fa-chevron-right"></i> Review</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="/projectNSA/contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-footer">

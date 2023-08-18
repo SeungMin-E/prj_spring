@@ -154,6 +154,15 @@ public class UserAccountController {
 		return "usr/infra/index/myPage/myPage";
 	}
 	
+//	위시리스트
+	@RequestMapping(value="/Project/myWish")
+	public String wish() {
+		
+		return "usr/infra/index/myPage/myKeep";
+	}
+	
+//	장바구니
+	
 	
 	
 }

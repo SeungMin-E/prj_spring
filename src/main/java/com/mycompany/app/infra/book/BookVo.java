@@ -6,6 +6,7 @@ public class BookVo {
 	private String seq;
 	private String bookSerialNum;
 	private String bookTitle;
+	private String anthorName;
 	private String bookChapter;
 	private String bookContent;
 	private String bookReleaseDate;
@@ -259,5 +260,11 @@ public String getBookContent() {
 }
 public void setBookContent(String bookContent) {
 	this.bookContent = bookContent;
+}
+public String getAnthorName() {
+	return anthorName;
+}
+public void setAnthorName(String anthorName) {
+	this.anthorName = anthorName;
 }
 }

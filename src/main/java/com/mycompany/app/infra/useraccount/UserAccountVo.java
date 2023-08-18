@@ -1,11 +1,6 @@
 package com.mycompany.app.infra.useraccount;
 
-import java.util.UUID;
-
-import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
 public class UserAccountVo {
 	private String seq;

@@ -52,7 +52,7 @@
 		 
 			  <div class = "review-content">
 				<h2 class = "product-title"><c:out value="${bookItem.bookTitle }"/></h2>
-				<a href = "#" class = "product-link">author</a>
+				<a href = "#" class = "product-link"><c:out value="${bookItem.anthorName }"/></a>
 				<div class = "product-rating">
 				  <i class = "fas fa-star"></i>
 				  <i class = "fas fa-star"></i>

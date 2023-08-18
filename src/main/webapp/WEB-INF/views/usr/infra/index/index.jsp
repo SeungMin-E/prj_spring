@@ -35,12 +35,12 @@
 
                 <div class="swiper books-slider">
                     <div class="swiper-wrapper">
-                        <a href="#" class="swiper-slide"><img src="img/book-31.jpg" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="img/book-32.jpg" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="img/book-33.jpg" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="img/book-34.jpg" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="img/book-35.jpg" alt=""></a>
-                        <a href="#" class="swiper-slide"><img src="img/book-36.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-31.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-32.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-33.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-34.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-35.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="../../../resources/images/project_nsa/usr_page/book-36.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -52,24 +52,24 @@
             <div class="support-icons">
                 <i class="fas fa-plane"></i>
                     <div class="support-content">
-                        <h3>Free Shipping</h3>
-                        <p>Orders over &#8369;699.99</p>
+                        <h3>무료 배송</h3>
+                        <p>대한민국 전국 어디서나!</p>
                     </div>
             </div>
 
             <div class="support-icons">
                 <i class="fas fa-headset"></i>
                     <div class="support-content">
-                        <h3>24/7 Support</h3>
-                        <p>Call us anytime</p>
+                        <h3>월 ~ 금 근무</h3>
+                        <p>오전 9시 ~ 오후 6시에 연락이 가능합니다.</p>
                     </div>
             </div>
 
             <div class="support-icons">
                 <i class="fas fa-lock"></i>
                     <div class="support-content">
-                        <h3>Secure Payment</h3>
-                        <p>100% secure payment</p>
+                        <h3>안전 결제</h3>
+                        <p>100% 안전한 결제를 보장합니다.</p>
                     </div>
             </div>
             
@@ -95,7 +95,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-1.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-1.jpg">
                     </div>
                     <div class="content">
                         <h3>The Hunger Games</h3>
@@ -111,7 +111,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-2.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-2.jpg">
                     </div>
                     <div class="content">
                         <h3>Catching Fire</h3>
@@ -121,13 +121,13 @@
                     </div>
 
                     <div class="swiper-slide box">
-                        <div class="icons">
+                        <div class="featured-icons">
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-3.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-3.jpg">
                     </div>
                     <div class="content">
                         <h3>Mockingjay</h3>
@@ -143,7 +143,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-4.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-4.jpg">
                     </div>
                     <div class="content">
                         <h3>The Raven Boys</h3>
@@ -159,7 +159,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-5.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-5.jpg">
                     </div>
                     <div class="content">
                         <h3>The Raven Boys</h3>
@@ -175,7 +175,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-6.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-6.jpg">
                     </div>
                     <div class="content">
                         <h3>The Dream Thieves</h3>
@@ -191,7 +191,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-7.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-7.jpg">
                     </div>
                     <div class="content">
                         <h3>Blue Lily, Lily Blue</h3>
@@ -207,7 +207,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-8.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-8.jpg">
                     </div>
                     <div class="content">
                         <h3>The Raven King</h3>
@@ -224,7 +224,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-9.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-9.jpg">
                     </div>
                     <div class="content">
                         <h3>Six of Crows</h3>
@@ -240,7 +240,7 @@
                         <a href="#" class="fas fa-eye"></a>
                         </div>
                     <div class="images">
-                        <img src="img/book-10.jpg">
+                        <img src="../../../resources/images/project_nsa/usr_page/book-10.jpg">
                     </div>
                     <div class="content">
                         <h3>Crooked Kingdom</h3>
@@ -268,7 +268,7 @@
                     
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-11.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-11.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>A History of Burning</h3>
@@ -285,7 +285,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-12.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-12.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>Yellowface</h3>
@@ -302,7 +302,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-13.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-13.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>Deep As The Sky, Red As The Sea</h3>
@@ -319,7 +319,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-14.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-14.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>Alone With You In The Ether</h3>
@@ -353,7 +353,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-16.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-16.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>If We Were Villains</h3>
@@ -370,7 +370,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-17.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-17.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>The Secret History</h3>
@@ -387,7 +387,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-18.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-18.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>Normal People</h3>
@@ -404,7 +404,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-19.jpg" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-19.jpg" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>The Picture of Dorian Gray</h3>
@@ -421,7 +421,7 @@
 
                     <a href="#" class="swiper-slide box">
                         <div class="arrivals-image">
-                            <img src="img/book-20.png" alt="">
+                            <img src="../../../resources/images/project_nsa/usr_page/book-20.png" alt="">
                         </div>
                         <div class="arrivals-content">
                           <h3>The Master & Margarita</h3>
@@ -442,7 +442,7 @@
                     <div class="swiper-wrapper">
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-21.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-21.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>The Poppy War</h3>
@@ -459,7 +459,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-22.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-22.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>The Dragon Republic</h3>
@@ -476,7 +476,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-23.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-23.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>The Burning God</h3>
@@ -510,7 +510,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-25.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-25.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>Crown of Midnight</h3>
@@ -544,7 +544,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-27.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-27.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>Queen of Shadows</h3>
@@ -561,7 +561,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-28.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-28.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>Empire of Storms</h3>
@@ -595,7 +595,7 @@
     
                         <a href="#" class="swiper-slide box">
                             <div class="arrivals-image">
-                                <img src="img/book-30.jpg" alt="">
+                                <img src="../../../resources/images/project_nsa/usr_page/book-30.jpg" alt="">
                             </div>
                             <div class="arrivals-content">
                               <h3>Kingdom of Ash</h3>
