@@ -25,7 +25,7 @@
 				<div class="header-icons">
 						<a href="search.html" ><i class="fa fa-search"></i></a>
 						<a href="/Project/myWish"><i class="fa fa-heart"></i></a> 
-                    	<a href="cart.html" ><i class="fa fa-shopping-cart"></i></a>
+                    	<a href="/projectNSA/myCart" ><i class="fa fa-shopping-cart"></i></a>
 						<i class="fas fa-user" onclick="menuToggle();"></i>
 	                    
 	                    <div class="menu">

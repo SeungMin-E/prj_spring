@@ -35,12 +35,12 @@
             
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="userID" id="userID" placeholder="Username"/>
+                    <input type="text" name="userID" id="userID" value="rain" placeholder="Username"/>
                 </div>
 
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="userPW" id="userPW" placeholder="Password"/>
+                    <input type="password" name="userPW" id="userPW" value="134679" placeholder="Password"/>
                 </div>
 
                 

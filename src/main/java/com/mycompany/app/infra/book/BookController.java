@@ -111,6 +111,11 @@ public class BookController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/projectNSA/myCart")
+	public String bookMyCart() {
+		return "usr/infra/index/myPage/myCart";
+	}
+	
 //	베스트셀러 페이지
 
 	@RequestMapping(value = "/projectNSA/bestSeller")

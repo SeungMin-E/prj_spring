@@ -97,19 +97,23 @@
 <body>
 	<%@include file="../../index/include/header.jsp" %>
 	
-	 <section class = "contact-page">
-		<div class = "contact-bg">
-		  <h2>나의 위시리스트 - 찜 목록</h2>
-		  <div class = "line">
-			<div></div>
-			<div></div>
-			<div></div>
-		  </div>
-		  <p class = "text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda iste facilis quos impedit fuga nobis modi debitis laboriosam velit reiciendis quisquam alias corporis, maxime enim, optio ab dolorum sequi qui.</p>
-		</div>
-	</section>
 	
-	<section id="likes">
+	 <section class="hero" id="hero">
+
+            <div class="row">
+                
+                <div class="content">
+                    <h1>나의 위시리스트 - 찜 목록</h1>
+                     <div class = "line">
+						<div></div>
+						<div></div>
+						<div></div>
+				  	</div>
+				  	<p class = "text"></p>
+                </div>
+            </div>
+            
+            <section id="likes">
 				<div class="container">
 					<div class="book-list">
 						<div class="book">
@@ -131,6 +135,12 @@
 					</div>
 				</div>
 			</section>
+            
+        </section>
+	
+		
+	
+	
 	
 	<%@include file="../../index/include/footer.jsp" %>
 </body>
