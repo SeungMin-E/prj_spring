@@ -230,12 +230,37 @@ public class indexController {
 		return mav;
 	}
 	
+//	review section
+	@RequestMapping(value="/projectNSA/reviwe")
+	public ModelAndView nsa_review() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/sub/reviwe");
+		return mav;
+	}
+	
 //	contact 페이지
 	@RequestMapping(value="/projectNSA/contact")
 	public ModelAndView nsa_contact() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("usr/infra/index/sub/contact");
 		return mav;
+	}
+	
+//	기타 페이지
+	
+//	개인정보처리방침 & 보호정책
+	@RequestMapping(value= "/projectNSA/privacypolicy")
+	public ModelAndView nsa_privacypolicy() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("usr/infra/index/sub/privacypolicy");
+		return mav;
+	}
+	
+//	이용약관
+	@RequestMapping(value="/projectNSA/termsConditions")
+	public String nsa_termsConditions(){
+		
+		return "usr/infra/index/sub/terms&conditions";
 	}
 	
 //	팀프로젝트 페이지

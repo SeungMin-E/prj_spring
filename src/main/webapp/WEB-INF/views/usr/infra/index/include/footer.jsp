@@ -23,7 +23,7 @@
                         <li><a href="/projectNSA/main_page"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
                         <li><a href="/projectNSA/internation"><i class="fas fa-chevron-right"></i> Shop</a></li>
-                        <li><a href="review.html"><i class="fas fa-chevron-right"></i> Review</a></li>
+                        <li><a href="/projectNSA/reviwe"><i class="fas fa-chevron-right"></i> Review</a></li>
                         <li><a href="/projectNSA/contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -31,8 +31,8 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="/projectNSA/question"><i class="fas fa-chevron-right"></i> FAQs</a></li>
-                        <li><a href="privacypolicy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                        <li><a href="terms&conditions.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                        <li><a href="/projectNSA/privacypolicy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="/projectNSA/terms&conditions"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="col-footer">

@@ -370,6 +370,10 @@ header {
     transform: scale(.9)
 }
 
+.hero .row .table{
+	color: #fff;
+}
+
 /* Support Section */
 
 .support {

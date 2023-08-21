@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +51,10 @@
 		#likes h1 {
 			font-size: 28px;
 			margin-bottom: 20px;
+		}
+		
+		#likes .container{
+			margin: auto;
 		}
 
 		.book-list {
@@ -114,9 +123,9 @@
             </div>
             
             <section id="likes">
-				<div class="container">
+				<div class = "container">
 					<div class="book-list">
-						<div class="book">
+						<div class = "book">
 							<img src="img/book-1.jpg" alt="Book Title 1">
 							<a href="#" class="btn" onclick=removeImage(this)>X</a>
 						</div>

@@ -111,9 +111,20 @@ public class BookController {
 		return mav;
 	}
 	
+//	장바구니
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value="/projectNSA/myCart")
 	public String bookMyCart() {
 		return "usr/infra/index/myPage/myCart";
+	}
+	
+//	결제
+	@RequestMapping(value="/projectNSA/checkOut")
+	public String checkOut() {
+		return "usr/infra/index/myPage/checkOut";
 	}
 	
 //	베스트셀러 페이지

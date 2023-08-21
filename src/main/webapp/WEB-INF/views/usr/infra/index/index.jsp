@@ -61,7 +61,7 @@
                 <i class="fas fa-headset"></i>
                     <div class="support-content">
                         <h3>월 ~ 금 근무</h3>
-                        <p>오전 9시 ~ 오후 6시에 연락이 가능합니다.</p>
+                        <p>오전 9시 ~ 오후 6시에 문의 전화가 가능합니다.</p>
                     </div>
             </div>
 
@@ -76,9 +76,9 @@
             <div class="support-icons">
                 <i class="fas fa-arrow-rotate-left"></i>
                     <div class="support-content">
-                        <h3>Easy Return</h3>
-                        <p>10 days return</p>
-                    <div>
+                        <h3>EASY RETURN</h3>
+                        <p>10일 이내로 무상 교환 및 반품이 가능합니다.</p>
+                    </div>
             </div>
         </section>
 
@@ -625,7 +625,7 @@
                 <img src="img/deal.jpg" alt="">
             </div>
         </section>
-		<%@include file="../index/include/reviews.jsp" %>
+		
 
 
        	

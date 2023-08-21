@@ -51,6 +51,8 @@
 			<exclude-mapping path="/projectNSA/global"/>
 			<exclude-mapping path="/projectNSA/BookOne"/>
 			<exclude-mapping path="/projectNSA/contact"/>
+			<exclude-mapping path="/projectNSA/privacypolicy"/>
+			<exclude-mapping path="/projectNSA/termsConditions"/>
 			<exclude-mapping path="/loginP"/>
 			<exclude-mapping path="/indexUsrView"/>
 			<beans:bean id="checkLoginSessionInterception" class="com.mycompany.app.common.intercepctor.CheckLoginSessionInterception"/>
