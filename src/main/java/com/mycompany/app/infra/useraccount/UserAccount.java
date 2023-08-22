@@ -36,7 +36,6 @@ public class UserAccount {
 	private String ext;
 	private long size;
 	private Integer delNy;
-	private String pseq;
 	
 //	get & set
 	
@@ -177,12 +176,6 @@ public class UserAccount {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
-	}
-	public String getPseq() {
-		return pseq;
-	}
-	public void setPseq(String pseq) {
-		this.pseq = pseq;
 	}
 	public MultipartFile[] getUploadImgProfile() {
 		return uploadImgProfile;

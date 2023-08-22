@@ -1,5 +1,7 @@
 package com.mycompany.app.infra.book;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Book {
 	
 //	 컬럼
@@ -91,4 +93,88 @@ public class Book {
 	public void setAnthorName(String anthorName) {
 		this.anthorName = anthorName;
 	}
+	
+	
+	
+//	책 이미지
+	private MultipartFile[] uploadImg;
+	private MultipartFile[] uploadImgProfile;
+	private MultipartFile[] uploadFile;
+	private Integer uploadImgType;	
+	private Integer uploadImgMaxNumber;
+	private Integer uploadImgProfileType;
+	private Integer uploadFileType;
+	private Integer uploadImgProfileMaxNumber;
+	private Integer uploadFileMaxNumber;
+	private String[] uploadImgDeleteSeq;
+	private String[] uploadImgDeletePathFile;
+
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public MultipartFile[] getUploadImgProfile() {
+		return uploadImgProfile;
+	}
+	public void setUploadImgProfile(MultipartFile[] uploadImgProfile) {
+		this.uploadImgProfile = uploadImgProfile;
+	}
+	public MultipartFile[] getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile[] uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public Integer getUploadImgProfileType() {
+		return uploadImgProfileType;
+	}
+	public void setUploadImgProfileType(Integer uploadImgProfileType) {
+		this.uploadImgProfileType = uploadImgProfileType;
+	}
+	public Integer getUploadFileType() {
+		return uploadFileType;
+	}
+	public void setUploadFileType(Integer uploadFileType) {
+		this.uploadFileType = uploadFileType;
+	}
+	public Integer getUploadImgProfileMaxNumber() {
+		return uploadImgProfileMaxNumber;
+	}
+	public void setUploadImgProfileMaxNumber(Integer uploadImgProfileMaxNumber) {
+		this.uploadImgProfileMaxNumber = uploadImgProfileMaxNumber;
+	}
+	public Integer getUploadFileMaxNumber() {
+		return uploadFileMaxNumber;
+	}
+	public void setUploadFileMaxNumber(Integer uploadFileMaxNumber) {
+		this.uploadFileMaxNumber = uploadFileMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
+	
+	
 }

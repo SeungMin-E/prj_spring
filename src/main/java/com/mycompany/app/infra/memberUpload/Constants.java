@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.useraccount;
+package com.mycompany.app.infra.memberUpload;
 
 public class Constants{
 	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "D:/factory/ws_sts_4180_1/prj_spring/src/main/webapp";

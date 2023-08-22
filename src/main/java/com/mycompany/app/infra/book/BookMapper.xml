@@ -121,5 +121,33 @@
 		WHERE 1=1
 			AND seq = #{seq}
 	</delete>
+	
+	<insert id="insertUpload">
+		INSERT INTO BookInfo(
+			type
+			, defaultNy
+			, sort
+			, path
+			, originalName
+			, uuidName
+			, ext
+			, size
+			, delNy
+			, pseq
+		)VALUES(
+			#{type}
+			, #{defaultNy}
+			, #{sort}
+			, #{path}
+			, #{originalName}
+			, #{uuidName}
+			, #{ext}
+			, #{size}
+			, #{delNy}
+			, #{pseq}
+		)
+		
+	
+	</insert>
 
 </mapper>
