@@ -108,8 +108,10 @@ public class KakaoAPI {
 
 //	            String email = properties.getAsJsonObject().get("profile_email").getAsString();
 	            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+	            String userProfile = properties.getAsJsonObject().get("profile_image").getAsString();
 
 	            userInfo.put("nickname", nickname);
+	            userInfo.put("userProfile", userProfile);
 //	            userInfo.put("email", email);
 
 	        } catch (IOException e) {

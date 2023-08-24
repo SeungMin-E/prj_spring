@@ -29,7 +29,7 @@
 						<i class="fas fa-user" onclick="menuToggle();"></i>
 	                    
 	                    <div class="menu">
-	                        <img src="../../resources/images/project_nsa/usr_page/people-1.jpg">
+	                        <img src="${userProfile }" style="width:60px; height: 60px;">
 	                        <h3>User Account</h3>
 	                        <ul>
 	                            <li>

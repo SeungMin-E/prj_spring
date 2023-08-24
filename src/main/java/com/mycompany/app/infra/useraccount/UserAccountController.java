@@ -166,8 +166,11 @@ public class UserAccountController {
 
 	        //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
 	        if (userInfo.get("nickname") != null) {
+	        	session.setMaxInactiveInterval(60*10);
 	            session.setAttribute("userId", userInfo.get("nickname"));
 	            session.setAttribute("access_Token", access_Token);
+	            session.setAttribute("userProfile", userInfo.get("userProfile"));
+	            session.setAttribute("sessionId", userInfo.get("nickname"));
 	        }
 
 		
