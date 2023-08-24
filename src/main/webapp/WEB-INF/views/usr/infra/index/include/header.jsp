@@ -23,7 +23,7 @@
 		<c:choose>
 			<c:when test="${not empty sessionId }">
 				<div class="header-icons">
-						<a href="search.html" ><i class="fa fa-search"></i></a>
+						<a href="/projectNSA/search" ><i class="fa fa-search"></i></a>
 						<a href="/Project/myWish"><i class="fa fa-heart"></i></a> 
                     	<a href="/projectNSA/myCart" ><i class="fa fa-shopping-cart"></i></a>
 						<i class="fas fa-user" onclick="menuToggle();"></i>

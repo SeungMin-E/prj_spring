@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,6 +20,9 @@ public class UserAccountController {
 	
 	@Autowired
 	UserAccountServiceImpl service;
+	
+	@Autowired
+	KakaoAPI kakao;
 	
 //	목록
 	@RequestMapping(value="/userList")
@@ -148,6 +152,45 @@ public class UserAccountController {
 		return returnMap;
 	}
 	
+	
+//	kakao API
+	@RequestMapping(value="/kakaologin")
+	public String login(@RequestParam("code") String code, HttpSession session) {
+		System.out.println("code : " + code);
+		
+		 String access_Token = kakao.getAccessToken(code);
+	        System.out.println("access_Token : " + access_Token);
+
+	        HashMap<String, Object> userInfo = kakao.getUserInfo(access_Token);
+	        System.out.println("login Controller : " + userInfo);
+
+	        //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
+	        if (userInfo.get("nickname") != null) {
+	            session.setAttribute("userId", userInfo.get("nickname"));
+	            session.setAttribute("access_Token", access_Token);
+	        }
+
+		
+		return "redirect:/projectNSA/main_page";
+	}
+	
+	@RequestMapping(value="/kakaologout")
+    public String logout(HttpSession session) {
+        String access_Token = (String)session.getAttribute("access_Token");
+
+        if(access_Token != null && !"".equals(access_Token)){
+            kakao.kakaoLogout(access_Token);
+            session.removeAttribute("access_Token");
+            session.removeAttribute("userId");
+        }else{
+            System.out.println("access_Token is null");
+            //return "redirect:/";
+        }
+        //return "index";
+        return "redirect:/";
+    }
+
+	
 //	마이페이지
 	@RequestMapping(value="/Project/mypage")
 	public String myPage() {
@@ -162,6 +205,8 @@ public class UserAccountController {
 	}
 	
 //	장바구니
+	
+//	결제
 	
 	
 	
