@@ -55,7 +55,7 @@
 	</select>
 
 	<insert id="bookSingUp">
-		INSERT INTO BookInfo(
+		INSERT INTO ${tableName}(
 		bookSerialNum
 		, bookTitle
 		, anthorName
@@ -146,8 +146,6 @@
 			, #{delNy}
 			, #{pseq}
 		)
-		
-	
 	</insert>
 
 </mapper>

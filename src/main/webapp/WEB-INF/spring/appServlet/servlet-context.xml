@@ -54,6 +54,7 @@
 			<exclude-mapping path="/projectNSA/privacypolicy"/>
 			<exclude-mapping path="/projectNSA/termsConditions"/>
 			<exclude-mapping path="/loginP"/>
+			<exclude-mapping path="/kakaologin"/>
 			<exclude-mapping path="/indexUsrView"/>
 			<beans:bean id="checkLoginSessionInterception" class="com.mycompany.app.common.intercepctor.CheckLoginSessionInterception"/>
 		</interceptor>
@@ -80,6 +81,7 @@
 				<exclude-mapping path="/register"/>
 				<exclude-mapping path="/pwLost"/>
 				<exclude-mapping path="/loginP"/>
+				<exclude-mapping path="/kakaologin"/>
 				<exclude-mapping path="/publicCorona1List"/>
 				<exclude-mapping path="/restinPeace"/>
 				<beans:bean id="CheckAdminSessionInterception" class="com.mycompany.app.common.intercepctor.CheckAdminSessionInterception"/>

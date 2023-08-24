@@ -23,13 +23,13 @@
 		<c:choose>
 			<c:when test="${not empty sessionId }">
 				<div class="header-icons">
-						<a href="search.html" ><i class="fa fa-search"></i></a>
+						<a href="/projectNSA/search" ><i class="fa fa-search"></i></a>
 						<a href="/Project/myWish"><i class="fa fa-heart"></i></a> 
                     	<a href="/projectNSA/myCart" ><i class="fa fa-shopping-cart"></i></a>
 						<i class="fas fa-user" onclick="menuToggle();"></i>
 	                    
 	                    <div class="menu">
-	                        <img src="../../resources/images/project_nsa/usr_page/people-1.jpg">
+	                        <img src="${userProfile }" style="width:60px; height: 60px;">
 	                        <h3>User Account</h3>
 	                        <ul>
 	                            <li>
