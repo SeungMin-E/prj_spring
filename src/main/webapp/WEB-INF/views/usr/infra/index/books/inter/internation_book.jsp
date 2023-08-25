@@ -236,8 +236,7 @@ section {
 						<b><span class="list-icon"> > </span><a href="/projectNSA/newJeans">신간도서</a></b>
 					</p>
 					<p class="blog-sidebar-list">
-						<b><span class="list-icon"> > </span><a href="rarebook.html">Rare
-								Books</a></b>
+						<!-- <b><span class="list-icon"> > </span><a href="#">#</a></b> -->
 					</p>
 
 					<div>&nbsp;</div>
@@ -298,18 +297,19 @@ section {
 										<c:forEach items="${list }" var="list" varStatus="status">
 											<li class="book-item ${list.bookTheme} ${list.nation}">
 												<div class="icons">
-													<a
-														href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"
-														class="fas fa-search"></a> <a href="#"
-														class="fas fa-heart"></a> <a href="#" class="fas fa-eye"></a>
-												</div> <img src="#" alt="Book Cover">
+													<!-- 책 상세 -->
+													<a href="/projectNSA/BookOne?seq=<c:out value="${list.seq}"/>"class="fas fa-search"></a>
+													<!-- 위시리스트 추가 -->
+													<a href="#" class="fas fa-heart"></a>
+												</div> 
+												<img src="#" alt="Book Cover">
 												<div class="content">
 													<h3>
 														<c:out value="${list.bookTitle }" />
 													</h3>
 													<div class="price">
-														<c:out value="${list.price }" />
-														원 <span><c:out value="${list.price }" />원</span>
+														<fmt:formatNumber value="${list.price - (list.price * 0.1)}"  pattern="#,###"/>
+														원 <span><fmt:formatNumber value="${list.price }" pattern="#,###"/>원</span>
 													</div>
 													<a href="#" class="featured-btn">Add to Cart</a>
 												</div>

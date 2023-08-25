@@ -49,9 +49,9 @@
                 <p class="social-text">소설미디어 로그인</p>
             
                 <div class="social-media">
-                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="index-logged-in.html" class="social-icon"><i class="fab fa-google"></i></a>
+                    <!-- <a href="index-logged-in.html" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
+                    <!-- <a href="index-logged-in.html" class="social-icon"><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a href="index-logged-in.html" class="social-icon"><i class="fab fa-google"></i></a> -->
                     <a href="https://kauth.kakao.com/oauth/authorize?client_id=dddb6e8c1186c4d389841789f159ebe3&redirect_uri=	
 http://localhost/kakaologin&response_type=code" class="social-icon"><i class="fa-solid fa-comment"></i></a>
                 </div>
