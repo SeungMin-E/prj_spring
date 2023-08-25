@@ -65,12 +65,12 @@ http://localhost/kakaologin&response_type=code" class="social-icon"><i class="fa
                 
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="userID" placeholder="Username"/>
+                    <input type="text" name="userName" placeholder="userName"/>
                 </div>
 
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email"/>
+                    <input type="email" name="userID" placeholder="Email&ID"/>
                 </div>
 
                 <div class="input-field">
@@ -80,7 +80,7 @@ http://localhost/kakaologin&response_type=code" class="social-icon"><i class="fa
 				
 				<div class="input-field">
 					<i class="fa-solid fa-venus-mars"></i>
-                    <select>
+                    <select name="gender">
                     	<option value="" selected>::성별을 선택해주세요::</option>
                     	<option value="1">남</option>
                     	<option value="2">여</option>
@@ -90,13 +90,9 @@ http://localhost/kakaologin&response_type=code" class="social-icon"><i class="fa
                
                 <input type="button" id="create" class="account-btn" value="Sign up"/>
                
-                <p class="social-text">Or Sign up with social platforms</p>
+                <p class="social-text"></p>
             
                 <div class="social-media">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"> <i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </form>
 

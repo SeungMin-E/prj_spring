@@ -84,6 +84,7 @@
 				<exclude-mapping path="/kakaologin"/>
 				<exclude-mapping path="/publicCorona1List"/>
 				<exclude-mapping path="/restinPeace"/>
+				<exclude-mapping path="/getReadyForTheNextBattle"/>
 				<beans:bean id="CheckAdminSessionInterception" class="com.mycompany.app.common.intercepctor.CheckAdminSessionInterception"/>
 			</interceptor>
 		</interceptors>
