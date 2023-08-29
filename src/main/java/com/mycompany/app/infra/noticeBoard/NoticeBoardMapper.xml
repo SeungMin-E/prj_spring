@@ -29,14 +29,13 @@
     		FROM 
     			notice
     		WHERE 1=1
-    			
+    			<if test="getNoticeTitle != null and !getNoticeTitle.equals('')">AND noticeTitle LIKE CONCAT('%',#{getNoticeTitle},'%')</if>
     	</sql>
     	
     	<select id="noticeOneCount" resultType="integer">
     		SELECT
     			COUNT(*)
 				<include refid="notice_"/>  
-    			
     	</select>
     	
     	<select id="noticeList" resultMap="resultMapObj">
