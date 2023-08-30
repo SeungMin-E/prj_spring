@@ -32,7 +32,7 @@
 		SELECT bb.* FROM(
 			SELECT
 				<include refid="def"/>
-				<include refid="selectUncommon"></include>
+				<include refid="selectUncommon"/>
 		) bb
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 

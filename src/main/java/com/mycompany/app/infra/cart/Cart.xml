@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-    <!-- mapper -->
-    <mapper namespace="com.mycompany.app.infra.cart.Cart">
-    
-    <resultMap type="com.mycompany.app.infra.cart.Cart" id="resultMapObj" />
-    
+	 <!-- mapper -->
+	<mapper namespace="com.mycompany.app.infra.cart.CartMapper">
+		
+		<resultMap id="resultMapObj" type="com.mycompany.app.infra.cart.Cart"></resultMap>
+		
+		<!-- 칼럼 -->
     	<sql id="cart">
     		seq
     		, quantity
@@ -17,9 +17,12 @@
     		, BookInfo_seq
     	</sql>
     	
+    	<!-- 테이블 -->
     	<sql id="cartTable">
+			FROM
 				cart
 			WHERE 1=1
+				AND seq = #{seq}
 			<if test="BookInfo_seq != null and !BookInfo_seq.equals('')">AND BookInfo_seq LIKE CONCAT('%',#{BookInfo_seq},'%')</if>	
     	</sql>
     	
@@ -30,24 +33,21 @@
     	</sql>
     	
     	
-    	<select id="cartAll">
-    	SELECT gg.*FROM(
-    		SELECT
-	    		<include refid="cart" />
-	    	FROM
-    			<include refid="cartTable" />
-	    	)gg
-	    	LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
-    	</select>
+		<select id="CartCount" resultType="Integer">
+			SELECT count(*)
+			<include refid="cart_table"/>
+		</select>
     	
-    	<select id="cartOne">
-    		SELECT
-    		<include refid="cart"/>
-    		FROM
-    		cart
-    		WHERE 1=1
-    		AND seq = #{seq}
-    	</select>
+    	
+		<select id="myCartList" resultMap="resultMapObj">
+			SELECT ca.*(
+				SELECT
+				<include refid="cart_col"/>
+				<include refid="cart_table"/>
+			) ca
+			LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+		</select>
+		
     	
     	<insert id="add_cart">
     		INSERT INTO cart(
@@ -69,4 +69,24 @@
     		)
     	</insert>
     	
+    	<update id="transCart">
+			UPDATE cart
+			SET
+				quantity = #{quantity}
+			WHERE
+				seq = #{seq}
+		</update>
+		
+		<delete id="cancel">
+			DELETE FROM
+				cart
+			WHERE
+				seq = #{seq}
+		</delete>
+    	
     </mapper>
+
+		
+
+		
+		
