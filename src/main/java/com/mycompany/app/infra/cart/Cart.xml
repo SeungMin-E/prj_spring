@@ -39,5 +39,34 @@
 			<include refid="cart_table"/>
 		</select>
 		
+		<insert id="addCart">
+			INSERT INTO cart(
+				quantity
+				, totalPrice
+				, buyDate
+				, userSeq
+				, BookInfo_seq
+			)VALUES(
+				#{quantity}
+				, #{totalPrice}
+				, #{buyDate}
+				, #{userSeq}
+				, #{BookInfo_seq}
+			)
+		</insert>
 		
+		<update id="transCart">
+			UPDATE cart
+			SET
+				quantity = #{quantity}
+			WHERE
+				seq = #{seq}
+		</update>
+		
+		<delete id="cancel">
+			DELETE FROM
+				cart
+			WHERE
+				seq = #{seq}
+		</delete>
 	</mapper>
