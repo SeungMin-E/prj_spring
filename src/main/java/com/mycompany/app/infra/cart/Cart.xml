@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <!-- mapper -->
+    <mapper namespace="com.mycompany.app.infra.cart.Cart">
+    
+    <resultMap type="com.mycompany.app.infra.cart.Cart" id="resultMapObj" />
+    
+    	<sql id="cart">
+    		seq
+    		, quantity
+    		, totalPrice
+    		, buyDate
+    		, userSeq
+    		, BookInfo_seq
+    	</sql>
+    	
+    	<sql id="cartTable">
+				cart
+			WHERE 1=1
+			<if test="BookInfo_seq != null and !BookInfo_seq.equals('')">AND BookInfo_seq LIKE CONCAT('%',#{BookInfo_seq},'%')</if>	
+    	</sql>
+    	
+    	<sql id="book">
+    		BookInfo_seq
+    		, BookInfo_bookTitle
+    		, BookInfo_price
+    	</sql>
+    	
+    	
+    	<select id="cartAll">
+    	SELECT gg.*FROM(
+    		SELECT
+	    		<include refid="cart" />
+	    	FROM
+    			<include refid="cartTable" />
+	    	)gg
+	    	LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+    	</select>
+    	
+    	<select id="cartOne">
+    		SELECT
+    		<include refid="cart"/>
+    		FROM
+    		cart
+    		WHERE 1=1
+    		AND seq = #{seq}
+    	</select>
+    	
+    	<insert id="add_cart">
+    		INSERT INTO cart(
+    		, quantity
+    		, totalPrice
+    		, buyDate
+    		, userSeq
+    		, BookInfo_seq
+    		, BookInfo_bookTitle
+    		, BookInfo_price
+    		)VALUES(
+    		, #{quantity}
+    		, #{totalPrice}
+    		, #{buyDate}
+    		, #{userSeq}
+    		, #{BookInfo_seq}
+    		, #{BookInfo_bookTitle}
+    		, #{BookInfo_price}
+    		)
+    	</insert>
+    	
+    </mapper>
