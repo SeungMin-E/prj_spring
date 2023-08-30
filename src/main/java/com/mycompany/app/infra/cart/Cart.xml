@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.mycompany.app.infra.cart.CartMapper">
+		
+		<resultMap id="resultMapObj" type="com.mycompany.app.infra.cart.Cart"></resultMap>
+		
+		<!-- 칼럼 -->
+		<sql id="cart_col">
+				seq
+				, quantity
+				, totalPrice
+				, buyDate
+				, userSeq
+				, BookInfo_seq
+		</sql>
+		
+		<!-- 테이블 -->
+		<sql id="cart_table">
+			FROM
+				cart
+			WHERE 1=1
+				AND seq = #{seq}
+		</sql>
+		
+		<select id="myCartList" resultMap="resultMapObj">
+			SELECT ca.*(
+				SELECT
+				<include refid="cart_col"/>
+				<include refid="cart_table"/>
+			) ca
+			LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+		</select>
+		
+		<select id="CartCount" resultType="Integer">
+			SELECT count(*)
+			<include refid="cart_table"/>
+		</select>
+		
+		
+	</mapper>
