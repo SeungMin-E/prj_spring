@@ -7,6 +7,7 @@
 		
 		<resultMap id="resultMapObj" type="com.mycompany.app.infra.cart.Cart"></resultMap>
 		
+		<!-- include -->
 		<!-- 칼럼 -->
     	<sql id="cart">
     		seq
@@ -25,15 +26,18 @@
 				AND seq = #{seq}
 			<if test="BookInfo_seq != null and !BookInfo_seq.equals('')">AND BookInfo_seq LIKE CONCAT('%',#{BookInfo_seq},'%')</if>	
     	</sql>
-    	
+		
+		<!-- 책 정보 -->
     	<sql id="book">
     		BookInfo_seq
     		, BookInfo_bookTitle
     		, BookInfo_price
     	</sql>
+    	<!-- /include -->
     	
     	
-		<select id="CartCount" resultType="Integer">
+    	
+		<select id="cartCount" resultType="Integer">
 			SELECT count(*)
 			<include refid="cart_table"/>
 		</select>
