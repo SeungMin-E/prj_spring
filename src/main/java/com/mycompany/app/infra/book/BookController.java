@@ -111,15 +111,6 @@ public class BookController {
 		return mav;
 	}
 	
-//	장바구니
-	/**
-	 * 
-	 * @return
-	 */
-	@RequestMapping(value="/projectNSA/myCart")
-	public String bookMyCart() {
-		return "usr/infra/index/myPage/myCart";
-	}
 	
 //	결제
 	@RequestMapping(value="/projectNSA/checkOut")

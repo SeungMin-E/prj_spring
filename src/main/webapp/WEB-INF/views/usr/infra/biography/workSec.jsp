@@ -126,8 +126,8 @@
                   <li>API 연결(네이버 맵, 카카오 맵 사용)</li>
                 </ul>
 
-                <p><a href="/teamProject" class="readmore">Visit User Website</a></p>
-                <p><a href="#" class="readmore">Visit admin WebStie</a></p>
+                <p><a href="http://43.200.5.22:8080/" class="readmore">Visit User Website(</a></p>
+                <p><a href="#" class="readmore">Visit admin WebStie (곧 추가 될 예정입니다.)</a></p>
               </div>
             </div>
           </div>

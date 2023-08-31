@@ -64,8 +64,8 @@
 		                    <!-- <form name="formList" method="get" -->
 		                    <form name="formList"
 		                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-		                        	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-									<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+								<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+								<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">		                        
 		                        
 		                        <div class="input-group">
 		                            <input type="text" name="getAgeKeyword" value="<c:out value="${vo.ageKeyword}"/>" class="form-control bg-white border-0 small" placeholder="찾고 싶은 코드를 작성하세요"
@@ -128,9 +128,11 @@
 	                    <button class="btn btn-primary" id="create" type="button">
 	                        추가
 	                     </button>
+	                    <button class="btn btn-primary mx-2" id="excel" type="button">
+	                        엑셀로다운
+	                     </button>
                     </div>
-                    
-                   <div class="container-fluid px-0 mt-2">
+                    <div class="container-fluid px-0 mt-2">
 				    <div class="row">
 				        <div class="col">
 				            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
@@ -157,6 +159,7 @@
 				        </div>
 				    </div>
 				</div>
+                
             	
             	<!-- End of Main Content -->
 			 
@@ -225,9 +228,13 @@
     		window.location.replace("/codeInsertPage");
     	});
     	
+    	$("#excel").on("click", function(){
+    		form.attr("action", "/excelUri").submit();
+    	});
+    	
     	goList = function(thisPage) {
     		$("input:hidden[name=thispage]").val(thisPage);
-    		$("form[name=formList]").attr("action", "codeList").submit();
+    		$("form[name=formList]").attr("action", "/codeList").submit();
     	}
     </script>
           

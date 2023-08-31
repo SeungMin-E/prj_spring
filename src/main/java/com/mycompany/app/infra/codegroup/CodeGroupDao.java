@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.app.infra.code.Code;
+
 @Repository
 public class CodeGroupDao {
 	
@@ -42,5 +44,11 @@ public class CodeGroupDao {
 	public int insertOne(CodeGroup dto) {
 		 return sqlSession.insert(namespace + ".insertOne", dto);
 	}
+	
+//	for cache
+	public List<Code> selectListCachedCodeArrayList(){
+		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null);
+	}
+	
 	
 }

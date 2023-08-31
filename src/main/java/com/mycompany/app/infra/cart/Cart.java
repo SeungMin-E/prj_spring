@@ -6,7 +6,6 @@ public class Cart {
 	private String totalPrice;
 	private String buyDate;
 	private String userSeq; // 이건....
-	private String BookInfo_seq; // 책 테이블 파생
 	
 //	get & set
 	public String getSeq() {
@@ -38,12 +37,6 @@ public class Cart {
 	}
 	public void setUserSeq(String userSeq) {
 		this.userSeq = userSeq;
-	}
-	public String getBookInfo_seq() {
-		return BookInfo_seq;
-	}
-	public void setBookInfo_seq(String bookInfo_seq) {
-		BookInfo_seq = bookInfo_seq;
 	}
 	
 	

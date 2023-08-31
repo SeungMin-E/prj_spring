@@ -122,6 +122,9 @@
 	                    <button class="btn btn-primary" id="create" type="button">
 	                        추가
 	                     </button>
+	                     <button class="btn btn-primary mx-2" id="excel" type="button">
+	                        엑셀로다운
+	                     </button>
                     </div>
 				<div class="container-fluid px-0 mt-2">
 				    <div class="row">
@@ -219,6 +222,10 @@
     	
     	$("#create").on("click", function(){
     		window.location.replace("/codeGroupInsert");
+    	});
+    	
+    	$("#excel").on("click", function(){
+    		form.attr("action", "/excelGri").submit();
     	});
     	
     	goList = function(thisPage) {

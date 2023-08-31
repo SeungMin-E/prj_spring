@@ -97,5 +97,16 @@
 			seq = #{seq}
 	</delete>
 	
+	
+	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT
+		seq
+		, codeGroup_name
+		, delNy
+		FROM
+			codeGroup
+		WHERE 1=1
+			AND delNy = 0
+	</select>
 	    
 </mapper>    

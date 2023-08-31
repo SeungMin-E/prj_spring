@@ -16,6 +16,8 @@
     		, buyDate
     		, userSeq
     		, BookInfo_seq
+    		, BookInfo_bookTitle
+    		, BookInfo_price
     	</sql>
     	
     	<!-- 테이블 -->
@@ -24,30 +26,22 @@
 				cart
 			WHERE 1=1
 				AND seq = #{seq}
-			<if test="BookInfo_seq != null and !BookInfo_seq.equals('')">AND BookInfo_seq LIKE CONCAT('%',#{BookInfo_seq},'%')</if>	
+			<if test="userSeq != null and !userSeq.equals('')">AND userSeqLIKE CONCAT('%',#{userSeq},'%')</if>	
     	</sql>
 		
-		<!-- 책 정보 -->
-    	<sql id="book">
-    		BookInfo_seq
-    		, BookInfo_bookTitle
-    		, BookInfo_price
-    	</sql>
-    	<!-- /include -->
-    	
     	
     	
 		<select id="cartCount" resultType="Integer">
 			SELECT count(*)
-			<include refid="cart_table"/>
+			<include refid="cartTable"/>
 		</select>
     	
     	
 		<select id="myCartList" resultMap="resultMapObj">
 			SELECT ca.*(
 				SELECT
-				<include refid="cart_col"/>
-				<include refid="cart_table"/>
+				<include refid="cart"/>
+				<include refid="cartTable"/>
 			) ca
 			LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 		</select>

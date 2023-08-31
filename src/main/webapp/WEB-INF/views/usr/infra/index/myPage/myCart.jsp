@@ -170,13 +170,45 @@
 			<table>
                 <div class="pqs">
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
+                        <th>Product</th><!-- 제품 -->
+                        <th>Quantity</th><!-- 수량 -->
+                        <th>Subtotal</th><!-- 총액 -->
                     </tr>
                 </div>
-
-				<tr>
+				
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0 }">
+						<tr>
+							<td>
+								<div class="cart-info">
+									<div>
+										<h1>장바구니에 추가된 책들이 없습니다.</h1>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list }" var="list" varStatus="status">
+							<tr>
+								<td>
+									<div class="cart-info">
+										<img src="img/Emperor.jpg" alt="wew" width="250" height="auto" />
+										<div>
+											<h3></h3>
+											<p>Price: <c:out value="${list.BookInfo_price }"/></p>
+											<button class="cart">Remove Item</button>
+										</div>
+									</div>
+								</td>
+								<td><input type="number" value="${list.quantity }"></td>
+								<td>${list.totalPrice }</td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+				
+<!-- 				<tr>
 					<td>
 						<div class="cart-info">
 							<img src="img/Emperor.jpg" alt="wew" width="250" height="auto" />
@@ -217,7 +249,7 @@
 					</td>
 					<td><input type="number" value="1"></td>
 					<td>&#8369;666.00</td>
-				</tr>
+				</tr> -->
 
 			</table>
 
