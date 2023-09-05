@@ -97,7 +97,7 @@
   
 				<div class = "purchase-info">
 				  <input type = "number" min = "0" value = "1">
-				  <button type = "button" class = "btn"><i class = "fas fa-shopping-cart"></i>
+				  <button type = "button" id="addToCart" class = "btn"><i class = "fas fa-shopping-cart"></i>
 					Add to Cart 
 				  </button>
 				  <button type = "button" class = "btn"> <i class = "fas fa-heart"></i> Add to Wishlist</button>
@@ -246,5 +246,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<!--Custom JS file link-->
 	<script src="../../../resources/js/project_nsa/user/script.js"></script>
+	<script type="text/javascript">
+			$('#addToCart').on("click", function(){
+				
+				$(location).attr("href","/projectNSA/addCart?BookInfo_seq=${bookItem.bookTheme}")
+			});
+	</script>
 </body>
 </html>
