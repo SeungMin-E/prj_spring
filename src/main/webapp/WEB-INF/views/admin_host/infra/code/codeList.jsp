@@ -233,8 +233,19 @@
     	});
     	
     	goList = function(thisPage) {
-    		$("input:hidden[name=thispage]").val(thisPage);
-    		$("form[name=formList]").attr("action", "/codeList").submit();
+    		 if(thisPage == 0) {
+	    		$("input:hidden[name=thispage]").val(thisPage);
+    			$("form[name=formList]").attr("action", "/codeList").submit();
+    		 }else if(thisPage > ${vo.totalPages}){
+
+    	            $("input:hidden[name=thisPage]").val(thisPage - 1);
+    	            $("form[name=formList]").attr("action", "/codeList").submit();
+    	        }else{
+
+    	            $("input:hidden[name=thisPage]").val(thisPage);
+    	            $("form[name=formList]").attr("action", "/codeList").submit();
+
+    	        }
     	}
     </script>
           

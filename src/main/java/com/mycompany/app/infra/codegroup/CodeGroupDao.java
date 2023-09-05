@@ -1,5 +1,6 @@
 package com.mycompany.app.infra.codegroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -46,9 +47,9 @@ public class CodeGroupDao {
 	}
 	
 //	for cache
-	public List<Code> selectListCachedCodeArrayList(){
+	public List<CodeGroup> selectListCachedCodeGroupArrayList(){
 		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null);
 	}
-	
+
 	
 }

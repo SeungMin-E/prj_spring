@@ -1,5 +1,8 @@
 package com.mycompany.app.infra.codegroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CodeGroup {
 	
 //	DB 컬럼명 첫글자는 소문자로 시작할것.
@@ -9,6 +12,8 @@ public class CodeGroup {
 	private String seq;
 	private String codeGroup_name;
 	private String delNy;
+	
+	public static List<CodeGroup> cahedCodeGroupArrayList = new ArrayList<CodeGroup>();
 	
 	//	----- getter & setter
 	public String getSeq() {

@@ -49,12 +49,12 @@
                                     <form id="formLogin" class="user">
                                         <div class="form-group">
                                             <input type="text" name="userID" class="form-control form-control-user"
-                                                id="userID" aria-describedby="emailHelp"
+                                                id="userID" value="rain" aria-describedby="emailHelp"
                                                 placeholder="Enter userID...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="userPW" class="form-control form-control-user"
-                                                id="userPW" placeholder="Password">
+                                                id="userPW" value="134679" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

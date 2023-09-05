@@ -219,7 +219,7 @@ public class CodeGroupController {
 	@RequestMapping(value = "codeGroupXdmInit")
 	public Map<String, Object> codeXdmInit() throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		service.selectListCachedCodeArrayList();
+		service.selectListCachedCodeGroupArrayList();
 		returnMap.put("rt", "success");
 		return returnMap;
 	}	

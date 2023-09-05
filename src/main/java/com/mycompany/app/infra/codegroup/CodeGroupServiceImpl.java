@@ -52,19 +52,19 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	}
 
 	@PostConstruct
-	public void selectListCachedCodeArrayList() throws Exception{
-		List<Code> codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
-		codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
-		Code.cahedCodeArrayList.clear();
-		Code.cahedCodeArrayList.addAll(codeListFromDb);
+	public void selectListCachedCodeGroupArrayList() throws Exception{
+		List<CodeGroup> codeListFromDb = (ArrayList<CodeGroup>) dao.selectListCachedCodeGroupArrayList();
+		codeListFromDb = (ArrayList<CodeGroup>) dao.selectListCachedCodeGroupArrayList();
+		CodeGroup.cahedCodeGroupArrayList.clear();
+		CodeGroup.cahedCodeGroupArrayList.addAll(codeListFromDb);
 		System.out.println("cahedCodeArrayList : " + Code.cahedCodeArrayList.size() + "cahed");
 	}
 	
 	public static void clear() throws Exception{
-		Code.cahedCodeArrayList.clear();
+		CodeGroup.cahedCodeGroupArrayList.clear();
 	}
 	
-	public static List<Code> selectListCachedCode(String seq) throws Exception{
+	public static List<Code> selectListCachedCodeGroup(String seq) throws Exception{
 		List<Code> rt = new ArrayList<Code>();
 		for(Code codeRow : Code.cahedCodeArrayList) {
 			if(codeRow.getCodeGroup_seq().equals(seq)) {
@@ -76,11 +76,11 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 		return rt;
 	}
 	
-	public static String selectOneChchedCode(int code) throws Exception{
+	public static String selectOneChchedCodeGroup(int codeGroup) throws Exception{
 		String rt = "";
-		for(Code codeRow : Code.cahedCodeArrayList) {
-			if(codeRow.getSeq().equals(Integer.toString(code))) {
-				rt = codeRow.getCode_value();
+		for(CodeGroup codeRow : CodeGroup.cahedCodeGroupArrayList) {
+			if(codeRow.getSeq().equals(Integer.toString(codeGroup))) {
+				rt = codeRow.getCodeGroup_name();
 			}else {
 				
 			}
