@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.app.infra.useraccount.UserAccount;
+import com.mycompany.app.infra.useraccount.UserAccountVo;
+
 @Controller
 public class BookController {
 	// 관리자 페이지
@@ -37,6 +40,7 @@ public class BookController {
 	@RequestMapping(value="/BookOne")
 	public String bookOneForm(BookVo vo, Model model)throws Exception{
 		Book book = service.bookOne(vo);
+		
 		model.addAttribute("bookItem", book);
 		
 		return "admin_host/infra/book/bookForm";

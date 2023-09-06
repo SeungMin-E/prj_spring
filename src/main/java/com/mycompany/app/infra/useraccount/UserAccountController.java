@@ -130,6 +130,7 @@ public class UserAccountController {
 		if(rtUserAccount != null) {
 			httpSession.setMaxInactiveInterval(60*60);
 			httpSession.setAttribute("sessionId", vo.getUserID());
+			httpSession.setAttribute("sessionSeq", rtUserAccount.getSeq());
 			
 			returnMap.put("rtUserAccount", rtUserAccount);
 			returnMap.put("rt", "success");

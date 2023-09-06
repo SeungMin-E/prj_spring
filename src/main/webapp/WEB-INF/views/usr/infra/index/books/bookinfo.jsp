@@ -39,92 +39,97 @@
 	
 	
 	<section class="review-details-page">
+	<form name = "cartAdd">
 		<div class="review-details-container">
 		<div class = "card-wrapper">
 			<div class = "card">
-				<div class = "product-imgs">
-					<div class = "img-display">
-					<div class = "img-showcase">
-						<img src = "../../../../resources/images/project_nsa/usr_page/book-1.jpg">
+					<div class = "product-imgs">
+						<div class = "img-display">
+							<div class = "img-showcase">
+								<img src = "../../../../resources/images/project_nsa/usr_page/book-1.jpg">
+							</div>
+						</div>
 					</div>
+			 
+				  <div class = "review-content">
+				  	<input type="hidden" name="BookInfo_seq" value="${bookItem.seq}">
+					<h2 class = "product-title"><c:out value="${bookItem.bookTitle }"/></h2>
+					<a href = "#" class = "product-link"><c:out value="${bookItem.anthorName }"/></a>
+					<div class = "product-rating">
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star-half-alt"></i>
+					  <span>4.7(21)</span>
 					</div>
-				</div>
-		 
-			  <div class = "review-content">
-				<h2 class = "product-title"><c:out value="${bookItem.bookTitle }"/></h2>
-				<a href = "#" class = "product-link"><c:out value="${bookItem.anthorName }"/></a>
-				<div class = "product-rating">
-				  <i class = "fas fa-star"></i>
-				  <i class = "fas fa-star"></i>
-				  <i class = "fas fa-star"></i>
-				  <i class = "fas fa-star"></i>
-				  <i class = "fas fa-star-half-alt"></i>
-				  <span>4.7(21)</span>
-				</div>
+					<div class = "product-price">
+					  <p class = "last-price">Old Price: <span><fmt:formatNumber value="${bookItem.price}"  pattern="#,###"/>원</span></p>
+					  <p class = "new-price">Discounted Price: 
+					  	<span>
+							<c:set var="dcPrice" value="${bookItem.price - (bookItem.price * 0.1) }"/>
+							<fmt:parseNumber var="dcP" integerOnly="true" value="${dcPrice }"/>
+							<fmt:formatNumber value="${dcP}"  pattern="#,###"/>원 (10%)
+					  	</span>
+					  </p>
+					</div>
+	  
+					<div class = "product-detail">
+					  <h2>Description: </h2>
+					  <p><c:out value="${bookItem.bookContent }"/></p> 
+					  <ul>
+						<li><i class="fa fa-check"></i> Format: <span>Paperback</span></li>
+						<li><i class="fa fa-check"></i> Available: <span>in stock</span></li>
+						<li>
+							<i class="fa fa-check"></i> Category: 
+							<span>
+								<c:set var="theme" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
+								<c:forEach items = "${theme }" var="category" varStatus="status">
+									<c:if test = "${bookItem.bookTheme eq  category.seq}">
+		                         		<c:out value="${category.code_value }" />
+		                            </c:if>
+								</c:forEach>
+							</span>
+						</li>
+						<li><i class="fa fa-check"></i> 배송 가능 지역: <span>한국 전역</span></li>
+						<li><i class="fa fa-check"></i> 배송비 : <span>무료</span></li>
+					  </ul>
+					</div>
   
-				<div class = "product-price">
-				  <p class = "last-price">Old Price: <span><fmt:formatNumber value="${bookItem.price}"  pattern="#,###"/>원</span></p>
-				  <p class = "new-price">Discounted Price: 
-				  	<span>
-						<c:set var="dcPrice" value="${bookItem.price - (bookItem.price * 0.1) }"/>
-						<fmt:parseNumber var="dcP" integerOnly="true" value="${dcPrice }"/>
-						<fmt:formatNumber value="${dcP}"  pattern="#,###"/>원 (10%)
-				  	</span>
-				  </p>
-				</div>
+					<div class = "purchase-info">
+					  <input type = "number" min = "0" name="quantity" value = "1">
+					  <input type="hidden" name="price" value="${dcP}">
+					  <button type = "button" id="addToCart" class = "btn"><i class = "fas fa-shopping-cart"></i>
+						Add to Cart 
+					  </button>
+					  <button type = "button" class = "btn"> <i class = "fas fa-heart"></i> Add to Wishlist</button>
+					  
+					</div>
   
-				<div class = "product-detail">
-				  <h2>Description: </h2>
-				  <p><c:out value="${bookItem.bookContent }"/></p> 
-				  <ul>
-					<li><i class="fa fa-check"></i> Format: <span>Paperback</span></li>
-					<li><i class="fa fa-check"></i> Available: <span>in stock</span></li>
-					<li>
-						<i class="fa fa-check"></i> Category: 
-						<span>
-							<c:set var="theme" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
-							<c:forEach items = "${theme }" var="category" varStatus="status">
-								<c:if test = "${bookItem.bookTheme eq  category.seq}">
-	                         		<c:out value="${category.code_value }" />
-	                            </c:if>
-							</c:forEach>
-						</span>
-					</li>
-					<li><i class="fa fa-check"></i> 배송 가능 지역: <span>한국 전역</span></li>
-					<li><i class="fa fa-check"></i> 배송비 : <span>무료</span></li>
-				  </ul>
-				</div>
-  
-				<div class = "purchase-info">
-				  <input type = "number" min = "0" value = "1">
-				  <button type = "button" id="addToCart" class = "btn"><i class = "fas fa-shopping-cart"></i>
-					Add to Cart 
-				  </button>
-				  <button type = "button" class = "btn"> <i class = "fas fa-heart"></i> Add to Wishlist</button>
-				</div>
-  
-				<div class = "social-links">
-				  <p>Share At:  </p>
-				  <a href = "#">
-					<i class = "fab fa-facebook-f"></i>
-				  </a>
-				  <a href = "#">
-					<i class = "fab fa-twitter"></i>
-				  </a>
-				  <a href = "#">
-					<i class = "fab fa-instagram"></i>
-				  </a>
-				  <a href = "#">
-					<i class = "fab fa-whatsapp"></i>
-				  </a>
-				  <a href = "#">
-					<i class = "fab fa-pinterest"></i>
-				  </a>
-				</div>
-		  	</div>
+					<div class = "social-links">
+					  <p>Share At:  </p>
+					  <a href = "#">
+						<i class = "fab fa-facebook-f"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-twitter"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-instagram"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-whatsapp"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-pinterest"></i>
+					  </a>
+					</div>
+		  		</div>
 		</div>
 	  </div>
 	</div>
+	
+	</form>
 	</section>         
 	
 	<section class="related">
@@ -140,7 +145,7 @@
 				<div class="content">
 					<h3>Catching Fire</h3>
 					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -151,7 +156,7 @@
 				<div class="content">
 					<h3>Mockingjay</h3>
 					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -162,7 +167,7 @@
 				<div class="content">
 					<h3>The Raven Boys</h3>
 					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -173,7 +178,7 @@
 				<div class="content">
 					<h3>The Raven Boys</h3>
 					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -184,7 +189,7 @@
 				<div class="content">
 					<h3>The Dream Thieves</h3>
 					<div class="price">&#8369;666.66<span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -195,7 +200,7 @@
 				<div class="content">
 					<h3>Blue Lily, Lily Blue</h3>
 					<div class="price">&#8369;333.59 <span>&#8369;667.18</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -206,7 +211,7 @@
 				<div class="content">
 					<h3>The Raven King</h3>
 					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -218,7 +223,7 @@
 				<div class="content">
 					<h3>Six of Crows</h3>
 					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 
@@ -229,7 +234,7 @@
 				<div class="content">
 					<h3>Crooked Kingdom</h3>
 					<div class="price">&#8369;666.66 <span>&#8369;999.99</span></div>
-					<a href="#" class="featured-btn">Add to Cart</a>
+					<a href="#" class="featured-btn">보러가기</a>
 				</div>
 				</div>
 			
@@ -248,8 +253,8 @@
 	<script src="../../../resources/js/project_nsa/user/script.js"></script>
 	<script type="text/javascript">
 			$('#addToCart').on("click", function(){
-				
-				$(location).attr("href","/projectNSA/addCart?BookInfo_seq=${bookItem.bookTheme}")
+				var cart = $('form[name="cartAdd"]');
+				cart.attr("action", "/projectNSA/addCart").submit();
 			});
 	</script>
 </body>

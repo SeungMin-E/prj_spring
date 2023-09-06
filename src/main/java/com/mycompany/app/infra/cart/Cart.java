@@ -3,10 +3,10 @@ package com.mycompany.app.infra.cart;
 public class Cart {
 	private String seq; // 기본적인 시퀀스
 	private String quantity; // 수량임
-	private String totalPrice;
+	private String price;
 	private String buyDate;
 	private String userSeq; // 이건....
-	private String Book_seq;
+	private String BookInfo_seq;
 	
 //	get & set
 	public String getSeq() {
@@ -21,12 +21,7 @@ public class Cart {
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
-	public String getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(String totalPrice) {
-		this.totalPrice = totalPrice;
-	}
+	
 	public String getBuyDate() {
 		return buyDate;
 	}
@@ -40,10 +35,16 @@ public class Cart {
 		this.userSeq = userSeq;
 	}
 	public String getBookInfo_seq() {
-		return Book_seq;
+		return BookInfo_seq;
 	}
 	public void setBookInfo_seq(String bookInfo_seq) {
-		Book_seq = bookInfo_seq;
+		BookInfo_seq = bookInfo_seq;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
 }

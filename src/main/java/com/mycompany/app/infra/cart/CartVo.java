@@ -3,9 +3,10 @@ package com.mycompany.app.infra.cart;
 public class CartVo {
 	private String seq; // 기본적인 시퀀스
 	private String quantity; // 수량임
-	private String totalPrice;
+	private String price;
 	private String buyDate;
 	private String userSeq; // 이건....
+	private String bookInfo_seq;
 	
 //	get & set
 	public String getSeq() {
@@ -19,12 +20,6 @@ public class CartVo {
 	}
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
-	}
-	public String getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(String totalPrice) {
-		this.totalPrice = totalPrice;
 	}
 	public String getBuyDate() {
 		return buyDate;
@@ -176,5 +171,17 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+public String getBookInfo_seq() {
+	return bookInfo_seq;
+}
+public void setBookInfo_seq(String bookInfo_seq) {
+	this.bookInfo_seq = bookInfo_seq;
+}
+public String getPrice() {
+	return price;
+}
+public void setPrice(String price) {
+	this.price = price;
+}
 	
 }

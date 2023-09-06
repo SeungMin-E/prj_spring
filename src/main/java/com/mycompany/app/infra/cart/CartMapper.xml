@@ -15,7 +15,7 @@
     		, totalPrice
     		, buyDate
     		, userSeq
-    		, Book_seq
+    		, BookInfo_seq
     	</sql>
     	
     	<!-- 테이블 -->
@@ -48,16 +48,16 @@
     	<insert id="add_cart">
     		INSERT INTO cart(
     		 quantity
-    		, totalPrice
+    		, price
     		, buyDate
     		, userSeq
-    		, Book_seq
+    		, BookInfo_seq
     		)VALUES(
     		 #{quantity}
-    		, #{totalPrice}
+    		, #{price}
     		, #{buyDate}
     		, #{userSeq}
-    		, #{Book_seq}
+    		, #{BookInfo_seq}
     		)
     	</insert>
     	
