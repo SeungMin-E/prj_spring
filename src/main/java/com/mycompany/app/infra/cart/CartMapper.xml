@@ -16,8 +16,6 @@
     		, buyDate
     		, userSeq
     		, Book_seq
-    		, Book_bookTitle
-    		, Book_price
     	</sql>
     	
     	<!-- 테이블 -->
@@ -54,16 +52,12 @@
     		, buyDate
     		, userSeq
     		, Book_seq
-    		, Book_bookTitle
-    		, Book_price
     		)VALUES(
     		 #{quantity}
     		, #{totalPrice}
     		, #{buyDate}
     		, #{userSeq}
     		, #{Book_seq}
-    		, #{Book_bookTitle}
-    		, #{Book_price}
     		)
     	</insert>
     	
