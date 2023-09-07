@@ -25,7 +25,7 @@
 				<div class="header-icons">
 						<a href="/projectNSA/search" ><i class="fa fa-search"></i></a>
 						<a href="/Project/myWish"><i class="fa fa-heart"></i></a> 
-                    	<a href="/projectNSA/myCart" ><i class="fa fa-shopping-cart"></i></a>
+                    	<a href="/projectNSA/myCart?userSeq=${sessionSeq }" ><i class="fa fa-shopping-cart"></i></a>
 						<i class="fas fa-user" onclick="menuToggle();"></i>
 	                    
 	                    <div class="menu">
@@ -33,7 +33,7 @@
 	                        <h3>User Account</h3>
 	                        <ul>
 	                            <li>
-	                                <a href="/Project/mypage" class="nav-link">My Profile</a>
+	                                <a href="/Project/mypage?seq=${sessionSeq }" class="nav-link">My Profile</a>
 	                            </li>
 	                            <li>
                                 	<a href="#">Edit Account</a>    

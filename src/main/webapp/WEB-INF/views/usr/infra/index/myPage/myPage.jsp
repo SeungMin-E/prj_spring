@@ -253,19 +253,13 @@
 					<!-- 인적사항 내용 창 -->
 					<div class="d-flex flex-column">
 						<div class="col-auto mb-3" style="width: 500px;">
-							<span>이름 : </span> <span>@@@</span>
+							<span>이름 : </span> <span><c:out value="${user.userName }" /></span>
 						</div>
 						<div class="col-auto mb-3" style="width: 500px;">
-							<span>성별 : </span> <span>비공개</span>
+							<span>성별 : </span> <span><c:out value="${user.gender }" /></span>
 						</div>
 						<div class="col-auto mb-3" style="width: 500px;">
-							<span>이메일 : </span> <span>Loremipsum@dolorsit.com</span>
-						</div>
-						<div class="col-auto mb-3" style="width: 500px;">
-							<span>우편번호 : </span> <span>11010</span>
-						</div>
-						<div class="col-auto mb-3" style="width: 500px;">
-							<span>주소 : </span> <span>@@시 !@#구 ##동 @!#$%%</span>
+							<span>아이디 : </span> <span><c:out value="${user.userID }" /></span>
 						</div>
 					</div>
 

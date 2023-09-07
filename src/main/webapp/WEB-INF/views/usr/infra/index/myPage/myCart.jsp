@@ -195,14 +195,15 @@
 									<div class="cart-info">
 										<img src="img/Emperor.jpg" alt="wew" width="250" height="auto" />
 										<div>
-											<h3></h3>
-											<p>Price: <c:out value="${list.BookInfo_price }"/></p>
+											<h3><c:out value="${list.BookInfo_seq }" /></h3>
+											<p>Price: <c:out value="${list.price }"/></p>
 											<button class="cart">Remove Item</button>
 										</div>
 									</div>
 								</td>
 								<td><input type="number" value="${list.quantity }"></td>
-								<td>${list.totalPrice }</td>
+								<td>${list.Price * list.quantity} : ${list.Price * list.quantity}</td>
+								
 							</tr>
 						</c:forEach>
 					</c:otherwise>

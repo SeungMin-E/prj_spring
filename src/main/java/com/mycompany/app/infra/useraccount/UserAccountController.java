@@ -197,7 +197,12 @@ public class UserAccountController {
 	
 //	마이페이지
 	@RequestMapping(value="/Project/mypage")
-	public String myPage() {
+	public String myPage(UserAccountVo vo, Model model) {
+		
+		UserAccount userAccount = service.userOne(vo);
+		
+		model.addAttribute("user", userAccount);
+		
 		return "usr/infra/index/myPage/myPage";
 	}
 	

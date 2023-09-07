@@ -23,8 +23,9 @@
 			FROM
 				cart
 			WHERE 1=1
-				AND seq = #{seq}
-			<if test="userSeq != null and !userSeq.equals('')">AND userSeqLIKE CONCAT('%',#{userSeq},'%')</if>	
+				AND userSeq = #{userSeq}
+				<!-- <if test="userSeq != null and !userSeq.equals('')" >AND userSeq LIKE CONCAT('%',#{userSeq},'%')</if> -->
+				
     	</sql>
 		
     	
